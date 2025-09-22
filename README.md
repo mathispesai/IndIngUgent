@@ -1,1 +1,16 @@
 # IndIngUgent
+
+Besturingssytemen
+Elektronica2
+FrameworksVoorServerapplicaties
+Ingenieurproject1
+PO1
+PO2
+SoftwareontwikkelingEnBeheer
+SoftwareProject1
+SoftwareProject2
+Statistiek en wiskundige data-analyse
+computerhardware
+gedistribueerde gegevensverwerking
+informatica
+Relatieve databanken
