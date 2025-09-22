@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.menu {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+.menu-item {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+.profile-overview {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.profile-overview h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.profile-overview p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.profile-overview strong {
+    font-weight: bold;
+}
+/* Styling for spans displaying user information */
+.profile-overview span {
+    color: #555;
+    font-weight: bold;
+}
+.profile-picture {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    margin: 0 auto 20px;
+}
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire container */
+    object-position: center; /* Center the image within the container */
+    display: block;
+}
+#map {
+    height: 400px; /* Hoogte van de kaart */
+    width: 100%; /* Breedte van de kaart */
+}

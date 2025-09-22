@@ -1,0 +1,144 @@
+% !TeX spellcheck = nl_NL
+\documentclass{article}
+
+\usepackage[dutch]{babel}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{siunitx}
+
+
+\newcommand{\R}{\ensuremath\{\mathbb{R}\}}
+
+\title{Mijn eerste \LaTeX-document}
+\author{Mathis Bossuyt}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+\listoffigures
+\section*{Inleiding}
+	
+	Dit is een beetje tekst. Gewoon een paar zinnetjes zodat er toch iets op ons blad staat. Liveblog: "Frankrijk mogelijk vanaf volgende week volledig rode zone", besmettingen in ons land stijgen bijna niet meer.
+	De Amerikaanse president Donald Trump en zijn vrouw Melania hebben positief getest op het coronavirus. Ze hadden vrijwillig een test ondergaan nadat een naaste medewerker van Trump ziek geworden was. Ze hadden de voorbije dagen vaak samen gereisd. In ons land stijgt het gemiddeld aantal besmettingen per dag bijna niet meer. Viroloog Steven Van Gucht waarschuwt dat Frankrijk vanaf volgende week mogelijk een volledig rode zone wordt. Volg alle updates in onze liveblog.
+	
+	Eerst wordt behandeld hoe een tekst is gestructureerd (hoofdstuk \ref{sec:Documenten structuren}), daarna komen lijsten(hoofdstuk \ref{sec:Lijstjes}) aan bod.
+\section{Documenten structuren}
+\label{sec:Documenten structuren}
+	De Amerikaanse president Donald Trump en zijn vrouw Melania hebben positief getest op het coronavirus. Ze hadden vrijwillig een test ondergaan nadat een naaste medewerker van Trump ziek geworden was.
+\subsection{Ondertitel}
+	De Amerikaanse president Donald Trump en zijn vrouw Melania hebben positief getest op het coronavirus. Ze hadden vrijwillig een test ondergaan nadat een naaste medewerker van Trump ziek geworden was.
+\subsection{Ondertitel}
+	De Amerikaanse president Donald Trump en zijn vrouw Melania hebben positief getest op het coronavirus. Ze hadden vrijwillig een test ondergaan nadat een naaste medewerker van Trump ziek geworden was.
+	k. dekimpe schrijft daar in zijn bo \cite{dekimpe2006almost} niet over.
+
+\section{Lijstjes}
+\label{sec:Lijstjes}
+\begin{enumerate}
+	\item Een
+	\item Twee
+	\item Drie
+\end{enumerate}
+\begin{itemize}
+	\item Een
+	\item Twee
+	\item Drie
+\end{itemize}
+\section{computercode}
+\label{sec:computercode}
+de werking van het commando
+\texttt{texttt} of beter
+\verb|\texttt{...}|
+
+\begin{verbatim}
+def f(x): return x**2
+plot(x,f(x))
+\end{verbatim}
+\section{tabel}
+\begin{tabular}{r|llll}
+	Geslacht & Ingenieur & Fysica & Wiskunde & Informatica \\ \hline
+	     Man & 47        & 11     & 3        & 7           \\
+	   Vrouw & 10        & 0      & 4        & 0
+\end{tabular}
+
+\section{figuren}
+Figuur \ref{fig:eucl} toont de kaart van België
+\begin{figure}
+\centering
+\includegraphics[width=.5\textwidth]{be} 
+\caption{Kaart van België}
+\label{fig:eucl}
+\end{figure}
+
+\section{Formules}
+een rechte door punten \(a,b\) en \(c,d\) heeft vergelijking
+\[y=\frac{d-b}{c-a}(x-a)+b)\]
+
+De formule van (\ref{eq:Euler}) werd ontdekt door Euler.
+\begin{equation}
+1+e^{i\pi}=0
+\label{eq:Euler}
+\end{equation}
+
+\begin{align*}
+	1 & = \sqrt{1} \\
+ 	  & = \sqrt{1 \cdot(-1)}\\
+ 	  & = \sqrt{(1)} \cdot(-1)\sqrt{(-1)}\\
+ 	  &= i \cdot i \\
+ 	  &= -1
+\end{align*}
+
+\section{spec wisk dingen}
+\[y=\frac{d-b}{c-a}(x-a)+b) \]
+\[x^n= \underbrace{ x\cdot x\cdot \ldots \cdot x}_{n \text{ keer}}\]
+\[\lim_{x\to 0} \frac{\sin x} {x}=1 \]
+in doorlopende tekst
+\(\sum_{n=0}^{+\infty} \frac{1}{2^n} = 2\)
+worden boven- en onderschrift anders genoteerd.
+\[\left(\int_a^x f(t) dt\right)'=f(x) \]
+
+\section{fysische dingen}
+de eenheid van kracht is \si{kg m/s^2}
+de valversnelling op aarde bedraagt
+\SI{9.81}{kg m/s^2}.
+
+\num{-123456.789}
+
+\(-123456.789\)
+
+-123456.789
+
+\section{Matrices}
+\[
+\left |
+\begin{array}{ll}
+    a_{11}	& a_{12} \\
+    a_{21}	& a_{22}    
+
+\end{array} 
+\right |
+\]
+
+\[
+|x|= \left\{\begin{array}{r@{\text{ als }}l}
+x & x\geq 0\\
+-x & x<0
+\end{array}
+\right.
+\]
+
+\section{Eigen commando's}
+Niet: \(\mathbb{R}\) is overaftelbaar
+
+Wel: De verzameling Der reële getallen \(R\)  is overaftelbaar
+
+\[f: \R \to \R \]
+
+\bibliography{mijnbibliografie}
+\bibliographystyle{unsrt}
+
+
+\end{document}

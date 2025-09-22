@@ -1,0 +1,140 @@
+\documentclass[aspectratio=169,kulak,t]{kulakbeamer} % handout
+
+\usepackage[dutch]{babel}
+\usepackage[T1]{fontenc}
+\usefonttheme[onlymath]{serif}
+
+\title[Korte titel]{mijn eerste beamer-presentatie}
+\author[Korte naam]{Mathis Bossuyt} 
+\institute[Kulak]{KU Leuven Kulak}
+\date{Academiejaar 2020 -- 2021}
+
+\AtBeginSection[]{\only<beamer>{\addtocounter{framenumber}{-1}
+		\begin{outlineframe}\frametitle{Overzicht}
+			\tableofcontents[currentsection,hideallsubsections]
+	\end{outlineframe}}}
+
+
+\begin{document}
+
+\begin{titleframe}
+\titlepage
+\end{titleframe}
+
+\begin{outlineframe}[Overzicht]
+\tableofcontents
+\end{outlineframe}
+
+
+
+\section{Inleiding}
+
+\begin{frame}
+\frametitle{Inleidende frame}
+\begin{itemize}
+	\item Een aantal dingen
+	\item nog een aantal dingen
+	\item laatste zaken
+\end{itemize}
+ 
+\end{frame}
+
+\section{Presentatie structuren}
+
+\begin{frame}{info foto dink}
+	
+	\begin{columns}
+		\column{0.5\textwidth}
+		\begin{figure}
+			\includegraphics{ik}
+			\caption{Foto van mezelf}
+			
+			
+		\end{figure}
+		
+		\column{0.5\textwidth}
+	
+	
+	
+		Naam:
+		Mathis Bossuyt
+		
+		
+		Studentennummer:
+		r0850546
+		
+		
+		Richting:
+		Ingenieurswetenschappen
+		
+		
+		Favoriete formule:
+		\begin{equation}
+			1+e^{i\pi}=0	
+		\end{equation}
+		
+		
+		
+	\end{columns}
+	
+	
+\end{frame}	
+
+
+
+\begin{frame}
+\frametitle{blokken}
+\begin{block}{definitie}
+een priemgetal is een getal dat deelbaar is door 1 en zichzelf
+\end{block}
+
+\begin{exampleblock}{voorbeelden}
+	voorbeelden van priemgetallen: 1, 3, 5, 7, \ldots
+\end{exampleblock}
+
+\begin{alertblock}{de Eén}
+	Eén is geen priemgetal
+\end{alertblock}
+
+
+	
+\end{frame}
+
+\begin{frame}{kolommen}
+	\begin{columns}
+		\column{0.5\textwidth}
+		
+		Eerste kolom
+		\column{0.5\textwidth}
+	\begin{alertblock}{De één}
+		1 is geen priemgetal
+	\end{alertblock}
+
+	\end{columns}
+\end{frame}	
+\begin{frame}{automatische lijstjes opbouwen}
+	\begin{itemize}[<+->]
+		\item dit staat er eerst
+		\item Dit staat er \alert{nog} niet
+		\item dit stuk wordt \only{helemaal niet} getoond
+		\item dit stuk wordt \uncover{niet} getoond.
+		\item dit stuk wordt \uncover{niet} getoond.
+	\end{itemize}
+\hypertarget<3>{auto:3}{Zichtbaar}
+\hypertarget<4>{auto:4}{}
+\end{frame}	
+
+\begin{frame}{hyperspace}
+
+\hyperlink{auto:3}{klik hier voor slide 3}
+
+\hyperlink{auto:4}{klik hier voor slide 4}
+
+\end{frame}
+\section{Besluit}
+\begin{frame}
+\frametitle{Afsluitende frame}
+Afsluitende tekst.
+\end{frame}
+
+\end{document}

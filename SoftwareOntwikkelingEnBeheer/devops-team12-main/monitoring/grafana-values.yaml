@@ -1,0 +1,24 @@
+admin:
+  existingSecret: grafana-admin
+
+grafana.ini:
+  server:
+    domain: devops-proxy.atlantis.ugent.be
+    root_url: "%(protocol)s://%(domain)s/grafana/devops-team12"
+    serve_from_sub_path: true
+ingress:
+  enabled: true
+  path: /grafana/devops-team12
+  hosts:
+    - devops-proxy.atlantis.ugent.be
+
+rbac:
+  create: false
+  pspEnabled: false
+serviceAccount:
+  create: false
+
+persistence:
+  enabled: true
+  size: 1Gi
+  storageClassName: k8s-stud-storage

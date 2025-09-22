@@ -1,0 +1,36 @@
+3.1. Eenvoudige UPDATE- en DELETE-instructies
+---------------------------------------------
+1. update speler set veldpositie = 'Midfield', marktwaarde = 1000000 where id = 10;
+2. update club set stadionnaam = 'Jan-Breydel-Stadion' where naam like 'KV%';
+3. update speler set marktwaarde = marktwaarde * 1.2 where geboortedatum >= '2000-01-01'::date;
+4. Er is een uniciteitsbeperking gedefinieerd op attribuut id in de tabel speler en een aanpassing van het id kan ervoor zorgen dat de data niet meer voldoen aan deze uniciteitsbeperking.
+Het is over het algemeen geen goed idee om data die behoren tot primaire sleutelattributen aan te passen.
+5. delete from doelpunt where
+	 (datum >= '2023-01-01'::date and datum <= '2023-01-31'::date) or
+	 (datum >= '2023-03-01'::date and datum <= '2023-03-31'::date)
+6. Dit is niet altijd mogelijk, aangezien er nog clubs kunnen gelinkt zijn aan deze stadions aan de hand van een vreemde sleutelbeperking.
+De default strategie die PostgreSQL hanteert is om het verwijderen van data tegen te houden indien er nog andere data naar deze data verwijzen (ON DELETE NO ACTION).
+
+3.2. Geavanceerde UPDATE- en DELETE-instructies
+-----------------------------------------------
+1. update stadion
+	set capaciteit = round(capaciteit * 1.2)
+    where capaciteit >= (select capaciteit from stadion where naam = 'Allianz Arena');
+2. update speler s
+	set geboorteplaats = c.stadionnaam
+	from club c where s.id = 10 and s.clubnaam = c.naam;
+3. delete
+	from doelpunt d using speler s
+	where s.id = d.spelerid and to_char(d.datum, 'MM') = to_char(s.geboortedatum, 'MM');
+	
+4.1. Inbreuk op uniciteitsbeperkingen
+-------------------------------------
+insert into stadion (naam, capaciteit)
+values ('Lotto Park', 25000),
+       ('Ghelamco Arena', 19999),
+       ('Olympisch Stadion', 13000),
+       ('DDCM Arena', 8000)
+on conflict on constraint stadion_pkey do update set capaciteit 
+	= case when excluded.capaciteit != stadion.capaciteit then abs(excluded.capaciteit - stadion.capaciteit)
+		   else stadion.capaciteit end;
+		   

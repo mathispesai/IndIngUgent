@@ -1,0 +1,73 @@
+SELECT title FROM album WHERE year = 1994;
+SELECT albumid,title FROM album WHERE year IS NULL;
+SELECT title FROM album WHERE length(title) > 30;
+SELECT name FROM artist WHERE name LIKE 'P%';
+SELECT presenterid FROM presenter WHERE lastname NOT LIKE  'Peters' AND firstname NOT LIKE 'Dave';
+SELECT concat(firstname,' ', upper(lastname)) AS fullname FROM presenter WHERE sex ILIKE 'm' ORDER BY lastname, firstname ;
+SELECT firstname, lastname, 
+CASE WHEN sex  LIKE 'm' THEN 'Male'
+     WHEN sex  LIKE 'f' THEN 'Female'
+END AS sex
+FROM presenter;
+SELECT presenterid, array_length(string_to_array(hobbies,','),1) AS number_of_hobbies FROM presenter; 
+SELECT presenterid, unnest(string_to_array(hobbies,',')) AS hobby FROM presenter; 
+SELECT 
+CASE WHEN name ILIKE 'the %' THEN concat(substr(name,5),', THE')
+     ELSE name
+END AS name
+FROM artist ORDER BY name;
+SELECT cast(floor(year/10)*10 as integer) AS decade, title FROM album where year IS NOT NULL ORDER BY decade, title;
+SELECT title, year FROM album WHERE ((cast((to_char(current_timestamp, 'YYYY')) as integer) - year)  <= 20) ;
+SELECT albumid FROM album WHERE year BETWEEN 2000 AND 2003 AND title NOT LIKE 'T%';
+SELECT presenterid FROM presenter WHERE firstname LIKE 'A%' AND length(firstname) =4;
+SELECT title FROM radioprogram WHERE title NOT LIKE '% %';
+SELECT DISTINCT genre FROM track;
+SELECT title FROM TRACK WHERE (genre LIKE 'Pop' OR genre LIKE 'Rock') AND tracknumber = 1 ORDER BY title DESC;
+SELECT concat(upper(substr(title,1,1)),lower(substr(title,2))) AS title FROM album;
+SELECT DISTINCT genre FROM track WHERE substr(title,1,1) ILIKE 's' AND title LIKE '%Rock%';
+
+SELECT title FROM track INNER JOIN artist ON track.artistid = artist.artistid WHERE artist.name LIKE 'INXS';
+SELECT title, lastname,firstname FROM radioprogram JOIN radioprogram_presenter ON radioprogram.radioprogramid = radioprogram_presenter.radioprogramid JOIN presenter ON radioprogram_presenter.presenterid = presenter.presenterid ORDER BY title, lastname, firstname;
+SELECT track.title AS songtitle, album.title AS albumtitle FROM track JOIN album ON track.albumid = album.albumid JOIN artist ON track.artistid = artist.artistid WHERE artist.name LIKE 'R.E.M.' AND album.year > 1993; 
+SELECT concat( lower(to_char( starttime , 'Day' )),' ',to_char(starttime, 'DD/MM/YYYY'), ' ', to_char(starttime, 'HH24:MI')) AS begintimestamp, title, genre from radiobroadcast JOIN radioprogram ON (radiobroadcast.radioprogramid = radioprogram.radioprogramid) ORDER BY starttime;
+SELECT title, concat( to_char(timestamp, 'DD/MM/YYYY'), ' ', to_char(timestamp, 'HH24:MI')) AS timestamp FROM track JOIN playlistitem ON playlistitem.trackid = track.trackid JOIN artist ON track.artistid = artist.artistid WHERE artist.name LIKE 'Novastar' AND to_char(playlistitem.timestamp, 'DD/MM/YYYY') LIKE '05/10/2011' ;
+SELECT title FROM radioprogram  LEFT JOIN radioprogram_presenter ON radioprogram_presenter.radioprogramid = radioprogram.radioprogramid WHERE radioprogram_presenter.presenterid IS NULL  ;
+SELECT title, CASE
+WHEN timestamp IS NOT NULL THEN concat( to_char(timestamp, 'DD/MM/YYYY'), ' ', to_char(timestamp, 'HH24:MI')) 
+END AS time FROM artist FULL JOIN track ON artist.artistid = track.artistid FULL JOIN playlistitem ON track.trackid = playlistitem.trackid WHERE artist.name LIKE 'Daan' ORDER BY time NULLS FIRST, title;
+SELECT title FROM radioprogram JOIN radioprogram_presenter ON radioprogram.radioprogramid = radioprogram_presenter.radioprogramid JOIN presenter ON radioprogram_presenter.presenterid = presenter.presenterid WHERE presenter.lastname LIKE 'Duyster' AND presenter.firstname LIKE 'Ayco';
+
+
+SELECT name, title FROM artist JOIN track ON artist.artistid = track.artistid WHERE trackid NOT IN ( SELECT trackid FROM playlistitem);
+SELECT presenterid FROM presenter WHERE birthdate >= ALL(SELECT birthdate from presenter);
+SELECT presenterid FROM presenter WHERE sex LIKE 'f' AND birthdate >= ALL(SELECT birthdate from presenter WHERE sex LIKE 'f') ;
+SELECT title FROM track JOIN artist ON track.artistid = artist.artistid WHERE name NOT LIKE 'Leonard Cohen'  
+AND title IN (SELECT title FROM track JOIN artist ON track.artistid = artist.artistid WHERE name LIKE 'Leonard Cohen');
+
+
+
+
+SELECT COUNT(DISTINCT genre) AS amount FROM radioprogram;
+SELECT MIN(cast(extract(year from birthdate) as integer)) AS year FROM presenter; 
+SELECT album.albumid , COUNT(trackid) FROM album JOIN track ON album.albumid=track.albumid WHERE genre LIKE 'Rock' GROUP BY album.albumid HAVING COUNT(trackid)>10 ;
+
+
+
+CASE WHEN count(SELECT nr FROM doelpunt where to_char(doelpunt.datum, 'DD/MM') LIKE to_char(speler.geboortedatum, 'DD/MM')  !=0 THEN count(SELECT nr FROM doelpunt where to_char(doelpunt.datum, 'DD/MM') LIKE speler.geboortedatum) 
+cast( extract(day from geboortedatum  )as integer) AS verjaardag
+
+
+SELECT id AS spelerid , 
+CASE WHEN to_char(datum , 'DD/MM') LIKE to_char(speler.geboortedatum, 'DD/MM') THEN cast(count(nr) as integer)
+ELSE 0
+END AS verjaardag,  
+CASE WHEN to_char(datum , 'DD/MM') NOT LIKE to_char(speler.geboortedatum, 'DD/MM') THEN cast(count(nr) as integer)
+END AS overige
+FROM speler JOIN doelpunt ON speler.id = doelpunt.spelerid WHERE geboortedatum IS NOT NULL GROUP BY doelpunt.datum, speler.id HAVING COUNT(nr)!=0
+
+SELECT DISTINCT cast(stadion.naam as varchar) AS stadionnaam FROM stadion 
+JOIN club ON stadion.naam = club.stadionnaam 
+JOIN wedstrijd ON club.naam = wedstrijd.thuisclub 
+JOIN wedstrijdevent ON (wedstrijd.thuisclub=wedstrijdevent.thuisclub AND wedstrijd.datum = wedstrijdevent.datum)
+JOIN doelpunt ON (wedstrijdevent.datum = doelpunt.datum AND wedstrijdevent.thuisclub = doelpunt.thuisclub AND wedstrijdevent.nr = doelpunt.nr)
+GROUP BY stadion.naam HAVING MIN(wedstrijdevent.minuut) <= ALL(SELECT wedstrijdevent.minuut FROM wedstrijdevent JOIN doelpunt ON (wedstrijdevent.datum = doelpunt.datum AND wedstrijdevent.thuisclub = doelpunt.thuisclub AND wedstrijdevent.nr = doelpunt.nr));  

@@ -1,0 +1,72 @@
+Oefening 1
+----------
+
+- Let op dat je enkel spelers teruggeeft van wie de marktwaarde 10 miljoen hoger is dan ALLE andere spelers in dezelfde club van wie de marktwaarde gekend is.
+  Het is dus noodzakelijk om met een ALL-functie te werken (of een ANY-functie met inverse logica).
+- Spelers die als enige een gekende marktwaarde hebben in een club mogen geen deel uitmaken van het resultaat.
+  Het is dus noodzakelijk om naast de eerste vereiste ook te gaan controleren of er minstens één andere speler is in de club die een gekende marktwaarde heeft.
+  Dit kan doormiddel van de EXISTS-functie.
+- We spreken in de opgave over minstens 10 miljoen.
+  Dit wil zeggen dat, wanneer een speler een marktwaarde heeft van exact 10 miljoen meer dan de andere spelers, deze speler ook deel moet uitmaken van het resultaat (minstens slaat dus op >=).
+- Zorg ervoor dat de spelers in je ALL-functie de speler die beschouwd wordt in de outer query niet includeert.
+
+Modelantwoord:
+
+select id, marktwaarde, clubnaam
+from speler s1
+where marktwaarde >= all
+      (select marktwaarde + 10000000
+       from speler s2
+       where s1.id != s2.id
+         and s1.clubnaam = s2.clubnaam
+         and s2.marktwaarde is not null)
+  and exists(select 1
+             from speler s2
+             where s1.id != s2.id
+               and s1.clubnaam = s2.clubnaam
+               and s2.marktwaarde is not null);
+
+
+Oefening 2
+----------
+
+- Let opnieuw op voor kolomnamen: spelerid (in plaats van id) wordt verwacht.
+- Voor deze oefening dien je het aantal doelpunten per speler per wedstrijd te tellen, en niet het totale aantal doelpunten per speler (over alle gespeelde wedstrijden).
+- Het eindresultaat mag geen spelers bevatten die nog nooit een doelpunt hebben gescoord.
+- We zijn op zoek naar spelers die ooit 1 OF 2 doelpunten hebben gescoord in eenzelfde wedstrijd.
+- We zijn *niet* op zoek naar spelers die in *een* wedstrijd minder dan 3 doelpunten hebben gescoord.
+- De kolom nr in de tabel doelpunt wordt gebruikt om te refereren naar het wedstrijdevent dat plaatsvond in de corresponderende wedstrijd, en wordt niet gebruikt om het aantal doelpunten (van een speler, in een wedstrijd) aan te geven.
+
+Modelantwoord:
+
+select distinct spelerid, voornaam, familienaam
+from doelpunt d
+         inner join speler s on d.spelerid = s.id
+where spelerid not in
+      (select d1.spelerid
+       from doelpunt d1
+                inner join doelpunt d2
+                           on d1.thuisclub = d2.thuisclub and d1.datum = d2.datum and d1.spelerid = d2.spelerid and
+                              d1.nr != d2.nr
+                inner join doelpunt d3
+                           on d1.thuisclub = d3.thuisclub and d1.datum = d3.datum and d1.spelerid = d3.spelerid and
+                              d1.nr != d3.nr and d2.nr != d3.nr);
+
+Oefening 3
+----------
+- Maak gebruik van de kolom uitdoelpunten in de tabel wedstrijd, en niet van de rijen in de tabel doelpunt.
+  Aangezien een speler een doelpunt gemaakt kan hebben voor een club die verschilt van zijn huidige club, is het gebruik van rijen in de tabel doelpunt niet noodzakelijk correct.
+- Let opnieuw op voor kolomnamen: clubnaam (in plaats van uitclub of naam) wordt verwacht.
+- Let op, het maximum van de uitdoelpunten van de uitclubs geldt niet per individuele uitclub, maar over alle clubs die ooit als uitclub fungeerden samen, en dit ongeacht de resultaten van de thuisclubs.
+  Er is ook geen voorwaarde nodig dat de thuisclub minder doelpunten gescoord moet hebben dan de uitclub.
+
+Modelantwoord:
+
+select distinct uitclub as clubnaam
+from club c
+         inner join wedstrijd w on c.naam = w.uitclub
+where naam not in (select thuisclub from wedstrijd)
+  and uitdoelpunten >= all (select uitdoelpunten
+                            from club c
+                                     inner join wedstrijd w on c.naam = w.uitclub
+                            where naam not in (select thuisclub from wedstrijd));

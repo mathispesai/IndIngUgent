@@ -1,0 +1,35 @@
+{
+  "name": "projectwerk",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "simulatie",
+    "zonnestelsel",
+    "barnes-hut algoritme",
+    "javascript"
+  ],
+  "contributors": [
+    "Mathis Bossuyt",
+    "Renaud De Laet",
+    "Thomas Inghelbrecht",
+    "Maxim, Ponomariov",
+    "Seppe Vanhoutte"
+  ],
+  "license": "ISC",
+  "description": "Simulatie van een zonnestelsel",
+  "dependencies": {
+    "canvas": "^3.1.0",
+    "jest": "^29.7.0",
+    "jsdom": "^26.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.27.1",
+    "@babel/preset-env": "^7.27.1",
+    "babel-jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  }
+}

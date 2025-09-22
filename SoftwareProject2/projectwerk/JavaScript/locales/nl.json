@@ -1,0 +1,354 @@
+{
+  "navigation": {
+    "create": "Creëer",
+    "myDesigns": "Mijn Designs",
+    "aboutApp": "Over de applicatie",
+    "nBody": "N-body Algoritme",
+    "colorBlindness": "Kleurenblindheid ▾"
+  },
+  "design-title": {
+    "title": "Mijn designs | SolarSim"
+  },
+  "create-title": {
+    "title": "Creëer | SolarSim"
+  },
+  "algoritme-title": {
+    "title": "N-body algoritme | SolarSim"
+  },
+  "info-title": {
+    "title": "Over de applicatie | SolarSim"
+  },
+  "hero": {
+    "welcome": "Welkom op SolarSim",
+    "startSimulation": "Start Simulatie"
+  },
+  "solarSystems": {
+    "madeByOthers": "Kies een zonnestelsel",
+    "labels": {
+      "new": "Nieuw",
+      "popular": "Populair"
+    },
+    "solarSystem": "Zonnestelsel",
+    "by": "Door gebruiker"
+  },
+  "createSystem": {
+    "title": "Maak je eigen zonnestelsel",
+    "subtitle": "Voeg een planeet toe om te starten",
+    "createPlanet": "Maak een planeet",
+    "choosePlanet": "Kies een bestaande planeet",
+    "planetName": "Naam Planeet",
+    "planetNamePlaceholder": "Vul naam planeet in",
+    "planetMass": "Massa in kg",
+    "planetMassPlaceholder": "Voeg massa toe",
+    "planetSpeed": "Snelheid in km/s",
+    "planetSpeedPlaceholder": "Vul de snelheid in",
+    "planetDistance": "Afstand tot ster (km)",
+    "planetDistancePlaceholder": "Voeg afstand toe",
+    "selectPlanet": "Naam Planeet",
+    "selectedPlanet": "Gekozen planeet:",
+    "simulate": "Simuleer"
+  },
+  "planets": {
+    "earth": "Aarde",
+    "mars": "Mars",
+    "jupiter": "Jupiter",
+    "mercury": "Mercurius",
+    "neptune": "Neptunus",
+    "saturn": "Saturnus",
+    "uranus": "Uranus",
+    "venus": "Venus"
+  },
+  "simulation": {
+    "title": "Zonnestelsel Simulatie",
+    "controls": {
+      "title": "Bediening",
+      "planetManagement": {
+        "title": "Planeet Beheer",
+        "addPlanet": "Planeet toevoegen",
+        "removePlanet": "Verwijder planeet",
+        "remove": "Verwijder",
+        "newPlanet": "Nieuwe Planeet Toevoegen",
+        "name": "Naam",
+        "positionX": "Positie X",
+        "positionY": "Positie Y",
+        "velocityX": "Snelheid X",
+        "velocityY": "Snelheid Y",
+        "mass": "Massa",
+        "add": "Toevoegen",
+        "solarsystem": "Nieuw zonnestelsel"
+      },
+      "simulationControls": {
+        "title": "Simulatie Bediening",
+        "pause": "Pauze",
+        "timeControls": {
+          "stop": "Stop",
+          "timeForward": "Tijd vooruit"
+        }
+      },
+      "saveImport": {
+        "title": "Opslaan/Importeren",
+        "save": "Opslaan",
+        "import": "Importeren"
+      },
+      "accessibility": {
+        "title": "Toegankelijkheid",
+        "colorBlindMode": "Kleurenblindheidsmodus"
+      },
+      "designs": "Mijn Designs"
+    }
+  },
+  "colorBlindModes": {
+    "normal": "Normaal",
+    "protanopia": "Protanopia",
+    "deuteranopia": "Deuteranopia",
+    "tritanopia": "Tritanopia",
+    "achromatopsia": "Achromatopsie"
+  },
+  "units": {
+    "millionKm": "miljoen km"
+  },
+  "languages": {
+    "dutch": "Nederlands",
+    "english": "English",
+    "french": "Français",
+    "german": "Deutsch"
+  },
+  "visualization": {
+    "title": "Zonnestelsel Visualisatie",
+    "noData": "Nog geen gegevens om weer te geven. Voeg planeten toe om visualisatie te zien.",
+    "speed": "Snelheid: "
+  },
+  "systemInfo": {
+    "title": "Zonnestelsel Informatie",
+    "totalMass": "Totale massa:",
+    "planetCount": "Aantal planeten:",
+    "stability": "Systeemstabiliteit:",
+    "stable": "Stabiel",
+    "unstable": "Instabiel",
+    "centerOfMass": "Zwaartepunt:",
+    "averageSpeed": "Gemiddelde snelheid:"
+  },
+  "algorithm": {
+    "title": "N-body Algoritme",
+    "subtitle": "Begrijp de fysica achter SolarSim",
+    "explanation": "Het N-lichaam algoritme simuleert de zwaartekrachtinteractie tussen meerdere hemellichamen. Het berekent de krachten tussen elk paar objecten en past hun posities en snelheden aan.",
+    "formula": "Wet van Newton: F = G(m₁m₂/r²)",
+    "learnMore": "Lees meer over hoe ons algoritme werkt.",
+    "moreInfo": "Meer info",
+    "pageTitle": "Inzicht in het N-body algoritme",
+    "pageDescription": "Leer hoe het N-body probleem gebruikt wordt om het zonnestelsel voor te stellen",
+    "howItWorks": "Hoe werkt het N-body algoritme?",
+    "sections": {
+      "introduction": "Inleiding",
+      "corePrinciples": "Kernprincipes",
+      "visualization": "Visualisatie"
+    },
+    "introduction": {
+      "title": "Inleiding",
+      "paragraph1": "Het N-body algoritme is een methode om de bewegingen van meerdere objecten te simuleren die elkaar aantrekken door zwaartekracht. Denk hierbij aan sterren, planeten of andere hemellichamen die onderling invloed op elkaar uitoefenen.",
+      "paragraph2": "Bij het algoritme wordt voor elk object berekend hoe sterk de zwaartekracht is die door de andere objecten op hem wordt uitgeoefend. Op basis van die krachten worden vervolgens de snelheden en posities aangepast. Omdat elk object met alle andere objecten moet worden vergeleken, kan dit algoritme erg intensief worden naarmate het aantal objecten toeneemt.",
+      "paragraph3": "Wij passen dit algoritme toe, de planeten en kometen in het zonnestelsel zijn de objecten van het N-body algoritme."
+    },
+    "corePrinciples": {
+      "title": "Kernprincipes",
+      "gravity": {
+        "title": "Zwaartekracht",
+        "description": "Elk object oefent een kracht uit op een ander object volgens de wet van Newton. Zo is de kracht voor elk object dus anders."
+      },
+      "timeIteration": {
+        "title": "Iteratie in tijd",
+        "description": "Het algoritme wordt herhaald in kleine intervallen om zo steeds de snelheid en richting opnieuw uit te rekenen."
+      },
+      "newtonSecondLaw": {
+        "title": "Versnelling volgens 2e wet van Newton",
+        "description": "De versnelling wordt steeds opnieuw berekent met de 2e wet van Newton. Deze is volgens de formule:",
+        "formula": "a = \\frac{F}{m}",
+        "variables": {
+          "acceleration": "a de versnelling",
+          "force": "F de kracht die inwerkt op de objecten",
+          "mass": "m de massa van het object"
+        }
+      },
+      "barnesHut": {
+        "title": "Barnes-Hut algoritme",
+        "description": "Het Barnes-Hut algoritme is een optimalisatie van het standaard N-body algoritme en is in bijna alle opzichten hetzelfde. Wij gebruiken het Barnes-hut omdat deze efficiënter en sneller is. Het algoritme versnelt de berekeningen door gebruik te maken van een hiërarchische datastructuur. Dit is een manier om objecten te organiseren in een boomachtige structuur. Wij maken gebruik van een Quadtree, waarbij het zonnestelsel wordt onderverdeeld in rechthoeken en enkel de rechthoeken waar er een object is zullen in het geheugen geladen zijn."
+      }
+    },
+    "visualization": {
+      "title": "Visualisatie",
+      "controls": {
+        "twoPlanets": "2 planeten",
+        "fivePlanets": "5 planeten",
+        "tenPlanets": "10 planeten",
+        "customCount": "Start",
+        "pause": "Pauze",
+        "speedLabel": "Snelheid: "
+      },
+      "canvasText": "Zoals je kunt zien, zal er maximaal 1 cirkel per rechthoek zijn. Dit zorgt ervoor dat er niet overal zo diep moet worden verder gerekent (stel je voor dat het hele canvas vol kleine rechthoeken zat — dit zou veel minder efficiënt zijn). Het Barnes-Hut algoritme kan bovendien ook nog eens bepalen als bepaalde objecten ver genoeg verwijderd zijn van elkaar en dan deze objecten als 1 groep beschouwen(bijvoorbeeld als een planeet zich helemaal rechtsonder bevindt, kan het algoritme planeten linksboven makkelijk samennemen aangezien dit ook allemaal kinderen zijn van dezelfde bovenliggende rechthoek)."
+    }
+  },
+  "about": {
+    "title": "Over de applicatie",
+    "description": "SolarSim is een webapplicatie waarmee je interactief je eigen zonnestelsel kunt creëren",
+    "learnMore": "Lees hier meer over hoe SolarSim werkt.",
+    "whatDoes": {
+      "title": "Wat doet SolarSim?",
+      "list": [
+        "Maak je eigen zonnestelsel",
+        "Aanpasbare kleurenblindheidsopties",
+        "Simuleer beweging met behulp van een <strong><a href=\"algoritme.html\">complex algoritme</a></strong>"
+      ]
+    },
+    "accessibility": {
+      "title": "Toegankelijkheid",
+      "description": "De website bevat verschillende opties om kleuren aan te passen aan de voorkeur van gebruikers met kleurenblindheid.",
+      "visualization": "Visualisatie",
+      "reset": "Reset",
+      "colorBlindTypes": {
+        "protanopia": {
+          "title": "Protanopia",
+          "description": "Gemaakt voor mensen met een rood-kleurenblindheid."
+        },
+        "deuteranopia": {
+          "title": "Deuteranopia",
+          "description": "Ontwikkeld voor mensen met een groen-kleurenblindheid, zodat alles van de website goed zichtbaar is."
+        },
+        "tritanopia": {
+          "title": "Tritanopia",
+          "description": "Voor mensen met een blauw-kleurenblindheid."
+        },
+        "achromatopsia": {
+          "title": "Achromatopsie",
+          "description": "Speciaal alleen ontwikkeld voor mensen met volledige kleurenblindheid."
+        }
+      }
+    },
+    "project": {
+      "title": "Het project",
+      "description": "Dit project werd gemaakt met de focus op gebruikersinteractie met behulp van JavaScript. Dit wordt dan visueel gesimuleerd voor de gebruiker."
+    },
+    "faq": {
+      "title": "Veelgestelde Vragen",
+      "questions": [
+        {
+          "question": "Is SolarSim gratis?",
+          "answer": "Ja! SolarSim is volledig gratis. We willen dat de webapplicatie voor iedereen toegankelijk is om kennis op te doen zonder te betalen."
+        },
+        {
+          "question": "Wat is de nauwkeurigheid van SolarSim?",
+          "answer": "SolarSim werkt met een N-body algoritme dat ervoor zorgt dat planeten op elkaar reageren. Dit algoritme is vereenvoudigd maar volgt de fundamentele natuurkundige principes."
+        },
+        {
+          "question": "Kan je je zonnestelsels delen met anderen?",
+          "answer": "Momenteel is dit nog niet mogelijk. Je kunt je gemaakte ontwerpen opslaan onder het tabblad <strong><a href=\"design.html\">Mijn Designs</a></strong>."
+        }
+      ]
+    },
+    "features": "Kenmerken:",
+    "featuresList": [
+      "Creëer aangepaste zonnestelsels",
+      "Observeer zwaartekrachtinteracties",
+      "Deel je ontwerpen met andere gebruikers",
+      "Leer over hemelmechanica"
+    ],
+    "moreInfo": "Meer info"
+  },
+  "addPlanetModal": {
+    "title": "Planeet Toevoegen",
+    "name": "Naam",
+    "namePlaceholder": "Vul naam in",
+    "mass": "Massa (kg)",
+    "massPlaceholder": "Massa invoeren",
+    "radius": "Straal (km)",
+    "radiusPlaceholder": "Straal invoeren",
+    "distance": "Afstand tot de zon (AU)",
+    "distancePlaceholder": "Afstand invoeren",
+    "speed": "Baansnelheid (km/s)",
+    "speedPlaceholder": "Snelheid invoeren",
+    "color": "Kleur",
+    "add": "Toevoegen",
+    "cancel": "Annuleren",
+    "errors": {
+      "nameRequired": "Naam is verplicht",
+      "massRequired": "Massa is verplicht",
+      "massPositive": "Massa moet positief zijn",
+      "radiusRequired": "Straal is verplicht",
+      "radiusPositive": "Straal moet positief zijn",
+      "distanceRequired": "Afstand is verplicht",
+      "distancePositive": "Afstand moet positief zijn",
+      "speedRequired": "Snelheid is verplicht"
+    }
+  },
+  "footer": {
+    "contactUs": "Contacteer ons",
+    "privacyPolicy": "Privacybeleid",
+    "termsOfUse": "Gebruiksvoorwaarden",
+    "copyright": "© 2025 SolarSim. Alle rechten voorbehouden."
+  },
+  "errors": {
+    "requiredField": "Dit veld is verplicht",
+    "invalidNumber": "Voer een geldig getal in",
+    "tooManyPlanets": "Maximum aantal planeten bereikt",
+    "fileImportFailed": "Importeren van bestand mislukt",
+    "invalidFile": "Ongeldig bestandsformaat"
+  },
+  "success": {
+    "systemSaved": "Zonnestelsel succesvol opgeslagen",
+    "simulationStarted": "Simulatie gestart",
+    "planetAdded": "Planeet succesvol toegevoegd",
+    "planetRemoved": "Planeet succesvol verwijderd",
+    "fileImported": "Bestand succesvol geïmporteerd"
+  },
+  "info": {
+    "header": {
+      "title": "Over SolarSim",
+      "text": "Ontdek de wonderen van het universum met onze interactieve webapplicatie voor het simuleren van zonnestelsels."
+    },
+    "cta": {
+      "discover": "Ontdek de Functies",
+      "toDesigns": "Ga naar mijn designs",
+      "nBody": "N-Body algoritme",
+      "backToTop": "Terug naar boven"
+    },
+    "features": {
+      "title": "Ontdek de Krachtige Functies",
+      "text": "Onze webapplicatie biedt een reeks unieke en innovatieve functies om het universum te verkennen:",
+      "list": {
+        "item1": "<strong>Zonnestelsel Simulatie:</strong> Simuleer realistische zonnestelsels met nauwkeurige fysica, inclusief zwaartekracht en banen.",
+        "item2": "<strong>Planeten Beheer:</strong> Voeg planeten toe of verwijder ze om je eigen zonnestelsel te ontwerpen.",
+        "item3": "<strong>Botsingssimulaties:</strong> Experimenteer met planetaire botsingen en observeer de dynamische effecten.",
+        "item4": "<strong>Kleurenblindheid Modus:</strong> Simuleer verschillende vormen van kleurenblindheid (protanopie, deuteranopie, tritanopie) voor toegankelijkheid en educatie.",
+        "item5": "<strong>Intuïtieve Interface:</strong> Een gebruiksvriendelijke interface die geschikt is voor zowel beginners als experts."
+      }
+    },
+    "technology": {
+      "title": "Geavanceerde Technologie",
+      "text": "Onze applicatie maakt gebruik van geavanceerde technologieën om een soepele en realistische ervaring te bieden:",
+      "list": {
+        "item1": "<strong>N-Body algoritme:</strong> simuleert de beweging en onderlinge krachten van meerdere objecten die elkaar aantrekken volgens de zwaartekracht.",
+        "item2": "<strong>Moderne Webtechnologieën:</strong> Gebouwd met HTML5, CSS3 en JavaScript voor brede compatibiliteit.",
+        "item3": "<strong>Responsief Ontwerp:</strong> Werkt naadloos op desktops, tablets en mobiele apparaten."
+      }
+    },
+    "aboutSection": {
+      "title": "Over de Applicatie",
+      "text1": "De Zonnestelsel Simulatie is ontwikkeld met als doel het universum toegankelijk te maken voor iedereen. Of je nu een student, leraar, of ruimte-enthousiast bent, onze applicatie biedt een unieke manier om de dynamiek van zonnestelsels te verkennen.",
+      "text2": "Met een focus op toegankelijkheid, prestaties en educatie, combineert onze applicatie geavanceerde technologie met een gebruiksvriendelijke ervaring. We blijven de applicatie verbeteren met nieuwe functies en optimalisaties."
+    },
+    "accessibility": {
+      "title": "Accessibility",
+      "text1": "Bij het ontwerpen van deze website hebben we bijzondere aandacht besteed aan toegankelijkheid. We begrijpen dat niet iedereen kleuren op dezelfde manier waarneemt. Daarom implementeert SolarSim de mogelijkheid om verschillende vormen van kleurenblindheid te laten simuleren.",
+      "visualizeButton": "Visualiseer"
+    }
+  },
+  "planetList": {
+    "title": "🌍 Toegevoegde Planeten",
+    "showButton": "Toon Lijst met planeten",
+    "hideButton": "Verberg Lijst met planeten"
+  },
+  "planet": {
+    "position": "Positie",
+    "velocity": "Snelheid",
+    "mass": "Massa"
+  }
+}

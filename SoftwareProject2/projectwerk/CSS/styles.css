@@ -1,0 +1,1412 @@
+.color-sample {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    margin: 10px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.info-container {
+    max-width: 1000px;
+    margin: 0 auto;
+
+}
+
+p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+ul {
+    margin-left: 2rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-question {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.faq-answer {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0 0 4px 4px;
+    margin-top: 1px;
+    display: none;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.algoritme {
+    width: 1000px;
+    max-width: 1000px;
+    padding: 40px 20px;
+    background: white;
+    margin: 30px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.algoritme h2 {
+    margin-bottom: 1rem;
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.algoritme p {
+    margin-bottom: 1.5rem;
+    color: #666;
+    font-size: 14px;
+}
+
+.algoritme button {
+    width: 100%;
+    background: black;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.algoritme button:hover {
+    background: #333;
+}
+
+.feature-card {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 80%; /* Zorg dat alle kaarten dezelfde hoogte hebben */
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Media query voor kleinere schermen */
+@media (max-width: 768px) {
+    .feature-cards {
+        grid-template-columns: 1fr; /* Op kleinere schermen, gebruik één kolom */
+    }
+}
+
+
+.red { background-color: red; }
+.green { background-color: green; }
+.blue { background-color: blue; }
+.yellow { background-color: yellow; }
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    border-radius: 5px;
+    background: #007bff; /* Standaard blauwe kleur */
+    outline: none;
+    transition: background 0.3s;
+}
+
+/* Styling voor de slider-knop */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #007bff;
+    border: 2px solid white;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #007bff;
+    border: 2px solid white;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Kleurenblindheidsfilters specifiek voor sliders */
+input[type="range"].kleurenblind-protanopia {
+    filter: url(#protanopia);
+    background: #0057b3; /* Aangepaste kleur voor protanopia */
+}
+
+input[type="range"].kleurenblind-deuteranopia {
+    filter: url(#deuteranopia);
+    background: #0057b3; /* Aangepaste kleur voor deuteranopia */
+}
+
+input[type="range"].kleurenblind-tritanopia {
+    filter: url(#tritanopia);
+    background: #0057b3; /* Aangepaste kleur voor tritanopia */
+}
+
+input[type="range"].kleurenblind-achromatopsia {
+    filter: url(#achromatopsia);
+    background: #555; /* Grijstint voor achromatopsia */
+}
+
+/* Aanpassingen voor de slider-knop bij verschillende kleurenblindheidsfilters */
+input[type="range"].kleurenblind-protanopia::-webkit-slider-thumb,
+input[type="range"].kleurenblind-deuteranopia::-webkit-slider-thumb,
+input[type="range"].kleurenblind-tritanopia::-webkit-slider-thumb {
+    background: #0057b3;
+}
+
+input[type="range"].kleurenblind-achromatopsia::-webkit-slider-thumb {
+    background: #555;
+}
+
+input[type="range"].kleurenblind-protanopia::-moz-range-thumb,
+input[type="range"].kleurenblind-deuteranopia::-moz-range-thumb,
+input[type="range"].kleurenblind-tritanopia::-moz-range-thumb {
+    background: #0057b3;
+}
+
+input[type="range"].kleurenblind-achromatopsia::-moz-range-thumb {
+    background: #555;
+}
+
+.link-protanopia {
+    filter: url(#protanopia);
+}
+
+.link-deuteranopia {
+    filter: url(#deuteranopia);
+}
+
+.link-tritanopia {
+    filter: url(#tritanopia);
+}
+
+.link-achromatopsia {
+    filter: url(#achromatopsia);
+}
+
+.kleurenblind-protanopia{
+    filter: url(#protanopia);
+}
+
+.kleurenblind-deuteranopia{
+    filter: url(#deuteranopia);
+}
+
+.kleurenblind-tritanopia{
+    filter: url(#tritanopia);
+}
+
+.kleurenblind-achromatopsia{
+    filter: url(#achromatopsia);
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eaeaea;
+    color: #333;
+}
+
+header {
+    background: #fff;
+    color: black;
+    padding: 15px 15px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    height: 45px;
+    gap: 30px;
+
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #555;
+}
+
+#kblind {
+    display: flex;
+}
+
+#language-selector {
+    display: flex;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #555;
+}
+
+
+#creeer-pagina {
+    display: flex;
+}
+
+#mijndesigns{
+    display: flex;
+}
+
+#overdeapp{
+    display: flex;
+}
+#nbody{
+    display: flex;
+}
+#kblind{
+    display: flex;
+}
+
+
+
+
+
+.hero {
+    text-align: center;
+    padding: 100px;
+    background-image: url('../Media/ruimtefoto.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 80%;
+    max-width: 1050px;
+    margin: 40px auto;
+    border-radius: 10px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #555;
+}
+
+
+.zonnestelsels, .create, .algoritme {
+    width: 1000px;
+    max-width: 1000px;
+    padding: 40px 20px;
+    background: white;
+    margin: 30px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #222;
+}
+
+.grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.zonnestelsel {
+    background: #ccc;
+    padding: 25px;
+    text-align: center;
+    flex: 1;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: auto;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    font-size: 16px;
+    width: 100%;
+}
+
+#logos {
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch; 
+    padding: 20px;
+
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #222;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+
+.zonnestelsels {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: white;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.logo-placeholder {
+    width: 80px;
+    height: 80px;
+    background-color: #d3d3d3;
+    display: inline-block;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.zonnestelsel-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.zonnestelsel-kaart {
+    width: 240px;
+    background: #f5f5f5;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover-effect */
+.zonnestelsel-kaart:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.zonnestelsel-image {
+    background: #d3d3d3;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+    color: black;
+}
+
+.zonnestelsel-info {
+    padding: 12px;
+    background: white;
+}
+
+.title {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.author {
+    font-size: 12px;
+    color: #555;
+    margin: 5px 0 0;
+}
+
+.label {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: black;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 3px 6px;
+    border-radius: 4px;
+}
+
+.create {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+
+.create-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+}
+.vis{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 35px;
+    margin-bottom: 35px;
+
+}
+
+#voeg{
+    margin-top: 0px;
+}
+
+.create-form{
+    margin-top: 20px;
+}
+
+#simknop{
+    margin-top: 10px;
+}
+
+
+.create-pag{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 35px;
+}
+
+.create-text {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.create-text h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+.create-text p {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.create-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    margin-top: -5px;
+}
+
+.create-form label {
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+}
+
+.create-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #f8f8f8;
+}
+
+.create-form button {
+    width: 100%;
+    background: black;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.create-form button:hover {
+    background: #333;
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav ul li {
+    display: inline;
+}
+
+.footer-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: color 0.3s;
+}
+
+.footer-nav ul li a:hover {
+    color: #bbb;
+}
+
+.footer-nav {
+    text-align: center;
+}
+
+.footer-nav ul {
+    display: inline-flex;
+}
+
+footer {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 30px;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center; 
+    gap: 20px; 
+    width: 100%; 
+}
+
+.algoritme-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.algoritme-info {
+    max-width: 500px;
+}
+
+.algoritme-info h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.algoritme-info p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.algoritme-kaart {
+    display: flex;
+    justify-content: center;
+}
+
+.kaart {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+}
+
+.kaart-afbeelding {
+    width: 50px;
+    height: 50px;
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+.kaart-inhoud h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.kaart-inhoud p {
+    font-size: 0.9rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+nav ul li {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    min-width: 150px;
+    z-index: 1000;
+
+}
+
+.dropdown-menu li {
+    padding: 1px;
+}
+
+.dropdown-menu li a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: 5px 15px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.main-nav .logo {
+    margin-left: 0; 
+}
+
+.test {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 1037px;
+    margin: 0 auto;
+}
+
+nav{
+    margin-right: 50px;
+}
+
+ul li:first-child{
+    margin-bottom: 5px;
+}
+
+ul{
+    gap: 50px;
+}
+
+.footer-nav{
+    margin-bottom: -10px;
+}
+
+#creeer-pagina{
+    gap: 100px;
+    position: relative;
+    margin-top: 5px;
+}
+
+#kblind{
+    white-space: nowrap;
+    position: relative;
+    margin-top: 8px;
+}
+
+#language-selector{
+    white-space: nowrap;
+    position: relative;
+    margin-top: 4px;
+}
+
+#visualisatieDropdown .dropdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    padding: 0 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+#visualisatieDropdown .dropdown.show {
+    max-height: 1000px;
+    padding: 15px;
+}
+
+#visualisatieDropdown .hidden {
+    display: none;
+}
+
+.wrapper {
+    display: flex;
+    gap: 40px;               /* ruimte tussen de divs */
+    margin: 40px;            /* marge rondom het geheel */
+    justify-content: center; /* centreren in het midden van de pagina */
+    flex-wrap: wrap;         /* zorgt dat het stackt op kleinere schermen */
+}
+
+.blok {
+    flex: 1 1 300px;          /* minimum 300px breed, flexibel verder */
+    max-width: 600px;
+    background-color: #f4f4f4;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+
+    height: 500px;
+}
+
+.features {
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.features-list li {
+    flex: 1;
+    background: whitesmoke;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s ease;
+    border: 1px solid black;
+
+
+}
+
+.features-list li:hover {
+    transform: scale(1.05);
+    background: whitesmoke;
+}
+
+.features-list li::before {
+    display: block;
+    color: rgb(200, 230, 200);
+    font-size: 10em;
+    margin-bottom: 10px;
+}
+
+.features-list li span {
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    color: #333;
+    font-weight: 500;
+}
+
+@media (max-width: 600px) {
+    .features-list {
+        flex-direction: column;
+    }
+}
+
+.features{
+    margin-top: -20px;
+}
+
+.infobody {
+    margin-top: 100px;
+    font-family: sans-serif;
+    background-image: url('../Media/sterrenhemel3.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Blijft vaststaan tijdens scrollen */
+    min-height: 100vh;
+    color: white; /* Eventueel: tekst leesbaar maken op achtergrond */
+
+}
+
+.infoheader{
+    margin-top: -100px;
+}
+
+/* Algemene styling */
+#html-root {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#main-body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(180deg, #0a0a23 0%, #1b1b4f 100%);
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header */
+#main-header {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url('https://source.unsplash.com/1600x900/?space,stars') no-repeat center center/cover;
+    overflow: hidden;
+    color: whitesmoke;
+
+}
+
+#main-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+#header-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    background: black;
+    border-radius: 25px;
+    clip-path: inset(50px 0 0 0);
+}
+
+#header-title {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+#header-text {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Navigatie */
+#main-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10, 10, 35, 0.9);
+    padding: 15px 0;
+    z-index: 100;
+    transition: background 0.3s ease;
+}
+
+#nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+#nav-item-home, #nav-item-features, #nav-item-technology, #nav-item-about {
+    margin: 0 20px;
+}
+
+#nav-item-home a, #nav-item-features a, #nav-item-technology a, #nav-item-about a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+#nav-item-home a:hover, #nav-item-features a:hover, #nav-item-technology a:hover, #nav-item-about a:hover {
+    color: #00d4ff;
+}
+
+/* Secties */
+#features-section, #technology-section, #about-section, #accessibility {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#features-title, #technology-title, #about-title, #accessibility-title{
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #00d4ff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+#features-text, #technology-text, #about-text-1, #about-text-2, #access-text-1 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+#features-list, #technology-list {
+    list-style: none;
+}
+
+#feature-item-1, #feature-item-2, #feature-item-3, #feature-item-4, #feature-item-5,
+#tech-item-1, #tech-item-2, #tech-item-3, #tech-item-4 {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+}
+
+#feature-item-1::before, #feature-item-2::before, #feature-item-3::before, #feature-item-4::before, #feature-item-5::before,
+#tech-item-1::before, #tech-item-2::before, #tech-item-3::before, #tech-item-4::before {
+    content: '»';
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+/* Knoppen */
+#header-cta, #features-cta, #technology-cta, #about-cta, #togglebutton, #reset-cta  {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #00d4ff;
+    color: #0a0a23;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+}
+
+#header-cta:hover, #features-cta:hover, #technology-cta:hover, #about-cta:hover, #togglebutton:hover, #reset-cta:hover {
+    background: #00b7d9;
+}
+
+/* Footer */
+#main-footer {
+    background: #0a0a23;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+#footer-text {
+    margin: 0;
+}
+
+#footer-link-privacy, #footer-link-contact {
+    color: #00d4ff;
+    text-decoration: none;
+}
+
+#footer-link-privacy:hover, #footer-link-contact:hover {
+    text-decoration: underline;
+}
+
+/* Responsieve styling */
+@media (max-width: 768px) {
+    #header-title {
+        font-size: 2.5rem;
+    }
+
+    #nav-list {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #nav-item-home, #nav-item-features, #nav-item-technology, #nav-item-about {
+        margin: 10px 0;
+    }
+
+    #features-section, #technology-section, #about-section {
+        padding: 40px 20px;
+    }
+}
+
+#togglebutton, #reset-cta{
+    margin-left: 532px;
+    margin-top: 40px;
+}
+.nbody-werking, .nbody-visualisation, .invulling-nbody-werking, .Kernprincipes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.nbody-werking, .nbody-visualisation{
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 1000px;
+}
+.Inleiding, .Kernprincipes, .Visualisatie{
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 1000px;
+}
+.card {
+    width: 200px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+.cards-container{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.creatie-sectie{
+    width: 1000px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: white;
+    margin-top: 45px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    padding: 0 20px;
+}
+
+.creatiemain{
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#titlecontent{
+    color: black;
+    font-size: xx-large;
+    margin-top: -10px;
+}
+
+.subsections {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: -20px;
+    gap: 20px; /* Ruimte tussen de sub-secties */
+    margin-bottom: 20px;
+
+}
+
+.subsection {
+    flex: 1; /* Elk neemt de helft van de ruimte in */
+    padding: 15px;
+    background-color: whitesmoke;
+    border: 1px solid #d1d5db;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.subsection h2{
+    margin-bottom: 30px;
+    margin-top: 7px;
+}
+
+#gekozenplaneet{
+    width: 100px;
+    align-self: center;
+    margin-top: 4px;
+    margin-bottom: 12px;
+}
+
+#planet-image{
+    width: 100px;
+    align-self: center;
+    margin-bottom: 12px;
+}
+
+#nbodytitle{
+    font-size: 45px;
+    margin-left: 160px;
+    margin-top: 60px;
+}
+
+.hidden{
+    display: none;
+}
+
+.main-navigation {
+    background-color: #f5f5f5;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-around;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+.main-navigation .nav-link {
+    text-decoration: none;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: border-bottom 0.3s;
+}
+.main-navigation .nav-link:hover, .main-navigation .nav-link.active {
+    border-bottom: 2px solid black;
+}
+
+.main-navigation{
+    margin-left: 40px;
+    border-radius: 20px;
+}
+
+.nbody-sections{
+    background-color: #f5f5f5;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 3px;
+    padding-bottom: 5px;
+    border-radius: 25px;
+}
+
+#aantalPlaneten{
+    width: 80px;
+}
+
+.visualisatie-controls{
+    margin-top: 20px;
+}
+
+#SliderSNelheid{
+    width: 500px;
+}
+
+.slider-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+#labelSliderSnelheid {
+  font-weight: 500;
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap;
+}
+
+.canvas-tekst {
+  display: flex;
+  align-items: center; /* verticale centrering */
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.tekst-naast-canvas{
+    width: 300px;
+    text-align: left;
+    font-family: sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* fixed de rare alignering in de header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: white; /* optioneel */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* optioneel */
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    margin: 0 10px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: black;
+}

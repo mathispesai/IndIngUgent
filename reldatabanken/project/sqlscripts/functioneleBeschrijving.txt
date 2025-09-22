@@ -1,0 +1,25 @@
+functionele beschrijving:
+
+- landcode van een wielrenner bestaat uit exact 2 karakters
+- geboorteplaats, gewicht en lengte voor wielrenner is optioneel
+- verkorte naam wielerteam bestaat uit exact 3 karakters
+- code wielerteam verwijst naar herkomstland, bestaande uit exact 2 karakters
+- status wielrenner opties: 'World Tour' of 'Pro Tour'
+- landcode wielerwedstrijd bestaat uit exact 2 karakters
+- eendagswedstrijd heeft exact 1 rit
+- meerdagswedstrijden/ rittenkoersen bestaat uit minstens 1 rit
+- type rit bij rit beperkt tot mogelijkheden: "road race", "individual time trial" en "team time trial"
+- volgnummer bij rittenkoersen hoort >=1 en is uniek binnen een rittenkoers
+- moelijkheidsniveau van route heeft een nummer tussen 1 tot 5
+- meerdere ritten binnen/ buiten rittenkoers kan dezelfde route volgen *
+- wielrenner kan op 1 datum maximum aan slechts 1 rit deelnemen
+- positie ritklassement >=1
+- tijd >=0 van wielrenner in rit
+- bonustijd >= van wielrenner in rit
+- status beperkt tot mogelijkheden: "did finish", "did not finish", "did not start", "over time limit" en disqualified
+- als uitslagstatus van wielrenner aan rit != "did finish" kan de wielrenner binnen dezelfde rittenkoers niet meer deelnemen aan rit met een hoger volgnummer
+- uitslagstatus van een renner in een rit "did finish" is, is de plaats, tijd en bonustijd van deze renner in deze rit gekend
+- als de uitslagstatus van een renner in een rit niet gelijk is aan "did finish", is de plaats van deze renner in deze rit niet gekend
+- Als de uitslagstatus van een renner in een rit "did not finish" of "did not start" is, is de tijd van deze renner in de rit niet gekend
+- Als de uitslagstatus van een renner in een rit "did not start" is, is de bonustijd van deze renner in deze rit niet gekend.
+- als wielrenner deelneemt aan rittenkoers moet de eerste rit waaraan hij deelneemt het volgnummer 1 bedragen, anders kan hij niet deelnemen aan de rittenkoers.

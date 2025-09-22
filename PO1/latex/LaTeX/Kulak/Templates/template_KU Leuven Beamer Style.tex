@@ -1,0 +1,40 @@
+% kuleuventheme2 by Janez Kren, September 2017, janez.kren@kuleuven.be, based on:
+% kuleuventheme 1.3 by Roland Pastorino, 2013 roland.pastorino@kuleuven.be / www.rolandpastorino.com
+
+\documentclass[11pt,t]{beamer}
+\usetheme[kulak,sedes]{kuleuven2}	%THEME OPTIONS for LOGO: kul (default), kulak, lrd,    ; OPTIONS for TITLE PAGE: normal (default), sedes
+
+\usefonttheme[onlymath]{serif}			% math font with serifs, delete to make it sans-serif
+\setbeamertemplate{footline}[body] 		% delete this line to remove footline bar on all frames
+
+\title{Title}
+\subtitle{Subtitle}
+
+\author{Name}
+\institute{School}
+\date{Date}
+
+\begin{document}
+
+\begin{frame}[plain,noframenumbering]
+	\titlepage
+\end{frame}
+
+\begin{frame}{Table of contents}
+\tableofcontents
+\end{frame}
+
+\section{Section 1} %Extra outlineframe is automatically added.
+
+\begin{frame}{Frametitle}
+	Content.
+\end{frame}
+
+\section{Section 2}
+
+\begin{frame}{Another frametitle}
+More content. 
+\end{frame}
+
+
+\end{document}

@@ -1,0 +1,5 @@
+-- https://dodona.ugent.be/nl/courses/1032/series/11417/activities/884416022
+SELECT * 
+FROM PRODUCT
+WHERE PRODUCT_CODE IS 'HW' AND PURCHASE_COST < 500 AND AVAILABLE is 'TRUE'
+

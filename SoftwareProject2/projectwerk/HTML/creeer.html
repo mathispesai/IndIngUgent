@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="create-title.title">Creëer | SolarSim</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../Media/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../Media/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../Media/favicon-16x16.png">
+</head>
+<body>
+<header>
+    <nav class="main-nav">
+        <ul>
+            <li><a class="logo" href="index.html">SolarSim</a></li>
+        </ul>
+    </nav>
+    <nav>
+        <ul>
+            <li><a href="solarSystem.html" id="creeer-pagina" data-i18n="navigation.create">Creëer</a></li>
+            <li><a href="design.html" id="mijndesigns" data-i18n="navigation.myDesigns">Mijn Designs</a></li>
+            <li><a href="info.html" id="overdeapp" data-i18n="navigation.aboutApp">Over de applicatie</a></li>
+            <li><a href="algoritme.html" id="nbody" data-i18n="navigation.nBody">N-body Algoritme</a></li>
+            <li class="dropdown">
+                <a href="#" id="kblin
+
+                    d" data-i18n="navigation.colorBlindness">Kleurenblindheid ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" onclick="resetKleurenblindheid()" data-i18n="colorBlindModes.normal">Normaal</a>
+                    </li>
+                    <li><a href="#" onclick="setColorBlindMode('protanopia')" data-i18n="colorBlindModes.protanopia">Protanopia</a>
+                    </li>
+                    <li><a href="#" onclick="setColorBlindMode('deuteranopia')"
+                           data-i18n="colorBlindModes.deuteranopia">Deuteranopia</a></li>
+                    <li><a href="#" onclick="setColorBlindMode('tritanopia')" data-i18n="colorBlindModes.tritanopia">Tritanopia</a>
+                    </li>
+                    <li><a href="#" onclick="setColorBlindMode('achromatopsia')"
+                           data-i18n="colorBlindModes.achromatopsia">Achromatopsie</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" id="language-selector">🌐</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" onclick="i18n.changeLanguage('nl')" data-i18n="languages.dutch">Nederlands</a></li>
+                    <li><a href="#" onclick="i18n.changeLanguage('en')" data-i18n="languages.english">English</a></li>
+                    <li><a href="#" onclick="i18n.changeLanguage('fr')" data-i18n="languages.french">Français</a></li>
+                    <li><a href="#" onclick="i18n.changeLanguage('de')" data-i18n="languages.german">Deutsch</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="creatiemain">
+    <section class="creatie-sectie">
+        <h1 id="titlecontent" data-i18n="createSystem.title">Maak je eigen zonnestelsel</h1>
+        <div class="subsections">
+            <section class="subsection">
+                <h2 data-i18n="createSystem.createPlanet">Maak een planeet</h2>
+                <form class="create-form">
+                    <label for="planet-name" data-i18n="createSystem.planetName">Naam Planeet</label>
+                    <input type="text" id="planet-name" data-i18n-placeholder="createSystem.planetNamePlaceholder">
+
+                    <label for="planet-mass" data-i18n="createSystem.planetMass">Massa in kg</label>
+                    <input type="number" id="planet-mass" data-i18n-placeholder="createSystem.planetMassPlaceholder">
+
+                    <label for="planet-speed1" data-i18n="createSystem.planetSpeed">Snelheid in km/s</label>
+                    <input type="number" id="planet-speed1" data-i18n-placeholder="createSystem.planetSpeedPlaceholder">
+
+                    <label for="planet-radius" data-i18n="createSystem.planetDistance">Afstand tot ster (km)</label>
+                    <input type="number" id="planet-radius"
+                           data-i18n-placeholder="createSystem.planetDistancePlaceholder">
+
+
+                    <button type="submit" data-i18n="createSystem.simulate">Simuleer</button>
+                </form>
+            </section>
+            <section class="subsection">
+                <h2 data-i18n="createSystem.choosePlanet">Kies een bestaande planeet</h2>
+                <form class="create-form">
+                    <label for="planet-select" data-i18n="createSystem.selectPlanet">Naam Planeet</label>
+                    <select id="planet-select" onchange="updatePlanetImage()">
+                        <option selected value="Aarde" data-i18n="planets.earth">Aarde</option>
+                        <option value="Mars" data-i18n="planets.mars">Mars</option>
+                        <option value="Jupiter" data-i18n="planets.jupiter">Jupiter</option>
+                        <option value="Mercurius" data-i18n="planets.mercury">Mercurius</option>
+                        <option value="Neptunus" data-i18n="planets.neptune">Neptunus</option>
+                        <option value="Saturnus" data-i18n="planets.saturn">Saturnus</option>
+                        <option value="Uranus" data-i18n="planets.uranus">Uranus</option>
+                        <option value="Venus" data-i18n="planets.venus">Venus</option>
+                    </select>
+
+                    <label for="planet-speed2" data-i18n="createSystem.planetSpeed">Snelheid in km/s</label>
+                    <input type="number" id="planet-speed2" data-i18n-placeholder="createSystem.planetSpeedPlaceholder">
+
+                    <label data-i18n="createSystem.selectedPlanet">Gekozen planeet:</label>
+                    <img id="planet-image" src="../Media/Aarde.png" alt="Planeet afbeelding">
+
+                    <button id="simuleerknop2" type="submit" data-i18n="createSystem.simulate">Simuleer</button>
+
+                </form>
+            </section>
+        </div>
+    </section>
+</main>
+
+
+<footer>
+    <nav class="footer-nav">
+        <ul>
+            <li><a href="#" data-i18n="footer.contactUs">Contacteer ons</a></li>
+            <li><a href="#" data-i18n="footer.privacyPolicy">Privacybeleid</a></li>
+            <li><a href="#" data-i18n="footer.termsOfUse">Gebruiksvoorwaarden</a></li>
+        </ul>
+    </nav>
+</footer>
+
+<script src="../JavaScript/i18n-mini.js"></script>
+<script src="../JavaScript/script.js"></script>
+</body>
+</html>

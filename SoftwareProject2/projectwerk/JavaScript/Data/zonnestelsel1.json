@@ -1,0 +1,58 @@
+[
+  {
+    "naam": "Alpha",
+    "positie": {
+      "x": 0.01688699539253555,
+      "y": 0.00025834660251290855
+    },
+    "snelheid": [
+      0.000014967435137609294,
+      2.616967989623781e-7
+    ],
+    "gewicht": 1500000000,
+    "afbeeldingsrc": "../Media/Zon.png",
+    "straal": 46.98970004336019
+  },
+  {
+    "naam": "Xeno",
+    "positie": {
+      "x": -30.660465383655055,
+      "y": 12.266681798115082
+    },
+    "snelheid": [
+      -12.13764919852756,
+      -28.822747253672958
+    ],
+    "gewicht": 1,
+    "afbeeldingsrc": "../Media/Neptunus.png",
+    "straal": 20
+  },
+  {
+    "naam": "Kronos",
+    "positie": {
+      "x": -58.89845187514731,
+      "y": -104.56510255984347
+    },
+    "snelheid": [
+      15.873486431495126,
+      -1.8067860196497727
+    ],
+    "gewicht": 2,
+    "afbeeldingsrc": "../Media/Willekeurige_Planeet_8.png",
+    "straal": 20
+  },
+  {
+    "naam": "Kronos",
+    "positie": {
+      "x": -137.84271848187703,
+      "y": 134.36102939563298
+    },
+    "snelheid": [
+      -11.078562174841204,
+      -4.86810565501387
+    ],
+    "gewicht": 0.5,
+    "afbeeldingsrc": "../Media/Willekeurige_Planeet_3.png",
+    "straal": 20
+  }
+]

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profielpagina</title>
+    <link rel="stylesheet" href="css/profiel.css">
+    <script type="module" src="scripts/profielAnderePersoon.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="menu">
+        <a class="menu-item" href="#" onclick="history.back()">Terug naar Zoekertje</a>
+    </div>
+    <!-- Hier komt het profieloverzicht -->
+    <div class="profile-overview">
+        <h1>Profieloverzicht</h1>
+        <div class="profile-picture">
+            <img id="profile-pic" src="images/profiel.png" alt="Profile Picture">
+        </div>
+        <p><strong>Voornaam:</strong> <span id="firstName">Loading...</span></p>
+        <p><strong>Achternaam:</strong> <span id="lastName">Loading...</span></p>
+        <p><strong>Sport:</strong> <span id="sport">Loading...</span></p>
+        <p><strong>Leeftijd:</strong> <span id="age">Loading...</span></p>
+    </div>
+</div>
+</body>
+</html>

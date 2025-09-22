@@ -1,0 +1,5 @@
+-- https://dodona.ugent.be/nl/courses/1032/series/11420/activities/220496878
+SELECT NAME, EMAIL, ZIP, CREDIT_LIMIT
+FROM CUSTOMER
+WHERE ZIP IS NOT 48128
+

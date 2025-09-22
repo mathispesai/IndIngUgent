@@ -1,0 +1,323 @@
+{
+  "navigation": {
+    "create": "Créer",
+    "myDesigns": "Mes Conceptions",
+    "aboutApp": "À propos de l'application",
+    "nBody": "Algorithme N-body",
+    "colorBlindness": "Daltonisme ▾"
+  },
+  "design-title": {
+    "title": "Mes designs | SolarSim"
+  },
+  "create-title": {
+    "title": "Créer | SolarSim"
+  },
+  "algoritme-title": {
+    "title": "Algorithme N-body | SolarSim"
+  },
+  "info-title": {
+    "title": "À propos de l'application | SolarSim"
+  },
+  "colorBlindModes": {
+    "normal": "Normal",
+    "protanopia": "Protanopie",
+    "deuteranopia": "Deutéranopie",
+    "tritanopia": "Tritanopie",
+    "achromatopsia": "Achromatopsie"
+  },
+  "languages": {
+    "dutch": "Néerlandais",
+    "english": "Anglais",
+    "french": "Français",
+    "german": "Allemand"
+  },
+  "hero": {
+    "welcome": "Bienvenue sur SolarSim",
+    "startSimulation": "Démarrer la simulation"
+  },
+  "solarSystems": {
+    "madeByOthers": "Choisissez un système solaire",
+    "labels": {
+      "new": "Nouveau",
+      "popular": "Populaire"
+    },
+    "solarSystem": "Système solaire",
+    "by": "Par utilisateur"
+  },
+  "createSystem": {
+    "title": "Crée ton propre système solaire",
+    "subtitle": "Ajouter une planète pour commencer",
+    "createPlanet": "Créer une planète",
+    "choosePlanet": "Choisir une planète existante",
+    "planetName": "Nom de la planète",
+    "planetNamePlaceholder": "Entrez le nom de la planète",
+    "planetMass": "Masse en kg",
+    "planetMassPlaceholder": "Ajouter la masse",
+    "planetSpeed": "Vitesse en km/s",
+    "planetSpeedPlaceholder": "Entrez la vitesse",
+    "planetDistance": "Distance de l'étoile (km)",
+    "planetDistancePlaceholder": "Ajouter la distance",
+    "selectPlanet": "Nom de la planète",
+    "selectedPlanet": "Planète sélectionnée :",
+    "simulate": "Simuler"
+  },
+  "planets": {
+    "earth": "Terre",
+    "mars": "Mars",
+    "jupiter": "Jupiter",
+    "mercury": "Mercure",
+    "neptune": "Neptune",
+    "saturn": "Saturne",
+    "uranus": "Uranus",
+    "venus": "Vénus"
+  },
+  "simulation": {
+    "title": "Simulation du Système Solaire",
+    "controls": {
+      "title": "Contrôles",
+      "planetManagement": {
+        "title": "Gestion des Planètes",
+        "addPlanet": "Ajouter une Planète",
+        "removePlanet": "Supprimer la Planète",
+        "remove": "Supprimer",
+        "newPlanet": "Ajouter une Nouvelle Planète",
+        "name": "Nom",
+        "positionX": "Position X",
+        "positionY": "Position Y",
+        "velocityX": "Vitesse X",
+        "velocityY": "Vitesse Y",
+        "mass": "Masse",
+        "add": "Ajouter",
+        "solarsystem": "Nouveau système solaire"
+      },
+      "simulationControls": {
+        "title": "Contrôles de Simulation",
+        "pause": "Pause",
+        "timeControls": {
+          "stop": "Arrêter",
+          "timeForward": "Temps Avancé"
+        }
+      },
+      "saveImport": {
+        "title": "Sauvegarder/Importer",
+        "save": "Sauvegarder",
+        "import": "Importer"
+      },
+      "accessibility": {
+        "title": "Accessibilité",
+        "colorBlindMode": "Mode Daltonien"
+      },
+      "designs": "Mes Designs"
+    }
+  },
+  "units": {
+    "millionKm": "million km"
+  },
+  "visualization": {
+    "title": "Visualisation du système solaire",
+    "noData": "Aucune donnée à afficher pour l’instant. Ajoutez des planètes pour voir la visualisation."
+  },
+  "systemInfo": {
+    "title": "Informations sur le système solaire",
+    "totalMass": "Masse totale :",
+    "planetCount": "Nombre de planètes :",
+    "stability": "Stabilité du système :",
+    "stable": "Stable",
+    "unstable": "Instable",
+    "centerOfMass": "Centre de masse :",
+    "averageSpeed": "Vitesse moyenne :"
+  },
+  "algorithm": {
+    "title": "Algorithme N-corps",
+    "subtitle": "Comprenez la physique derrière SolarSim",
+    "explanation": "L'algorithme N-corps simule l'interaction gravitationnelle entre plusieurs corps célestes. Il calcule les forces entre chaque paire d’objets et met à jour leurs positions et vitesses.",
+    "formula": "Loi de Newton : F = G(m₁m₂/r²)",
+    "learnMore": "En savoir plus sur le fonctionnement de notre algorithme.",
+    "moreInfo": "Plus d'infos",
+    "pageTitle": "Comprendre l'algorithme N-corps",
+    "pageDescription": "Découvrez comment le problème N-corps est utilisé pour modéliser le système solaire",
+    "howItWorks": "Comment fonctionne l'algorithme N-corps ?",
+    "sections": {
+      "introduction": "Introduction",
+      "corePrinciples": "Principes de base",
+      "visualization": "Visualisation"
+    },
+    "introduction": {
+      "title": "Introduction",
+      "paragraph1": "L’algorithme N-corps est une méthode pour simuler le mouvement de plusieurs objets qui s’attirent mutuellement par la gravité. Pensez aux étoiles, planètes ou autres corps célestes qui exercent une influence les uns sur les autres.",
+      "paragraph2": "L'algorithme calcule la force gravitationnelle exercée par chaque objet sur les autres. Sur cette base, les vitesses et positions sont ajustées. Comme chaque objet doit être comparé avec tous les autres, cet algorithme devient très intensif à mesure que le nombre d’objets augmente.",
+      "paragraph3": "Nous utilisons cet algorithme pour simuler les planètes et comètes du système solaire, qui sont les objets de l’algorithme N-corps."
+    },
+    "corePrinciples": {
+      "title": "Principes de base",
+      "gravity": {
+        "title": "Gravité",
+        "description": "Chaque objet exerce une force sur un autre objet selon la loi de Newton. Ainsi, la force est différente pour chaque objet."
+      },
+      "timeIteration": {
+        "title": "Itération temporelle",
+        "description": "L'algorithme est répété par intervalles pour recalculer la vitesse et la direction à chaque fois."
+      },
+      "newtonSecondLaw": {
+        "title": "Accélération selon la 2ᵉ loi de Newton",
+        "description": "L’accélération est recalculée en fonction de la deuxième loi de Newton, selon la formule :",
+        "formula": "a = \\frac{F}{m}",
+        "variables": {
+          "acceleration": "a l’accélération",
+          "force": "F la force exercée sur les objets",
+          "mass": "m la masse de l’objet"
+        }
+      },
+      "barnesHut": {
+        "title": "Algorithme de Barnes-Hut",
+        "description": "L’algorithme de Barnes-Hut est une optimisation de l’algorithme N-corps standard et fonctionne presque de la même manière. Nous utilisons Barnes-Hut car il est plus rapide et efficace. Il accélère les calculs grâce à une structure de données hiérarchique. Nous utilisons une Quadtree, qui divise le système solaire en rectangles ; seuls ceux contenant des objets sont chargés en mémoire."
+      }
+    },
+    "visualization": {
+      "title": "Visualisation",
+      "controls": {
+        "twoPlanets": "2 planètes",
+        "fivePlanets": "5 planètes",
+        "tenPlanets": "10 planètes",
+        "customCount": "Démarrer",
+        "pause": "Pause",
+        "speedLabel": "Vitesse : "
+      },
+      "canvasText": "Comme vous pouvez le voir, il n’y a qu’un cercle maximum par rectangle. Cela permet d’éviter des calculs trop profonds partout (imaginez que tout le canevas soit rempli de petits rectangles — ce serait bien moins efficace). L’algorithme de Barnes-Hut peut également regrouper les objets éloignés (par exemple, une planète en bas à droite et les autres en haut à gauche peuvent être considérées comme un groupe car elles appartiennent à un même rectangle parent)."
+    }
+  },
+
+  "about": {
+    "title": "À propos de l'application",
+    "description": "SolarSim est une application web interactive permettant de créer votre propre système solaire.",
+    "learnMore": "Découvrez ici comment fonctionne SolarSim.",
+    "whatDoes": {
+      "title": "Que fait SolarSim ?",
+      "list": [
+        "Créez votre propre système solaire",
+        "Options personnalisées pour le daltonisme",
+        "Simulez les mouvements grâce à un <strong><a href=\"algoritme.html\">algorithme complexe</a></strong>"
+      ]
+    },
+    "accessibility": {
+      "title": "Accessibilité",
+      "description": "Le site propose diverses options de couleurs pour s’adapter aux utilisateurs atteints de daltonisme.",
+      "visualization": "Visualisation",
+      "reset": "Réinitialiser",
+      "colorBlindTypes": {
+        "protanopia": {
+          "title": "Protanopie",
+          "description": "Conçu pour les personnes ayant une cécité au rouge."
+        },
+        "deuteranopia": {
+          "title": "Deutéranopie",
+          "description": "Développé pour ceux qui ont une cécité au vert, afin que tout soit visible correctement."
+        },
+        "tritanopia": {
+          "title": "Tritanopie",
+          "description": "Pour les personnes ayant une cécité au bleu."
+        },
+        "achromatopsia": {
+          "title": "Achromatopsie",
+          "description": "Spécialement conçu pour les personnes atteintes de cécité totale aux couleurs."
+        }
+      }
+    },
+    "project": {
+      "title": "Le projet",
+      "description": "Ce projet a été créé avec un accent sur l’interaction utilisateur en utilisant JavaScript. Le tout est ensuite visualisé de manière interactive."
+    },
+    "faq": {
+      "title": "Foire Aux Questions",
+      "questions": [
+        {
+          "question": "SolarSim est-il gratuit ?",
+          "answer": "Oui ! SolarSim est entièrement gratuit. Nous voulons que l’application soit accessible à tous sans frais."
+        },
+        {
+          "question": "Quelle est la précision de SolarSim ?",
+          "answer": "SolarSim utilise un algorithme N-body qui permet aux planètes d’interagir. Il est simplifié mais suit les principes fondamentaux de la physique."
+        },
+        {
+          "question": "Peut-on partager ses systèmes solaires ?",
+          "answer": "Pas encore. Vous pouvez enregistrer vos conceptions dans l’onglet <strong><a href=\"design.html\">Mes Conceptions</a></strong>."
+        }
+      ]
+    },
+    "features": "Fonctionnalités :",
+    "featuresList": [
+      "Créer des systèmes solaires personnalisés",
+      "Observer les interactions gravitationnelles",
+      "Partager vos conceptions avec d’autres utilisateurs",
+      "Apprendre la mécanique céleste"
+    ],
+    "moreInfo": "Plus d'infos"
+  },
+  "footer": {
+    "contactUs": "Contactez-nous",
+    "privacyPolicy": "Politique de confidentialité",
+    "termsOfUse": "Conditions d'utilisation",
+    "copyright": "© 2025 SolarSim. Tous droits réservés."
+  },
+  "errors": {
+    "requiredField": "Ce champ est requis",
+    "invalidNumber": "Veuillez entrer un nombre valide",
+    "tooManyPlanets": "Nombre maximum de planètes atteint"
+  },
+  "success": {
+    "systemSaved": "Système solaire enregistré avec succès",
+    "simulationStarted": "Simulation démarrée"
+  },
+  "info": {
+    "header": {
+      "title": "À propos de SolarSim",
+      "text": "Découvrez les merveilles de l'univers grâce à notre application web interactive pour simuler les systèmes solaires."
+    },
+    "cta": {
+      "discover": "Découvrir les fonctionnalités",
+      "toDesigns": "Voir mes conceptions",
+      "nBody": "Algorithme N-body",
+      "backToTop": "Retour en haut"
+    },
+    "features": {
+      "title": "Découvrez des Fonctionnalités Puissantes",
+      "text": "Notre application propose un ensemble de fonctionnalités uniques pour explorer l’univers :",
+      "list": {
+        "item1": "<strong>Simulation de système solaire :</strong> Simulez des systèmes réalistes avec gravité et orbites précises.",
+        "item2": "<strong>Gestion des planètes :</strong> Ajoutez ou supprimez des planètes pour concevoir votre système.",
+        "item3": "<strong>Simulations de collisions :</strong> Expérimentez des collisions et observez les effets dynamiques.",
+        "item4": "<strong>Mode daltonisme :</strong> Simulez différentes formes de daltonisme pour l’accessibilité et l’éducation.",
+        "item5": "<strong>Interface intuitive :</strong> Conçue pour les débutants comme pour les experts."
+      }
+    },
+    "technology": {
+      "title": "Technologie Avancée",
+      "text": "Notre application utilise des technologies de pointe pour une expérience fluide et réaliste :",
+      "list": {
+        "item1": "<strong>Algorithme N-body :</strong> Simule les mouvements et interactions gravitationnelles de plusieurs objets.",
+        "item2": "<strong>Technologies Web Modernes :</strong> Conçue avec HTML5, CSS3 et JavaScript.",
+        "item3": "<strong>Design Responsive :</strong> Compatible avec ordinateurs, tablettes et mobiles."
+      }
+    },
+    "aboutSection": {
+      "title": "À propos de l'application",
+      "text1": "La Simulation de Système Solaire a été développée pour rendre l’univers accessible à tous. Étudiant, enseignant ou passionné d’astronomie, notre application offre une façon unique d’explorer la dynamique des systèmes solaires.",
+      "text2": "Axée sur l’accessibilité, la performance et l’apprentissage, l’application combine technologie avancée et expérience utilisateur agréable. Nous continuons à l’améliorer avec de nouvelles fonctionnalités."
+    },
+    "accessibility": {
+      "title": "Accessibilité",
+      "text1": "Lors de la conception du site, nous avons accordé une attention particulière à l’accessibilité. Nous comprenons que tout le monde ne perçoit pas les couleurs de la même façon. C’est pourquoi SolarSim permet de simuler différents types de daltonisme.",
+      "visualizeButton": "Visualiser"
+    }
+  },
+  "planetList": {
+    "title": "🌍 Planètes ajoutées",
+    "showButton": "Afficher la liste des planètes",
+    "hideButton": "Masquer la liste des planètes"
+  },
+  "planet": {
+    "position": "Position",
+    "velocity": "Vitesse",
+    "mass": "Masse"
+  }
+}

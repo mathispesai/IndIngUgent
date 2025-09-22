@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simulatie | SolarSim</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolarSim</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../Media/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../Media/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../Media/favicon-16x16.png">
+
+</head>
+<body>
+<header>
+    <nav class="main-nav">
+        <ul>
+            <li><a class="logo" href="index.html">SolarSim</a></li>
+        </ul>
+    </nav>
+    <nav>
+        <ul>
+            <li><a href="solarSystem.html" id="creeer-pagina">Creëer</a></li>
+            <li><a href="design.html" id="mijndesigns">Mijn Designs</a></li>
+            <li><a href="info.html" id="overdeapp">Over de applicatie</a></li>
+            <li><a href="algoritme.html" id="nbody">N-body Algoritme</a></li>
+            <li class="dropdown">
+                <a href="#" id="kblind">Kleurenblindheid ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" onclick="resetKleurenblindheid()">Normaal</a></li>
+                    <li><a href="#" onclick="setColorBlindMode('protanopia')">Protanopia</a></li>
+                    <li><a href="#" onclick="setColorBlindMode('deuteranopia')">Deuteranopia</a></li>
+                    <li><a href="#" onclick="setColorBlindMode('tritanopia')">Tritanopia</a></li>
+                    <li><a href="#" onclick="setColorBlindMode('achromatopsia')" >Achromatopsie</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" id="language-selector">🌐</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" onclick="changeLanguage('nederlands')">Nederlands</a></li>
+                    <li><a href="#" onclick="changeLanguage('engels')">English</a></li>
+                    <li><a href="#" onclick="changeLanguage('frans')">Français</a></li>
+                    <li><a href="#" onclick="changeLanguage('duits')">Deutsch</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+<table>
+    <tbody>
+    <tr>
+        <td>
+            <canvas id = "canvas" height = "700%" width = "1200%"></canvas>
+        </td>
+        <td>
+            <button id = "toevoegen" type = "button" onclick="voegPlaneettoe()">Toevoegen</button>
+        </td>
+        <td>
+            <button id = "reset" type="button" onclick="resetZonnestelsel()">Reset</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

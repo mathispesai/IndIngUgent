@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title data-i18n="design-title.title">Mijn designs | SolarSim</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolarSim</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../Media/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../Media/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../Media/favicon-16x16.png">
+    <link rel="stylesheet" href="../CSS/design.css">
+
+</head>
+<body>
+<header>
+    <nav class="main-nav">
+        <ul>
+            <li><a class="logo" href="index.html">SolarSim</a></li>
+        </ul>
+    </nav>
+    <nav>
+        <ul>
+            <li><a href="solarSystem.html" id="creeer-pagina" data-i18n="navigation.create">Creëer</a></li>
+            <li><a href="design.html" id="mijndesigns" data-i18n="navigation.myDesigns">Mijn Designs</a></li>
+            <li><a href="info.html" id="overdeapp" data-i18n="navigation.aboutApp">Over de applicatie</a></li>
+            <li><a href="algoritme.html" id="nbody" data-i18n="navigation.nBody">N-body Algoritme</a></li>
+            <li class="dropdown">
+                <a href="#" id="kblind" data-i18n="navigation.colorBlindness">Kleurenblindheid ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" onclick="resetKleurenblindheid()" data-i18n="colorBlindModes.normal">Normaal</a></li>
+                    <li><a href="#" onclick="setColorBlindMode('protanopia')" data-i18n="colorBlindModes.protanopia">Protanopia</a></li>
+                    <li><a href="#" onclick="setColorBlindMode('deuteranopia')" data-i18n="colorBlindModes.deuteranopia">Deuteranopia</a></li>
+                    <li><a href="#" onclick="setColorBlindMode('tritanopia')" data-i18n="colorBlindModes.tritanopia">Tritanopia</a></li>
+                    <li><a href="#" onclick="setColorBlindMode('achromatopsia')" data-i18n="colorBlindModes.achromatopsia">Achromatopsie</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" id="language-selector">🌐</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" onclick="i18n.changeLanguage('nl')" data-i18n="languages.dutch">Nederlands</a></li>
+                    <li><a href="#" onclick="i18n.changeLanguage('en')" data-i18n="languages.english">English</a></li>
+                    <li><a href="#" onclick="i18n.changeLanguage('fr')" data-i18n="languages.french">Français</a></li>
+                    <li><a href="#" onclick="i18n.changeLanguage('de')" data-i18n="languages.german">Deutsch</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+<section class="algoritme-title">
+    <h1 id="nbodytitle" data-i18n="simulation.controls.designs">Mijn Designs</h1>
+</section>
+<div class="wrapper">
+    <div class="designs-grid" id="designsGrid"></div>
+</div>
+
+<footer>
+    <nav class="footer-nav">
+        <ul>
+            <li><a id="privacy-link" href="#" data-i18n="footer.privacyPolicy">Privacybeleid</a></li>
+            <li><a id="terms-link" href="#" data-i18n="footer.termsOfUse">Gebruiksvoorwaarden</a></li>
+        </ul>
+    </nav>
+</footer>
+
+<svg width="0" height="0">
+    <!-- Gebruik filters voor de kleurenblindheid -->
+    <defs>
+        <!-- Protanopia: Simuleert rood-groen kleurenblindheid -->
+        <filter id="protanopia">
+            <feColorMatrix type="matrix" values="
+                    0.567, 0.433, 0, 0, 0,
+                    0.558, 0.442, 0, 0, 0,
+                    0, 0.242, 0.758, 0, 0,
+                    0, 0, 0, 1, 0"/>
+        </filter>
+
+        <!-- Deuteranopia: Simuleert groen kleurenblindheid -->
+        <filter id="deuteranopia">
+            <feColorMatrix type="matrix" values="
+                    0.625, 0.375, 0, 0, 0,
+                    0.7, 0.3, 0, 0, 0,
+                    0, 0.3, 0.7, 0, 0,
+                    0, 0, 0, 1, 0"/>
+        </filter>
+
+        <!-- Tritanopia: Simuleert blauw-geel kleurenblindheid -->
+        <filter id="tritanopia">
+            <feColorMatrix type="matrix" values="
+                    0.95, 0.05, 0, 0, 0,
+                    0, 0.433, 0.567, 0, 0,
+                    0, 0.475, 0.525, 0, 0,
+                    0, 0, 0, 1, 0"/>
+        </filter>
+        <!-- Achromatsopia: Volledige kleurenblindheid -->
+        <filter id="achromatopsia">
+            <feColorMatrix type="matrix"
+                           values="0.33 0.33 0.33 0 0
+            0.33 0.33 0.33 0 0
+            0.33 0.33 0.33 0 0
+            0    0    0    1 0"/>
+        </filter>
+    </defs>
+</svg>
+<script src="../JavaScript/script.js"></script>
+<script src="../JavaScript/i18n-mini.js"></script>
+<script src="../JavaScript/designs.js"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="simulation.title">Solar System Simulation</title>
+    <link rel="stylesheet" href="../CSS/solarSystem.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../Media/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../Media/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../Media/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <script src="../JavaScript/i18n-mini.js"></script>
+    <script src="../JavaScript/script.js"></script>
+    <script type="module" src="../JavaScript/loadingSolar.js"></script>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<div class="main-container">
+    <div class="simulation-container">
+        <canvas id="solarSystemCanvas"></canvas>
+    </div>
+    <div class="controls-panel">
+        <div class="controls-header">
+            <h2 data-i18n="simulation.controls.title">Controls</h2>
+            <div class="button-group">
+                <div class="language-dropdown">
+                    <a href="#" class="round-btn">🌐</a>
+                    <ul class="dropdown-menu">
+                        <li><a id="ne" href="#" onclick="i18n.changeLanguage('nl')" data-i18n="languages.dutch">Nederlands</a></li>
+                        <li><a id="en" href="#" onclick="i18n.changeLanguage('en')" data-i18n="languages.english">English</a></li>
+                        <li><a id="fr"  href="#" onclick="i18n.changeLanguage('fr')" data-i18n="languages.french">Français</a></li>
+                        <li><a id="de"  href="#" onclick="i18n.changeLanguage('de')" data-i18n="languages.german">Deutsch</a></li>
+                    </ul>
+                </div>
+                <button class="control-button round-btn" id="toggle-btn" aria-label="Houd ingedrukt om het control-panel te verbergen">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="4" y1="12" x2="20" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="control-section" id="simuleercontrols">
+            <h3 id="planetmanag" data-i18n="simulation.controls.planetManagement.title">Planet Management</h3>
+            <div class="planet-controls">
+                <h4 data-i18n="simulation.controls.planetManagement.newPlanet">Nieuwe Planeet Toevoegen</h4>
+                <form id="planetForm" style="position: relative;">
+
+                    <!-- Naam en Afbeeldingselector -->
+                    <div class="name-image-container" style="display: flex; align-items: center; gap: 1rem;">
+                        <label for="planetName" style="flex: 1;" data-i18n="simulation.controls.planetManagement.name">Naam:</label>
+                        <input type="text" id="planetName" required style="width: 100%;">
+                        <div style="position: relative; width: 200px; height: 100px;">
+                            <div id="selectedImage" class="image-selector" style="background-image: url('../Media/Aarde.png'); width: 100%; height: 100%; background-size: cover; border: 1px solid #ccc; border-radius: 8px; cursor: pointer;"></div>
+                            <div id="imageOptions" class="image-options" style="display: none; position: absolute; top: 90px; left: 0; background: #fff; border: 1px solid #ccc; z-index: 10;">
+                                <img src="../Media/Zon.png" alt="Zon" style="width: 60px; height: 60px; cursor: pointer;">
+                                <img src="../Media/Mercurius.png" alt="Mercurius" style="width: 60px; height: 60px; cursor: pointer;">
+                                <img src="../Media/Venus.png" alt="Venus" style="width: 60px; height: 60px; cursor: pointer;">
+                                <img src="../Media/Aarde.png" alt="Aarde" style="width: 60px; height: 60px; cursor: pointer;">
+                                <img src="../Media/Mars.png" alt="Mars" style="width: 60px; height: 60px; cursor: pointer;">
+                                <img src="../Media/Jupiter.png" alt="Jupiter" style="width: 60px; height: 60px; cursor: pointer;">
+                                <img src="../Media/Saturnus.png" alt="Saturnus" style="width: 60px; height: 60px; cursor: pointer;">
+                                <img src="../Media/Uranus.png" alt="Uranus" style="width: 60px; height: 60px; cursor: pointer;">
+                                <img src="../Media/Neptunus.png" alt="Neptunus" style="width: 60px; height: 60px; cursor: pointer;">
+                                <img src="../Media/komeetzonderzwart.png" alt="Komeet" style="width: 60px; height: 60px; cursor: pointer;">
+                                <img src="../Media/Willekeurige_Planeet_1.png" alt="Planeet1" style="width: 60px; height: 60px; cursor: pointer;">
+                                <img src="../Media/Willekeurige_Planeet_2.png" alt="Planeet2" style="width: 60px; height: 60px; cursor: pointer;">
+                                <img src="../Media/Willekeurige_Planeet_3.png" alt="Planeet3" style="width: 60px; height: 60px; cursor: pointer;">
+                                <img src="../Media/Willekeurige_Planeet_4.png" alt="Planeet4" style="width: 60px; height: 60px; cursor: pointer;">
+                                <img src="../Media/Willekeurige_Planeet_5.png" alt="Planeet5" style="width: 60px; height: 60px; cursor: pointer;">
+                                <img src="../Media/Willekeurige_Planeet_6.png" alt="Planeet6" style="width: 60px; height: 60px; cursor: pointer;">
+                                <img src="../Media/Willekeurige_Planeet_7.png" alt="Planeet7" style="width: 60px; height: 60px; cursor: pointer;">
+                                <img src="../Media/Willekeurige_Planeet_8.png" alt="Planeet8" style="width: 60px; height: 60px; cursor: pointer;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="position-container" style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <label for="positionX" style="flex: 1;" data-i18n="simulation.controls.planetManagement.positionX">Positie X:</label>
+                        <input type="number" id="positionX" step="0.1" data-i18n-placeholder="units.millionKm" placeholder="miljoen km" required style="width: 100%;">
+                        <label for="positionY" style="flex: 1;" data-i18n="simulation.controls.planetManagement.positionY">Positie Y:</label>
+                        <input type="number" id="positionY" step="0.1" data-i18n-placeholder="units.millionKm" placeholder="miljoen km" required style="width: 100%;">
+                    </div>
+
+                    <div class="velocity-container" style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <label for="velocityX" style="flex: 1;" data-i18n="simulation.controls.planetManagement.velocityX">Snelheid X:</label>
+                        <input type="number" id="velocityX" step="0.1" placeholder="km/s" required style="width: 100%;">
+                        <label for="velocityY" style="flex: 1;" data-i18n="simulation.controls.planetManagement.velocityY">Snelheid Y:</label>
+                        <input type="number" id="velocityY" step="0.1" placeholder="km/s" required style="width: 100%;">
+                    </div>
+
+                    <div class="mass-container" style="margin-top: 1rem;">
+                        <label for="mass" data-i18n="simulation.controls.planetManagement.mass">Massa:</label>
+                        <input type="number" id="mass" step="0.1" placeholder="×10²¹ kg" required style="width: 100%;">
+                    </div>
+
+                    <button id="toevoegbtn" type="submit" class="control-button" style="margin-top: 1rem;">
+                        <span class="icon" style="margin-right: 0.5rem;">
+                            <svg class="icon" viewBox="0 0 24 24" style="width: 20px; height: 20px;">
+                                <path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </span>
+                        <span data-i18n="simulation.controls.planetManagement.add">Toevoegen</span>
+                    </button>
+                    </form>
+                    <button id="removePlanet" class="control-button" style="margin-top: 1rem;" style="width: 100%;">
+                            <span class="icon" style="margin-right: 0.5rem;">
+                                <svg class="icon" id="deleteicon" viewBox="0 0 24 24" style="width: 20px; height: 20px;">
+                                    <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </span>
+                        <span data-i18n="simulation.controls.planetManagement.remove">Verwijder planeet</span>
+                    </button>
+            </div>
+
+        </div>
+        <hr>
+        <div class="control-section">
+            <h3 data-i18n="simulation.controls.simulationControls.title">Simulation Controls</h3>
+            <div class="time-controls" style="display: flex; flex-direction: column; gap: 1rem;">
+                <button id="pauseSimulation" class="control-button" style="width: 100%;">
+                    <span class="icon">⏸</span>
+                    <span data-i18n="simulation.controls.simulationControls.pause">Pause</span>
+                </button>
+                <div class="time-slider-container" style="width: 100%;">
+                    <input type="range" id="timeSpeed" min="0" max="6" step="0.5" value="0" class="time-slider">
+                    <div class="time-labels" style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-top: 4px;">
+                        <span data-i18n="simulation.controls.simulationControls.timeControls.stop" id="stop">Stop</span>
+                        <span data-i18n="simulation.controls.simulationControls.timeControls.timeForward" id="vooruit">Time forward</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider">
+
+        </div>
+        <h3 id="s/i" data-i18n="simulation.controls.saveImport.title">Save/Import</h3>
+        <div class="save/import">
+            <button id="save" class="control-button">
+                    <span class="icon">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M17 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7l-4-4zM12 19a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm2-10H6V5h8v4z" fill="currentColor"/>
+                        </svg>
+                    </span>
+                    <span data-i18n="simulation.controls.saveImport.save">Save</span>
+            </button>
+            <button id="import" class="control-button">
+                <input type="file" id="fileInput" style="display: none;">
+                <span class="icon">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"/>
+                        </svg>
+                    </span>
+                <span data-i18n="simulation.controls.saveImport.import">Import</span>
+            </button>
+        </div>
+
+        <h3 data-i18n="simulation.controls.accessibility.title">Toegankelijkheid</h3>
+
+        <!-- Kleurenblindheidsmodus -->
+        <label for="colorBlindSelect" data-i18n="simulation.controls.accessibility.colorBlindMode">Kleurenblindheidsmodus</label>
+        <select id="colorBlindSelect" class="control-button">
+            <option value="normaal" data-i18n="colorBlindModes.normal">Normaal</option>
+            <option value="protanopia" data-i18n="colorBlindModes.protanopia">Protanopia</option>
+            <option value="deuteranopia" data-i18n="colorBlindModes.deuteranopia">Deuteranopia</option>
+            <option value="tritanopia" data-i18n="colorBlindModes.tritanopia">Tritanopia</option>
+            <option value="achromatopsia" data-i18n="colorBlindModes.achromatopsia">Achromatopsie</option>
+        </select>
+        <hr>
+        <button class="control-button" data-i18n="simulation.controls.designs" id="designsknop">Mijn Designs</button>
+    </div>
+    <div class="logo-container" onclick="window.location.href='index.html'">
+        <h1 class="logotekst">SolarSim</h1>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.logotekst').addEventListener('click', () => {
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+
+
+
+
+<svg width="0" height="0">
+    <!-- Gebruik filters voor de kleurenblindheid -->
+    <defs>
+        <!-- Protanopia: Simuleert rood-groen kleurenblindheid -->
+        <filter id="protanopia">
+            <feColorMatrix type="matrix" values="
+                    0.567, 0.433, 0, 0, 0,
+                    0.558, 0.442, 0, 0, 0,
+                    0, 0.242, 0.758, 0, 0,
+                    0, 0, 0, 1, 0"/>
+        </filter>
+
+        <!-- Deuteranopia: Simuleert groen kleurenblindheid -->
+        <filter id="deuteranopia">
+            <feColorMatrix type="matrix" values="
+                    0.625, 0.375, 0, 0, 0,
+                    0.7, 0.3, 0, 0, 0,
+                    0, 0.3, 0.7, 0, 0,
+                    0, 0, 0, 1, 0"/>
+        </filter>
+
+        <!-- Tritanopia: Simuleert blauw-geel kleurenblindheid -->
+        <filter id="tritanopia">
+            <feColorMatrix type="matrix" values="
+                    0.95, 0.05, 0, 0, 0,
+                    0, 0.433, 0.567, 0, 0,
+                    0, 0.475, 0.525, 0, 0,
+                    0, 0, 0, 1, 0"/>
+        </filter>
+        <!-- Achromatsopia: Volledige kleurenblindheid -->
+        <filter id="achromatopsia">
+            <feColorMatrix type="matrix"
+                           values="0.33 0.33 0.33 0 0
+            0.33 0.33 0.33 0 0
+            0.33 0.33 0.33 0 0
+            0    0    0    1 0"/>
+        </filter>
+    </defs>
+</svg>
+
+<script src="../JavaScript/solarSystem.js" type = "module"></script>
+    <div id="planetInfoWrapper">
+        <button id="toggleInfoPanel" class="control-button" data-i18n="planetList.showButton">🔽 Toon info</button>
+
+
+
+        <div id="planetInfoList" class="info-panel" style="display: none;">
+            <h3 data-i18n="planetList.title">🌍 Toegevoegde Planeten</h3>
+            <div id="planetListContent"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+

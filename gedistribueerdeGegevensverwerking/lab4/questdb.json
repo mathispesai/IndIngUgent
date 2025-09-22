@@ -1,0 +1,15 @@
+{
+    "name": "questdb-sink",
+    "config": {
+      "connector.class": "io.questdb.kafka.QuestDBSinkConnector",
+      "topics": "timeseries-topic",
+      "table": "data",
+      "client.conf.string": "http::addr=questdb:9000;",
+      "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+      "value.converter.schemas.enable": "false",
+      "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+      "include.key": "false",
+      "timestamp.field.name": "timestamp",
+      "timestamp.string.format": "yyyy-MM-dd HH:mm:ss.SSS"
+    }
+  }

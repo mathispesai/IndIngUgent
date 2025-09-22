@@ -1,0 +1,1 @@
+Zet in deze map ('brainstorm') de foto's van de brainstorm.

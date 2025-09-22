@@ -1,0 +1,63 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 72px;
+  padding-bottom: 40px;
+  background-color: #E6E6EA;
+}
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+}
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+button{
+  margin: 10px;
+  padding: 10px;
+}
+footer {
+  position: absolute;
+  width: 100%;
+  margin-top: 100px;
+  background-color: #F4F4F8;
+  bottom: 0px;
+  display: flex;
+  justify-content: space-between;
+}
+#mainNav {
+  background-color: #FE4A49;
+  z-index: 1;
+  flex-wrap: wrap;
+}
+a {
+  color: #009FB7;
+}
+#footer ul {
+  list-style: none;
+}
+#footer li {
+  display: inline-block;
+  margin-right: 10px; /* add spacing between items */
+  margin-top: 10px;
+}
+.navbar-brand{
+  overflow: visible;
+}
+.navbar-toggler{
+  overflow: visible;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accountinstellingen</title>
+    <link rel="stylesheet" href="css/EditProfile.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+</head>
+<body>
+<div class="container">
+    <h1>Accountinstellingen</h1>
+    <form id="account-form">
+        <div class="form-group">
+            <p><strong>Email:</strong> <span id="email">Loading...</span></p>
+            <label for="firstName">Voornaam:</label>
+            <input type="text" id="firstName" name="firstName" required>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Achternaam:</label>
+            <input type="text" id="lastName" name="lastName" required>
+        </div>
+        <div class="form-group">
+            <label for="age">Leeftijd:</label>
+            <input type="number" id="age" name="age" required min="16" max="99">
+        </div>
+        <div class="form-group">
+            <label for="niveau">Niveau:</label>
+            <input type="number" id="niveau" name="age" min="1" max="5" required>
+        </div>
+        <!-- zoekbalk -->
+        <label for="searchInput">Zoek een sport:</label>
+        <input type="text" id="searchInput" placeholder="Zoek een sport...">
+        <div id="sport-checkboxes" class="form-group">
+            <!-- Dynamisch gegenereerde checkboxes worden hier ingevoegd -->
+        </div>
+        <div class="profile-picture">
+            <img id="profile-pic" src="images/profiel.png" alt="Profile Picture">
+        </div>
+        <label for="profile-picture-input"><b>Profielfoto</b></label>
+        <input type="file" id="profile-picture-input" accept="image/*">
+        <br>
+        <label for="map"><b>locatie aanpassen</b></label>
+        <div class="map-container" style="{margin-bottom: 20px;}">
+            <label for="pac-input"></label><input
+                id="pac-input"
+                class="controls"
+                type="text"
+                placeholder="Search Box"/>
+            <div id="map"></div>
+        </div>
+        <button id="opslaan" type="submit">Opslaan</button>
+    </form>
+</div>
+<script src="scripts/mapLocatieKiezen.js" type="module"></script>
+<script type="module" src="scripts/EditProfile.js"></script>
+<script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r,"places"]+""); // Voeg "places" toe aan de libraries
+    for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+({key: "AIzaSyCPtcgF3iuR9R76YPI24CaDsE_46G3b74w", v: "weekly"}); // Vervang "YOUR_API_KEY" door je eigen API-sleutel</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+\documentclass
+   {beamer}
+
+\usepackage[dutch]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+	\usetikzlibrary{arrows} 
+	\usetikzlibrary{decorations.pathmorphing}
+	\usetikzlibrary{backgrounds}
+	\usetikzlibrary{fit}
+	\usetikzlibrary{calc}
+	\usetikzlibrary{shadows}
+
+\title[Korte titel]{Lange titel}
+\author[Korte naam]{Lange naam} 
+\institute[Kulak]{KU Leuven Kulak}
+\date{Academiejaar 2012-2013}
+
+
+\begin{document}
+
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{kulakTitlepagePlain}}
+\begin{tikzpicture}[remember picture,overlay,inner sep=0mm]
+  \node[anchor=south west] at ($(current page.south west) + (0.9059\paperwidth,0.06299\paperheight)$)
+    {\includegraphics[width=0.04685\paperwidth]{kuleuvenSedesWit}};
+  \node[anchor=south west] at ($(current page.south west) + (0.03937\paperwidth,0.8426\paperheight)$)
+    {\includegraphics[height=0.1049\paperheight]{kulakLogo}};
+  \node[anchor=south west] at ($(current page.south west) + (0.06629\paperwidth,0.1115\paperheight)$)
+    {\includegraphics[width=0.2124\paperwidth]{corporate}};
+\end{tikzpicture}
+\setbeamertemplate{head  line}[page number]{}
+\setbeamertemplate{navigation symbols}{}
+
+\end{document}

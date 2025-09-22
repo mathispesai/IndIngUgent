@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profielpagina</title>
+    <link rel="stylesheet" href="css/profiel.css">
+    <script type="module" src="scripts/profiel.js"></script>
+    <script type="module" src="scripts/mapToonLocatie.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+</head>
+<body>
+<div class="container">
+    <div class="menu">
+        <a class="menu-item" href="hoofdscherm.html">Terug naar hoofdmenu</a>
+        <a class="menu-item" href="EditProfile.html">Profiel aanpassen</a>
+    </div>
+    <!-- Hier komt het profieloverzicht -->
+    <div class="profile-overview">
+        <h1>Profieloverzicht</h1>
+        <div class="profile-picture">
+                <img id="profile-pic" src="images/profiel.png" alt="Profile Picture">
+        </div>
+        <p><strong>Voornaam:</strong> <span id="firstName">Loading...</span></p>
+        <p><strong>Achternaam:</strong> <span id="lastName">Loading...</span></p>
+        <p><strong>Sport:</strong> <span id="sport">Loading...</span></p>
+        <p><strong>Leeftijd:</strong> <span id="age">Loading...</span></p>
+        <p><strong>Niveau:</strong> <span id="niveau">Loading...</span></p>
+        <p><strong>Locatie:</strong></p>
+        <div id="map"></div>
+    </div>
+</div>
+<script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+({key: "AIzaSyCPtcgF3iuR9R76YPI24CaDsE_46G3b74w", v: "weekly"});</script>
+</body>
+</html>

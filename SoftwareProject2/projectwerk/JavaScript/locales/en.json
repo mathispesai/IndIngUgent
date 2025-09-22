@@ -1,0 +1,319 @@
+{
+  "navigation": {
+    "create": "Create",
+    "myDesigns": "My Designs",
+    "aboutApp": "About the Application",
+    "nBody": "N-body Algorithm",
+    "colorBlindness": "Color Blindness ▾"
+  },
+  "create-title": {
+    "title": "Create | SolarSim"
+  },
+  "algoritme-title": {
+    "title": "N-body algorithm | SolarSim"
+  },
+  "info-title": {
+    "title": "About the application | SolarSim"
+  },
+  "colorBlindModes": {
+    "normal": "Normal",
+    "protanopia": "Protanopia",
+    "deuteranopia": "Deuteranopia",
+    "tritanopia": "Tritanopia",
+    "achromatopsia": "Achromatopsia"
+  },
+  "languages": {
+    "dutch": "Dutch",
+    "english": "English",
+    "french": "French",
+    "german": "German"
+  },
+  "hero": {
+    "welcome": "Welcome to SolarSim",
+    "startSimulation": "Start Simulation"
+  },
+  "solarSystems": {
+    "madeByOthers": "Choose a solar system",
+    "labels": {
+      "new": "New",
+      "popular": "Popular"
+    },
+    "solarSystem": "Solar System",
+    "by": "By user"
+  },
+  "createSystem": {
+    "title": "Create your own solar system",
+    "subtitle": "Add a planet to start",
+    "createPlanet": "Create a planet",
+    "choosePlanet": "Choose an existing planet",
+    "planetName": "Planet name",
+    "planetNamePlaceholder": "Enter planet name",
+    "planetMass": "Mass in kg",
+    "planetMassPlaceholder": "Add mass",
+    "planetSpeed": "Speed in km/s",
+    "planetSpeedPlaceholder": "Enter speed",
+    "planetDistance": "Distance to star (km)",
+    "planetDistancePlaceholder": "Add distance",
+    "selectPlanet": "Planet name",
+    "selectedPlanet": "Selected planet:",
+    "simulate": "Simulate"
+  },
+  "planets": {
+    "earth": "Earth",
+    "mars": "Mars",
+    "jupiter": "Jupiter",
+    "mercury": "Mercury",
+    "neptune": "Neptune",
+    "saturn": "Saturn",
+    "uranus": "Uranus",
+    "venus": "Venus"
+  },
+  "simulation": {
+    "title": "Solar System Simulation",
+    "controls": {
+      "title": "Controls",
+      "planetManagement": {
+        "title": "Planet Management",
+        "addPlanet": "Add Planet",
+        "removePlanet": "Remove Planet",
+        "remove": "Remove",
+        "newPlanet": "Add New Planet",
+        "name": "Name",
+        "positionX": "Position X",
+        "positionY": "Position Y",
+        "velocityX": "Velocity X",
+        "velocityY": "Velocity Y",
+        "mass": "Mass",
+        "add": "Add",
+        "solarsystem": "New solar system"
+      },
+      "simulationControls": {
+        "title": "Simulation Controls",
+        "pause": "Pause",
+        "timeControls": {
+          "stop": "Stop",
+          "timeForward": "Time Forward"
+        }
+      },
+      "saveImport": {
+        "title": "Save/Import",
+        "save": "Save",
+        "import": "Import"
+      },
+      "accessibility": {
+        "title": "Accessibility",
+        "colorBlindMode": "Color Blind Mode"
+      },
+      "designs": "My Designs"
+    }
+  },
+  "units": {
+    "millionKm": "million km"
+  },
+  "visualization": {
+    "title": "Solar System Visualization",
+    "noData": "No data to display yet. Add planets to see the visualization."
+  },
+  "systemInfo": {
+    "title": "Solar System Information",
+    "totalMass": "Total mass:",
+    "planetCount": "Number of planets:",
+    "stability": "System stability:",
+    "stable": "Stable",
+    "unstable": "Unstable",
+    "centerOfMass": "Center of mass:",
+    "averageSpeed": "Average speed:"
+  },
+  "algorithm": {
+    "title": "N-body Algorithm",
+    "subtitle": "Understand the physics behind SolarSim",
+    "explanation": "The N-body algorithm simulates gravitational interaction between multiple celestial bodies. It calculates the forces between each pair of objects and updates their positions and velocities.",
+    "formula": "Newton’s Law: F = G(m₁m₂/r²)",
+    "learnMore": "Read more about how our algorithm works.",
+    "moreInfo": "More info",
+    "pageTitle": "Understanding the N-body Algorithm",
+    "pageDescription": "Learn how the N-body problem is used to model the solar system",
+    "howItWorks": "How does the N-body algorithm work?",
+    "sections": {
+      "introduction": "Introduction",
+      "corePrinciples": "Core Principles",
+      "visualization": "Visualization"
+    },
+    "introduction": {
+      "title": "Introduction",
+      "paragraph1": "The N-body algorithm is a method to simulate the motion of multiple objects that attract each other through gravity. Think of stars, planets, or other celestial bodies that exert mutual influence.",
+      "paragraph2": "The algorithm calculates how strong the gravitational force is that other objects exert on each individual object. Based on these forces, the velocities and positions are adjusted. Since every object must be compared with every other one, the algorithm becomes very intensive as the number of objects increases.",
+      "paragraph3": "We apply this algorithm to planets and comets in the solar system, which are the objects in the N-body algorithm."
+    },
+    "corePrinciples": {
+      "title": "Core Principles",
+      "gravity": {
+        "title": "Gravity",
+        "description": "Each object exerts a force on another object according to Newton’s law. As a result, the force is different for every object."
+      },
+      "timeIteration": {
+        "title": "Time Iteration",
+        "description": "The algorithm is repeated in small intervals to continuously recalculate velocity and direction."
+      },
+      "newtonSecondLaw": {
+        "title": "Acceleration according to Newton’s 2nd Law",
+        "description": "The acceleration is recalculated using Newton’s second law, given by the formula:",
+        "formula": "a = \\frac{F}{m}",
+        "variables": {
+          "acceleration": "a the acceleration",
+          "force": "F the force acting on the objects",
+          "mass": "m the mass of the object"
+        }
+      },
+      "barnesHut": {
+        "title": "Barnes-Hut Algorithm",
+        "description": "The Barnes-Hut algorithm is an optimization of the standard N-body algorithm and is nearly identical in most respects. We use Barnes-Hut because it is more efficient and faster. The algorithm speeds up calculations using a hierarchical data structure. This organizes objects in a tree-like structure. We use a Quadtree, which divides the solar system into rectangles, and only rectangles containing objects are loaded into memory."
+      }
+    },
+    "visualization": {
+      "title": "Visualization",
+      "controls": {
+        "twoPlanets": "2 planets",
+        "fivePlanets": "5 planets",
+        "tenPlanets": "10 planets",
+        "customCount": "Start",
+        "pause": "Pause",
+        "speedLabel": "Speed: "
+      },
+      "canvasText": "As you can see, there is a maximum of one circle per rectangle. This ensures that calculations don’t need to go too deep in all areas (imagine the entire canvas full of tiny rectangles — it would be much less efficient). The Barnes-Hut algorithm can also determine whether certain objects are far enough apart and then group them together (e.g., if a planet is in the bottom-right, the algorithm can group top-left planets as they belong to the same parent rectangle)."
+    }
+  },
+  "about": {
+    "title": "About the application",
+    "description": "SolarSim is a web application that allows you to interactively create your own solar system",
+    "learnMore": "Read more about how SolarSim works here.",
+    "whatDoes": {
+      "title": "What does SolarSim do?",
+      "list": [
+        "Create your own solar system",
+        "Customizable color blindness options",
+        "Simulate movement using a <strong><a href=\"algoritme.html\">complex algorithm</a></strong>"
+      ]
+    },
+    "accessibility": {
+      "title": "Accessibility",
+      "description": "The website contains various options to adjust colors to the preference of users with color blindness.",
+      "visualization": "Visualization",
+      "reset": "Reset",
+      "colorBlindTypes": {
+        "protanopia": {
+          "title": "Protanopia",
+          "description": "Made for people with red color blindness."
+        },
+        "deuteranopia": {
+          "title": "Deuteranopia",
+          "description": "Developed for people with green color blindness, so that everything on the website is clearly visible."
+        },
+        "tritanopia": {
+          "title": "Tritanopia",
+          "description": "For people with blue color blindness."
+        },
+        "achromatopsia": {
+          "title": "Achromatopsia",
+          "description": "Specially developed only for people with complete color blindness."
+        }
+      }
+    },
+    "project": {
+      "title": "The project",
+      "description": "This project was created with a focus on user interaction using JavaScript. This is then visually simulated for the user."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "questions": [
+        {
+          "question": "Is SolarSim free?",
+          "answer": "Yes! SolarSim is completely free. We want the web application to be accessible to everyone to gain knowledge without paying."
+        },
+        {
+          "question": "What is the accuracy of SolarSim?",
+          "answer": "SolarSim works with an N-body algorithm that ensures planets react to each other. This algorithm is simplified but follows the fundamental principles of physics."
+        },
+        {
+          "question": "Can you share your solar systems with others?",
+          "answer": "This is not currently possible. You can save your created designs under the <strong><a href=\"design.html\">My Designs</a></strong> tab."
+        }
+      ]
+    },
+    "features": "Features:",
+    "featuresList": [
+      "Create custom solar systems",
+      "Observe gravitational interactions",
+      "Share your designs with other users",
+      "Learn about celestial mechanics"
+    ],
+    "moreInfo": "More info"
+  },
+  "footer": {
+    "contactUs": "Contact us",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfUse": "Terms of Use",
+    "copyright": "© 2025 SolarSim. All rights reserved."
+  },
+  "errors": {
+    "requiredField": "This field is required",
+    "invalidNumber": "Enter a valid number",
+    "tooManyPlanets": "Maximum number of planets reached"
+  },
+  "success": {
+    "systemSaved": "Solar system successfully saved",
+    "simulationStarted": "Simulation started"
+  },
+  "info": {
+    "header": {
+      "title": "About SolarSim",
+      "text": "Discover the wonders of the universe with our interactive web application for simulating solar systems."
+    },
+    "cta": {
+      "discover": "Discover the Features",
+      "toDesigns": "Go to my designs",
+      "nBody": "N-Body algorithm",
+      "backToTop": "Back to top"
+    },
+    "features": {
+      "title": "Discover the Powerful Features",
+      "text": "Our web application offers a range of unique and innovative features to explore the universe:",
+      "list": {
+        "item1": "<strong>Solar System Simulation:</strong> Simulate realistic solar systems with accurate physics, including gravity and orbits.",
+        "item2": "<strong>Planet Management:</strong> Add or remove planets to design your own solar system.",
+        "item3": "<strong>Collision Simulations:</strong> Experiment with planetary collisions and observe the dynamic effects.",
+        "item4": "<strong>Color Blindness Mode:</strong> Simulate different forms of color blindness (protanopia, deuteranopia, tritanopia) for accessibility and education.",
+        "item5": "<strong>Intuitive Interface:</strong> A user-friendly interface suitable for both beginners and experts."
+      }
+    },
+    "technology": {
+      "title": "Advanced Technology",
+      "text": "Our application uses advanced technologies to provide a smooth and realistic experience:",
+      "list": {
+        "item1": "<strong>N-Body algorithm:</strong> simulates the movement and mutual forces of multiple objects attracting each other according to gravity.",
+        "item2": "<strong>Modern Web Technologies:</strong> Built with HTML5, CSS3, and JavaScript for broad compatibility.",
+        "item3": "<strong>Responsive Design:</strong> Works seamlessly on desktops, tablets, and mobile devices."
+      }
+    },
+    "aboutSection": {
+      "title": "About the Application",
+      "text1": "The Solar System Simulation was developed with the goal of making the universe accessible to everyone. Whether you're a student, teacher, or space enthusiast, our application offers a unique way to explore the dynamics of solar systems.",
+      "text2": "With a focus on accessibility, performance, and education, our application combines advanced technology with a user-friendly experience. We continue to improve the application with new features and optimizations."
+    },
+    "accessibility": {
+      "title": "Accessibility",
+      "text1": "When designing this website, we paid special attention to accessibility. We understand that not everyone perceives colors in the same way. That's why SolarSim implements the ability to simulate different forms of color blindness.",
+      "visualizeButton": "Visualize"
+    }
+  },
+  "planetList": {
+    "title": "🌍 Added Planets",
+    "showButton": "Show planet list",
+    "hideButton": "Hide planet list"
+  },
+  "planet": {
+    "position": "Position",
+    "velocity": "Velocity",
+    "mass": "Mass"
+  }
+}

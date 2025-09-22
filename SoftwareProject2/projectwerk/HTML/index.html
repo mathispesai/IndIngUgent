@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolarSim</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../Media/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../Media/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../Media/favicon-16x16.png">
+    
+</head>
+<body>
+<header>
+    <nav class="main-nav">
+        <ul>
+            <li><a class="logo" href="index.html">SolarSim</a></li>
+        </ul>
+    </nav>
+    <nav>
+        <ul>
+            <li><a href="solarSystem.html" id="creeer-pagina" data-i18n="navigation.create">Creëer</a></li>
+            <li><a href="design.html" id="mijndesigns" data-i18n="navigation.myDesigns">Mijn Designs</a></li>
+            <li><a href="info.html" id="overdeapp" data-i18n="navigation.aboutApp">Over de applicatie</a></li>
+            <li><a href="algoritme.html" id="nbody" data-i18n="navigation.nBody">N-body Algoritme</a></li>
+            <li class="dropdown">
+                <a href="#" id="kblind" data-i18n="navigation.colorBlindness">Kleurenblindheid ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" onclick="resetKleurenblindheid()" data-i18n="colorBlindModes.normal">Normaal</a></li>
+                    <li><a href="#" onclick="setColorBlindMode('protanopia')" data-i18n="colorBlindModes.protanopia">Protanopia</a></li>
+                    <li><a href="#" onclick="setColorBlindMode('deuteranopia')" data-i18n="colorBlindModes.deuteranopia">Deuteranopia</a></li>
+                    <li><a href="#" onclick="setColorBlindMode('tritanopia')" data-i18n="colorBlindModes.tritanopia">Tritanopia</a></li>
+                    <li><a href="#" onclick="setColorBlindMode('achromatopsia')" data-i18n="colorBlindModes.achromatopsia">Achromatopsie</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" id="language-selector">🌐</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" onclick="i18n.changeLanguage('nl')" data-i18n="languages.dutch">Nederlands</a></li>
+                    <li><a href="#" onclick="i18n.changeLanguage('en')" data-i18n="languages.english">English</a></li>
+                    <li><a href="#" onclick="i18n.changeLanguage('fr')" data-i18n="languages.french">Français</a></li>
+                    <li><a href="#" onclick="i18n.changeLanguage('de')" data-i18n="languages.german">Deutsch</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<svg width="0" height="0">
+    <!-- Gebruik filters voor de kleurenblindheid -->
+    <defs>
+        <!-- Protanopia: Simuleert rood-groen kleurenblindheid -->
+        <filter id="protanopia">
+            <feColorMatrix type="matrix" values="
+                    0.567, 0.433, 0, 0, 0,
+                    0.558, 0.442, 0, 0, 0,
+                    0, 0.242, 0.758, 0, 0,
+                    0, 0, 0, 1, 0"/>
+        </filter>
+
+        <!-- Deuteranopia: Simuleert groen kleurenblindheid -->
+        <filter id="deuteranopia">
+            <feColorMatrix type="matrix" values="
+                    0.625, 0.375, 0, 0, 0,
+                    0.7, 0.3, 0, 0, 0,
+                    0, 0.3, 0.7, 0, 0,
+                    0, 0, 0, 1, 0"/>
+        </filter>
+
+        <!-- Tritanopia: Simuleert blauw-geel kleurenblindheid -->
+        <filter id="tritanopia">
+            <feColorMatrix type="matrix" values="
+                    0.95, 0.05, 0, 0, 0,
+                    0, 0.433, 0.567, 0, 0,
+                    0, 0.475, 0.525, 0, 0,
+                    0, 0, 0, 1, 0"/>
+        </filter>
+        <!-- Achromatsopia: Volledige kleurenblindheid -->
+        <filter id="achromatopsia">
+            <feColorMatrix type="matrix"
+                           values="0.33 0.33 0.33 0 0
+            0.33 0.33 0.33 0 0
+            0.33 0.33 0.33 0 0
+            0    0    0    1 0"/>
+        </filter>
+    </defs>
+</svg>
+
+<main>
+    <section class="hero">
+        <h1 data-i18n="hero.welcome">Welkom op SolarSim</h1>
+        <button id="startSimulationBtn" data-i18n="hero.startSimulation">Start Simulatie</button>
+    </section>
+
+    <section class="zonnestelsels">
+        <div class="container">
+            <h2 data-i18n="solarSystems.madeByOthers">Kies een zonnestelsel</h2>
+            <div class="zonnestelsel-grid">
+                <div class="zonnestelsel-kaart">
+                    <a href="solarSystem.html?system=zonnestelsel1" class="zonnestelsel-kaart">
+                    <span class="label new" data-i18n="solarSystems.labels.new">New</span>
+                    <div class="zonnestelsel-image" data-i18n="solarSystems.solarSystem">Zonnestelsel 1</div>
+                    <div class="zonnestelsel-info">
+                        <p class="title" data-i18n="[html]solarSystems.solarSystem">Zonnestelsel 1</p>
+                        <p class="author" data-i18n="[html]solarSystems.by">Door Gebruiker 1</p>
+                    </div>
+                    </a>
+                </div>
+                <div class="zonnestelsel-kaart">
+                    <a href="solarSystem.html?system=zonnestelsel2" class="zonnestelsel-kaart">
+                    <span class="label popular" data-i18n="solarSystems.labels.popular">New</span>
+                    <div class="zonnestelsel-image" data-i18n="solarSystems.solarSystem">Zonnestelsel 2</div>
+                    <div class="zonnestelsel-info">
+                        <p class="title" data-i18n="[html]solarSystems.solarSystem">Zonnestelsel 2</p>
+                        <p class="author" data-i18n="[html]solarSystems.by">Door Gebruiker 2</p>
+                    </div>
+                    </a>
+                </div>
+                <div class="zonnestelsel-kaart">
+                    <a href="solarSystem.html?system=Zonnestelsel_3" class="zonnestelsel-kaart">
+                    <div class="zonnestelsel-image" data-i18n="solarSystems.solarSystem">Zonnestelsel 3</div>
+                    <div class="zonnestelsel-info">
+                        <p class="title" data-i18n="[html]solarSystems.solarSystem">Zonnestelsel 3</p>
+                        <p class="author" data-i18n="[html]solarSystems.by">Door Gebruiker 3</p>
+                    </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--
+    <section class="create">
+        <div class="create-container">
+            <div class="create-text">
+                <h2 data-i18n="createSystem.title">Maak je eigen zonnestelsel</h2>
+                <p data-i18n="createSystem.subtitle">Voeg een planeet toe om te starten.</p>
+            </div>
+            <div class="create-form">
+                <label for="planet-name" data-i18n="createSystem.planetName">Naam Planeet</label>
+                <input type="text" id="planet-name" data-i18n="[placeholder]createSystem.planetNamePlaceholder" placeholder="Vul naam planeet in">
+
+                <label for="planet-mass" data-i18n="createSystem.planetMass">Massa in kg</label>
+                <input type="number" id="planet-mass" data-i18n="[placeholder]createSystem.planetMassPlaceholder" placeholder="Voeg massa toe">
+                <label for="planet-speed" data-i18n="createSystem.planetSpeed">Snelheid in km/s</label>
+                <input type="number" id="planet-speed" data-i18n="[placeholder]createSystem.planetSpeedPlaceholder" placeholder="Vul de snelheid in">
+
+                <button type="submit" data-i18n="createSystem.simulate">Simuleer</button>
+            </div>
+        </div>
+    </section>
+    -->
+    <div class="test">
+        <section class="algoritme">
+            <h2 id="nbody-text" data-i18n="algorithm.title">N-body Algoritme</h2>
+            <p id="leesmeer" data-i18n="algorithm.learnMore">Leer meer over hoe ons algoritme werkt.</p>
+            <button onclick="navigeerNaar('algoritme.html')" data-i18n="algorithm.moreInfo">Meer info</button>
+        </section>
+        <section class="algoritme">
+            <h2 id="info-text" data-i18n="about.whatDoes.title">Wat is SolarSim ?</h2>
+            <p data-i18n="about.learnMore">Lees hier meer over hoe SolarSim werkt.</p>
+            <button onclick="navigeerNaar('info.html')" data-i18n="about.moreInfo">Meer info</button>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <nav class="footer-nav">
+        <ul>
+            <li><a id="privacy-link" href="#" data-i18n="footer.privacyPolicy">Privacybeleid</a></li>
+            <li><a id="terms-link" href="#" data-i18n="footer.termsOfUse">Gebruiksvoorwaarden</a></li>
+        </ul>
+    </nav>
+</footer>
+
+<script src="../JavaScript/i18n-mini.js"></script>
+<script src="../JavaScript/script.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const startButton = document.getElementById('startSimulationBtn');
+        if (startButton) {
+            startButton.addEventListener('click', () => {
+                localStorage.removeItem('selectedDesignId');
+                window.location.href = '../HTML/solarSystem.html';
+            });
+        } else {
+            console.warn("Startknop niet gevonden");
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title"></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="icon" href="images/SportersConnect.svg" sizes="16x16" type="image/png">
+    <meta name="theme-color" content="#FE4A49">
+    <link href="css/hoofdscherm.css" rel="stylesheet">
+    <script type="module" src="scripts/logoutButton.js"></script>
+    <script src="./scripts/zoekertje.js" type="module"></script>
+    <script src="scripts/mapToonLocatie.js" type="module"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg" style="position: absolute" id="mainNav">
+    <a class="navbar-brand" href="index.html"><img class="navbar-brand" src="images/SportersConnect.svg"
+                                                   alt="Sporters Connect" width="10%" height="10%">Sporters Connect</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="hoofdscherm.html">Feed</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="profiel.html">Profile</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container-fluid p-0 d-flex h-100 ">
+    <div id="bdSidebar"
+         class="d-flex flex-column
+                    flex-shrink-0
+                    p-3
+                    text-white offcanvas-md offcanvas-start">
+        <a href="#"
+           class="navbar-brand">
+        </a>
+        <hr>
+        <ul class="mynav nav nav-pills flex-column mb-auto">
+            <li class="nav-item mb-1 menu_hoofd">
+                <a href="hoofdscherm.html">
+                    <i class="fa-regular fa-user"></i>
+                    Hoofdscherm
+                </a>
+            </li>
+            <li class="nav-item mb-1 menu_hoofd">
+                <a href="CreateZoekertje.html">
+                    <i class="fa-regular fa-bookmark"></i>
+                    Zoekertje aanmaken
+                </a>
+            </li>
+            <li class="nav-item mb-1 menu_hoofd">
+                <a href="MijnZoekertjes.html">
+                    <i class="fa-regular fa-newspaper"></i>
+                    Mijn zoekertjes
+                </a>
+            </li>
+            <li class="nav-item mb-1 menu_hoofd">
+                <a href="locatiesZoekertjes.html">
+                    <i class="fa-solid fa-archway"></i>
+                    Locatie overzicht
+                </a>
+            </li>
+            <li class="nav-item mb-1 menu_hoofd">
+                <a href="graaf.html">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    Test het Algoritme uit!
+                </a>
+            </li>
+            <li class="nav-item mb-1 menu_hoofd">
+                <a href="acceptedZoekertjes.html">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    Geaccepteerde Zoekertjes
+                </a>
+            </li>
+            <li class="nav-item mb-1">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <div class="dropdown">
+                    <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img id="profiel_img" src="images/profiel.png" alt="naar profiel">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="profiel.html">Profiel</a>
+                        <a class="dropdown-item" href="#"><button id="logoutbutton">Logout</button></a>
+                    </div>
+                </div>
+            </li>
+            <hr>
+            <div class="d-flex">
+
+                <i class="fa-solid fa-book  me-2"></i>
+            </div>
+        </ul>
+    </div>
+    <div class="bg-light flex-fill lengte ">
+        <div class="p-2 d-md-none d-flex text-white">
+            <a href="#" class="text-white"
+               data-bs-toggle="offcanvas"
+               data-bs-target="#bdSidebar">
+                <i class="fa-solid fa-bars"></i>
+            </a>
+        </div>
+        <div class="p-4">
+
+            <hr>
+            <div class="row">
+                <div class="col ">
+                    <h1>Details Zoekertje</h1>
+                    <div class="feed pb-5">
+                        <div class="page-header">
+                            <h1 id="zoekertje-titel" class="pt-4"></h1>
+                            <hr/>
+                        </div>
+                        <div class="zoekertje-details" id="zoekertje-details">
+                            <!-- This is where the zoekertje details will be populated -->
+                        </div>
+                        <div id="map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer mt-auto py-3 fixed-bottom">
+    <ul class="nav col-md-4 justify-content-around " id="footerpara2">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">&copy; 2024 Team 2</a></li>
+    </ul>
+    <ul class="nav col-md-4 justify-content-end " id="footerpara">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+        <li class="nav-item"><a href="hoofdscherm.html" class="nav-link px-2 text-body-secondary">Feed</a></li>
+        <li class="nav-item"><a href="profiel.html" class="nav-link px-2 text-body-secondary">Profile</a></li>
+    </ul>
+</footer>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+({key: "AIzaSyCPtcgF3iuR9R76YPI24CaDsE_46G3b74w", v: "weekly"});</script>
+</body>
+</html>

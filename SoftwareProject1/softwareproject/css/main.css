@@ -1,0 +1,64 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+body {
+  color: #5a5a5a;
+  background-color: #E6E6EA;
+  padding-top: 72px;
+}
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+/* Carousel base class */
+.carousel {
+  margin-bottom: 100px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+/* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 32rem;
+}
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+}
+#mainNav {
+  background-color: #FE4A49;
+  z-index:1;
+}
+.carousel-caption{
+  color: #009FB7;
+  text-shadow: 1px 1px #000000;
+}
+#one,#two,#three{
+  opacity: 1;
+  object-fit: cover;
+  height:100%;
+  width:100%;
+}
+.carousel-item {
+  overflow: hidden;
+
+}
+footer {
+  position: absolute;
+  width: 100%;
+  margin-top: 100px;
+  background-color: #F4F4F8;
+  bottom: 0px;
+}
+.container {
+  bottom: 100px;
+}
+a {
+  color: #009FB7;
+}

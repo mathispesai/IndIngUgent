@@ -1,0 +1,9 @@
+9.4 X
+examenleerstof.word	 X
+introductie postgresql X
+fysiek ontwerp 1 X
+fysiek ontwerp 2 X
+data importeren X
+datamanipulatie X
+logisch ontwerp X
+conceptueel ontwerp X

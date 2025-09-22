@@ -1,0 +1,116 @@
+body div div div main dd {
+    font-size: smaller;
+}
+article {
+    font-size: smaller;
+    margin: 10px;
+}
+article footer {
+    font-style: italic;
+}
+article img {
+    border-style: double;
+    border-color: #1E64C8;
+    padding: 10px;
+    border-width: 5px;
+    float: left;
+    margin: 40px ;
+}
+article figure figcaption {
+    text-align: right;
+}
+.kleur {
+    color: #1E64C8;
+}
+body > footer {
+    background-color: #1E64C8;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+}
+#eigennaam:hover {
+    background-color: #FFD200;
+}
+main article li {
+    list-style-type: upper-alpha;
+}
+article{
+    border-style: solid;
+    border-color: silver;
+    border-width: thin;
+    margin: 40px ;
+    padding: 40px ;
+}
+input, select, textarea{
+    border-color: silver;
+    border-width: thin;
+    border-style: solid;
+}
+header .nav-pills .nav-link.active, header nav li.nav-item1, header .nav-pills .show>.nav-link, header .nav-pills .nav-link.active, header nav li.nav-item{
+    background-color: #FFD200;
+}
+img {
+    width: 100%;
+    height: auto;
+  }
+#submit{
+    background-color: #1E64C8;
+    border-color: #1E64C8;
+  }
+#reset{
+    background-color: #FFD200;
+    border-color: #FFD200;
+
+}
+form .row{
+    background-color: #1E64C8;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+form .row label, form .mb-3{
+    color: white;
+}  
+#raceweekend{
+    padding-left: 300px;
+    padding-right: 300px;
+
+}
+#alfa, #alphat, #alp, #ast, #fer, #hass, #mclar, #merc, #rbr, #will{
+    padding-left: 190px;
+    padding-right: 190px;
+    border-style: double;
+    border-color: #1E64C8;
+    border-width: 5px;
+    margin-top: 7px;
+}
+
+#eaurouge{
+    padding-left: 200px;
+    padding-right: 200px;
+    margin-top: 50px;
+
+}
+#eaurouge figcaption{
+    text-align: right;
+}
+footer time{
+    float: right;
+}
+.nav{
+    background-color: #FFD200;
+}
+
+body > header {
+    position: sticky;
+    top: 0;
+    z-index: 1;    
+}
+header .nav-pills .nav-link.active:hover, header nav li.nav-item1:hover, header .nav-pills .show>.nav-link:hover {
+    background-color:black;
+    transition: transform 0.2s ease-in-out,
+              opacity 0.2s ease-in-out;    
+}
+.table-primary{
+    background-color: #FFD200;
+}
+

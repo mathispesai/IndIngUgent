@@ -1,0 +1,4 @@
+-- https://dodona.ugent.be/nl/courses/1032/series/11420/activities/793910408
+SELECT NAME, EMAIL, ZIP, CREDIT_LIMIT
+FROM CUSTOMER
+WHERE ZIP >= 70000 AND ZIP <= 99000

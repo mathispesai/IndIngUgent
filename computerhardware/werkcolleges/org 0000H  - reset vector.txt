@@ -1,0 +1,68 @@
+      org 0000H  -> reset vector
+       
+0000| jmp main   jmp:mnemonic jump to adress;g  main ->label
+       
+      org 0050H
+       
+0050| main: mov P1,#10111111b  ; label gebruiken 
+		dest, src 
+		#: immediate data 
+		10111111B ->naar hex: 0BFH
+
+		slechte oplossing alle pinnen worden een 		bepaalde waarde opgelegd
+	
+	betere opl;	clr P1.6	
+			cpl P1.6 bekijk toestand van, en 			inverse
+
+0053| einde: jmp einde   -> loop beter ; jmp $ einde weglaten
+
+
+delay:
+	
+	mov R2,#255
+	loop: 
+djnz r2,loop   decrement and jump if not zero
+
+
+
+org 0000H
+
+jmp main	
+
+org 0050H
+
+main: 
+		mov R2,#255
+loop:
+		djnz R2, loop ->beter gwn $-teken
+		cp1 P1.6
+		jmp main
+
+	
+
+jb P2.6,$ -> jump if bit set ; wachten op indrukken
+jnb P2.6,$ -> wachten op loslaten
+
+-------------------------------
+
+
+org 0000H
+
+jmp main
+
+org 0050H
+
+main: mov R2,#0 
+
+start: jb P2.6,$
+		jnb P2.6,$
+		inc R2
+		inc R2
+		mov A,R2
+		mov R3,A
+loop:
+		djnz R3, loop
+		jmp main
+
+
+cpl A  ; alle 

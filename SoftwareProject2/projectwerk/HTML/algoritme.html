@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="algoritme-title.title">N-body algoritme | SolarSim</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <script defer id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!--<script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>-->
+    <script type="module" src="../JavaScript/Visualisatie.js"></script>
+    <script defer src="../JavaScript/i18n-mini.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="../Media/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../Media/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../Media/favicon-16x16.png">
+</head>
+
+<body>
+<header>
+    <nav class="main-nav">
+        <ul>
+            <li><a class="logo" href="index.html">SolarSim</a></li>
+        </ul>
+    </nav>
+    <nav>
+        <ul>
+            <li><a href="solarSystem.html" id="creeer-pagina" data-i18n="navigation.create">Creëer</a></li>
+            <li><a href="design.html" id="mijndesigns" data-i18n="navigation.myDesigns">Mijn Designs</a></li>
+            <li><a href="info.html" id="overdeapp" data-i18n="navigation.aboutApp">Over de applicatie</a></li>
+            <li><a href="algoritme.html" id="nbody" data-i18n="navigation.nBody">N-body Algoritme</a></li>
+            <li class="dropdown">
+                <a href="#" id="kblind" data-i18n="navigation.colorBlindness">Kleurenblindheid ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" onclick="resetKleurenblindheid()" data-i18n="colorBlindModes.normal">Normaal</a></li>
+                    <li><a href="#" onclick="setColorBlindMode('protanopia')" data-i18n="colorBlindModes.protanopia">Protanopie</a></li>
+                    <li><a href="#" onclick="setColorBlindMode('deuteranopia')" data-i18n="colorBlindModes.deuteranopia">Deuteranopie</a></li>
+                    <li><a href="#" onclick="setColorBlindMode('tritanopia')" data-i18n="colorBlindModes.tritanopia">Tritanopie</a></li>
+                    <li><a href="#" onclick="setColorBlindMode('achromatopsia')" data-i18n="colorBlindModes.achromatopsia">Achromatopsie</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" id="language-selector">🌐</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" onclick="i18n.changeLanguage('nl')" data-i18n="languages.dutch">Nederlands</a></li>
+                    <li><a href="#" onclick="i18n.changeLanguage('en')" data-i18n="languages.english">Engels</a></li>
+                    <li><a href="#" onclick="i18n.changeLanguage('fr')" data-i18n="languages.french">Frans</a></li>
+                    <li><a href="#" onclick="i18n.changeLanguage('de')" data-i18n="languages.german">Duits</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<svg width="0" height="0">
+    <!-- Gebruik filters voor de kleurenblindheid -->
+    <defs>
+        <!-- Protanopia: Simuleert rood-groen kleurenblindheid -->
+        <filter id="protanopia">
+            <feColorMatrix type="matrix" values="
+                    0.567, 0.433, 0, 0, 0,
+                    0.558, 0.442, 0, 0, 0,
+                    0, 0.242, 0.758, 0, 0,
+                    0, 0, 0, 1, 0"/>
+        </filter>
+
+        <!-- Deuteranopia: Simuleert groen kleurenblindheid -->
+        <filter id="deuteranopia">
+            <feColorMatrix type="matrix" values="
+                    0.625, 0.375, 0, 0, 0,
+                    0.7, 0.3, 0, 0, 0,
+                    0, 0.3, 0.7, 0, 0,
+                    0, 0, 0, 1, 0"/>
+        </filter>
+
+        <!-- Tritanopia: Simuleert blauw-geel kleurenblindheid -->
+        <filter id="tritanopia">
+            <feColorMatrix type="matrix" values="
+                    0.95, 0.05, 0, 0, 0,
+                    0, 0.433, 0.567, 0, 0,
+                    0, 0.475, 0.525, 0, 0,
+                    0, 0, 0, 1, 0"/>
+        </filter>
+        <!-- Achromatsopia: Volledige kleurenblindheid -->
+        <filter id="achromatopsia">
+            <feColorMatrix type="matrix"
+                           values="0.33 0.33 0.33 0 0
+            0.33 0.33 0.33 0 0
+            0.33 0.33 0.33 0 0
+            0    0    0    1 0"/>
+        </filter>
+    </defs>
+</svg>
+
+<main>
+    <section class="algoritme-title">
+        <h1 id="nbodytitle" data-i18n="algorithm.title">N-Body</h1>
+    </section>
+    <nav class="main-navigation">
+        <a href="inleiding" onclick="showPage('inleiding', event)" class="nav-link active" data-i18n="algorithm.sections.introduction">Inleiding</a>
+        <a href="kernprincipe" onclick="showPage('kernprincipe', event)" class="nav-link" data-i18n="algorithm.sections.corePrinciples">Kernprincipe</a>
+        <a href="visualisatie" onclick="showPage('visualisatie', event)" class="nav-link" data-i18n="algorithm.sections.visualization">Visualisatie</a>
+    </nav>
+    <section class="invulling-nbody-werking">
+        <div id="inleiding" class="content-section">
+            <h2 data-i18n="algorithm.introduction.title">Inleiding</h2>
+            <section class="nbody-sections">
+                <p data-i18n="algorithm.introduction.paragraph1">Het N-body algoritme is een methode om de bewegingen van meerdere objecten te simuleren die elkaar aantrekken door zwaartekracht. Denk hierbij aan sterren, planeten of andere hemellichamen die onderling invloed op elkaar uitoefenen.</p>
+                <p data-i18n="algorithm.introduction.paragraph2">Bij het algoritme wordt voor elk object berekend hoe sterk de zwaartekracht is die door de andere objecten op hem wordt uitgeoefend. Op basis van die krachten worden vervolgens de snelheden en posities aangepast. Omdat elk object met alle andere objecten moet worden vergeleken, kan dit algoritme erg intensief worden naarmate het aantal objecten toeneemt.</p>
+                <p data-i18n="algorithm.introduction.paragraph3">Wij passen dit algoritme toe, de planeten en kometen in het zonnestelsel zijn de objecten van het N-body algoritme.</p>
+            </section>
+        </div>
+        <div id="kernprincipe" class="content-section hidden" >
+            <h2 data-i18n="algorithm.corePrinciples.title">Kernprincipes</h2>
+            <section class="nbody-sections">
+                <h3 data-i18n="algorithm.corePrinciples.gravity.title">Zwaartekracht</h3>
+                <p data-i18n="algorithm.corePrinciples.gravity.description">Elk object oefent een kracht uit op een ander object volgens de wet van Newton. Zo is de kracht voor elk object dus anders.</p>
+                <h3 data-i18n="algorithm.corePrinciples.timeIteration.title">Iteratie in tijd</h3>
+                <p data-i18n="algorithm.corePrinciples.timeIteration.description">Het algoritme wordt herhaald in kleine intervallen om zo steeds de snelheid en richting opnieuw uit te rekenen.</p>
+                <h3 data-i18n="algorithm.corePrinciples.newtonSecondLaw.title">Versnelling volgens 2e wet van Newton</h3>
+                <p data-i18n="algorithm.corePrinciples.newtonSecondLaw.description">De versnelling wordt steeds opnieuw berekent met de 2e wet van Newton. Deze is volgens de formule: Hierbij is:</p>
+                <ul>
+                    <li data-i18n="algorithm.corePrinciples.newtonSecondLaw.variables.acceleration">a de versnelling</li>
+                    <li data-i18n="algorithm.corePrinciples.newtonSecondLaw.variables.force">F de kracht die inwerkt op de objecten</li>
+                    <li data-i18n="algorithm.corePrinciples.newtonSecondLaw.variables.mass">m de massa van het object</li>
+                </ul>
+                <p>\( a = \frac{F}{m} \)</p>
+                <h3 data-i18n="algorithm.corePrinciples.barnesHut.title">Barnes-Hut algoritme</h3>
+                <p data-i18n="algorithm.corePrinciples.barnesHut.description">Het Barnes-Hut algoritme is een optimalisatie van het standaard N-body algoritme en is in bijna alle opzichten hetzelfde. Wij gebruiken het Barnes-hut omdat deze efficiënter en sneller is. Het algoritme versnelt de berekeningen door gebruik te maken van een hiërarchische datastructuur. Dit is een manier om objecten te organiseren in een boomachtige structuur. Wij maken gebruik van een Quadtree, waarbij het zonnestelsel wordt onderverdeeld in rechthoeken en enkel de rechthoeken waar er een object is zullen in het geheugen geladen zijn.</p>
+            </section>
+        </div>
+        <div id="visualisatie" class="content-section hidden">
+            <h2 data-i18n="algorithm.visualization.title">Visualisatie</h2>
+            <section class="nbody-sections">
+                <div class="visualisatie-controls">
+                    <button data-i18n="algorithm.visualization.controls.twoPlanets" id="2planetenknop">2 planeten</button>
+                    <button data-i18n="algorithm.visualization.controls.fivePlanets" id="5planetenknop">5 planeten</button>
+                    <button data-i18n="algorithm.visualization.controls.tenPlanets" id="10planetenknop">10 planeten</button>
+                    <input type="number" id="aantalPlaneten" min="1" max="50" placeholder="Max 50" value="20">
+                    <button id="customaantalplaneten" data-i18n="algorithm.visualization.controls.customCount">Start</button>
+                    <button id="pauzeSim" data-i18n="algorithm.visualization.controls.pause">Pauze</button>
+                </div>
+                <div class="slider-container">
+                    <label for="SliderSNelheid" id="labelSliderSnelheid" data-i18n="algorithm.visualization.controls.speedLabel">Snelheid: </label>
+                    <input type="range" id="SliderSNelheid" min="0.1" max="5" step="0.1" value="1.5">
+                </div>
+                <div class="canvas-tekst">
+                    <canvas id="VisualisatieCanvas" width="600" height="600"></canvas>
+                    <div class="tekst-naast-canvas" data-i18n="algorithm.visualization.canvasText">
+                        Zoals je kunt zien, zal er maximaal 1 cirkel per rechthoek zijn. Dit zorgt ervoor dat er niet overal zo diep moet worden verder gerekent (stel je voor dat het hele canvas vol kleine rechthoeken zat — dit zou veel minder efficiënt zijn). Het Barnes-Hut algoritme kan bovendien ook nog eens bepalen als bepaalde objecten ver genoeg verwijderd zijn van elkaar en dan deze objecten als 1 groep beschouwen(bijvoorbeeld als een planeet zich helemaal rechtsonder bevindt, kan het algoritme planeten linksboven makkelijk samennemen aangezien dit ook allemaal kinderen zijn van dezelfde bovenliggende rechthoek).
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <nav class="footer-nav">
+        <ul>
+            <li><a id="privacy-link" href="#" data-i18n="footer.privacyPolicy">Privacybeleid</a></li>
+            <li><a id="terms-link" href="#" data-i18n="footer.termsOfUse">Gebruiksvoorwaarden</a></li>
+        </ul>
+    </nav>
+</footer>
+
+<script src="../JavaScript/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+Oefening 1
+----------
+
+- Let op dat wanneer de marktwaarde van een speler NULL is, de waarde in marktwaarde_miljoen ook NULL is.
+- Een NULL-waarde is niet gelijk aan de varchar 'NULL'.
+- Om ervoor te zorgen dat alle NULL waarden op het einde gesorteerd worden, kan je gebruik maken van 'NULLS LAST' in de ORDER BY clausule.
+- Geef enkel de spelers terug waarvan de geboortedatum gekend is.
+- Wanneer je je marktwaarde deelt door 1000000.0 is het belangerijk dat je werkt met float/numeric waarden, anders zal je tussentijds resultaat ook voorgesteld worden als een integer en worden de waarden na de komma gewoon afgekapt.
+  Als je daarna wilt afronden zal je in sommige gevallen een verkeerd resultaat krijgen. (-0.5)
+- Er wordt gevraagd om te sorteren op de originele marktwaarde, niet op de afgeronde marktwaarden uitgedrukt in miljoen.
+- Wanneer er gevraagd wordt om de leeftijd van een speler te berekenen op basis van de huidige datum, moet dit werken voor de huidige datum waarop de query wordt uitgevoerd en niet wanneer die wordt opgesteld.
+  Je kan gebruik maken van CURRENT_DATE hiervoor.
+- Voor het berekenen van de leeftijd van een speler moet je rekening houden de speciale gevallen zoals schrikkeljaren. Het aantal dagen van de geboortedatum tot de huidige datum delen door 365 volstaat dus niet.
+
+
+Modelantwoord:
+
+select id,
+       familienaam,
+       round(marktwaarde::float / 1000000.)::varchar || ' miljoen' as marktwaarde_miljoen,
+       extract('years' from age(geboortedatum))::integer                      as leeftijd
+from speler
+where geboortedatum is not null
+order by marktwaarde desc nulls last, leeftijd, id;
+
+Oefening 2
+----------
+
+- Hou enkel de wedstrijden over waarvan het aantal toeschouwers gekend is en de thuisclub of de uitclub (of de thuis- en uitclub apart) een aantal goals heeft gescoord dat een veelvoud is van 2.
+- Let op voor de prioriteitsregels van de operatoren AND, OR en NOT: A AND B OR C is niet gelijk aan A AND (B OR C), maar wel aan (A AND B) OR C.
+- (thuisdoelpunten + uitdoelpunten) % 2 = 0 is niet correct om te controleren dat de thuisclub of de uitclub een aantal goals heeft gescoord dat een veelvoud is van 2, aangezien bv. (1+1) % 2 ook gelijk is aan 0.
+- (thuisdoelpunten + uitdoelpunten) % 2 = 0 is ook niet correct om te controleren dat een wedstrijd geëindigd is op een gelijkspel, aangezien bv. ook (2+4) % 2 gelijk is aan 0
+- Het is onmogelijk om alle veelvouden van 2 (0, 2, 4, 6, 8...) expliciet op te lijsten, je dient hier dus gebruik te maken van een berekening.
+
+Modelantwoord:
+
+select thuisclub, uitclub, datum, thuisdoelpunten, uitdoelpunten, thuisdoelpunten = uitdoelpunten as gelijkspel
+from wedstrijd
+where toeschouwers is not null
+  and (thuisdoelpunten % 2 = 0 or uitdoelpunten % 2 = 0);
+  
+Oefening 3
+----------
+
+- Hou enkel de stadions over waarvoor de lengte van de naam *minstens* 15 karakters telt: length(naam) >=15.
+- De functies COUNT, REGEXP_REPLACE, LEAST... zijn niet opgelijst in de introductiepresentatie van reeks 1 en mogen dus niet gebruikt worden (-0.5).
+Dit geldt ook voor het sleutelwoord GROUP BY.
+Dit staat expliciet vermeld in de opgave.
+- Beschouw enkel 'a', 'e', 'i', 'o' en 'u' als klinkers, niet 'y'
+- Werk op een hoofdletterongevoelige manier.
+- Tel het aantal *unieke* klinkers, niet het totale aantal klinkers
+
+Modelantwoord:
+
+select naam,
+       case when replace(lower(naam), 'a', '') != lower(naam) then 1 else 0 end +
+       case when replace(lower(naam), 'e', '') != lower(naam) then 1 else 0 end +
+       case when replace(lower(naam), 'i', '') != lower(naam) then 1 else 0 end +
+       case when replace(lower(naam), 'o', '') != lower(naam) then 1 else 0 end +
+       case when replace(lower(naam), 'u', '') != lower(naam) then 1 else 0 end as aantal
+from stadion
+where length(naam) >= 15;

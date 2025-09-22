@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title data-i18n="info-title.title">Over de applicatie | SolarSim</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="../Media/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../Media/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../Media/favicon-16x16.png">
+
+</head>
+<header class="infoheader">
+    <nav class="main-nav">
+        <ul>
+            <li><a class="logo" href="index.html">SolarSim</a></li>
+        </ul>
+    </nav>
+    <nav>
+        <ul>
+            <li><a href="solarSystem.html" id="creeer-pagina" data-i18n="navigation.create">Creëer</a></li>
+            <li><a href="design.html" id="mijndesigns" data-i18n="navigation.myDesigns">Mijn Designs</a></li>
+            <li><a href="info.html" id="overdeapp" data-i18n="navigation.aboutApp">Over de applicatie</a></li>
+            <li><a href="algoritme.html" id="nbody" data-i18n="navigation.nBody">N-body Algoritme</a></li>
+            <li class="dropdown">
+                <a href="#" id="kblind" data-i18n="navigation.colorBlindness">Kleurenblindheid ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" onclick="resetKleurenblindheid()" data-i18n="colorBlindModes.normal">Normaal</a></li>
+                    <li><a href="#" onclick="setColorBlindMode('protanopia')" data-i18n="colorBlindModes.protanopia">Protanopia</a></li>
+                    <li><a href="#" onclick="setColorBlindMode('deuteranopia')" data-i18n="colorBlindModes.deuteranopia">Deuteranopia</a></li>
+                    <li><a href="#" onclick="setColorBlindMode('tritanopia')" data-i18n="colorBlindModes.tritanopia">Tritanopia</a></li>
+                    <li><a href="#" onclick="setColorBlindMode('achromatopsia')" data-i18n="colorBlindModes.achromatopsia">Achromatopsie</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" id="language-selector">🌐</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" onclick="i18n.changeLanguage('nl')" data-i18n="languages.dutch">Nederlands</a></li>
+                    <li><a href="#" onclick="i18n.changeLanguage('en')" data-i18n="languages.english">English</a></li>
+                    <li><a href="#" onclick="i18n.changeLanguage('fr')" data-i18n="languages.french">Français</a></li>
+                    <li><a href="#" onclick="i18n.changeLanguage('de')" data-i18n="languages.german">Deutsch</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+<body class="infobody">
+
+
+<section id="main-header">
+    <div id="header-content">
+        <h1 id="header-title" data-i18n="info.header.title">Over SolarSim</h1>
+        <p id="header-text" data-i18n="info.header.text">Ontdek de wonderen van het universum met onze interactieve webapplicatie voor het simuleren van zonnestelsels.</p>
+        <p></p>
+
+        <a href="#features-section" id="header-cta" data-i18n="info.cta.discover">Ontdek de Functies</a>
+    </div>
+</section>
+
+<!-- Functies Sectie -->
+<section id="features-section">
+    <h2 id="features-title" data-i18n="info.features.title">Ontdek de Krachtige Functies</h2>
+    <p id="features-text" data-i18n="info.features.text">Onze webapplicatie biedt een reeks unieke en innovatieve functies om het universum te verkennen:</p>
+    <ul id="features-list">
+        <li id="feature-item-1" data-i18n="[html]info.features.list.item1"><strong>Zonnestelsel Simulatie:</strong> Simuleer realistische zonnestelsels met nauwkeurige fysica, inclusief zwaartekracht en banen.</li>
+        <li id="feature-item-2" data-i18n="[html]info.features.list.item2"><strong>Planeten Beheer:</strong> Voeg planeten toe of verwijder ze om je eigen zonnestelsel te ontwerpen.</li>
+        <li id="feature-item-3" data-i18n="[html]info.features.list.item3"><strong>Botsingssimulaties:</strong> Experimenteer met planetaire botsingen en observeer de dynamische effecten.</li>
+        <li id="feature-item-4" data-i18n="[html]info.features.list.item4"><strong>Kleurenblindheid Modus:</strong> Simuleer verschillende vormen van kleurenblindheid (protanopie, deuteranopie, tritanopie) voor toegankelijkheid en educatie.</li>
+        <li id="feature-item-5" data-i18n="[html]info.features.list.item5"><strong>Intuïtieve Interface:</strong> Een gebruiksvriendelijke interface die geschikt is voor zowel beginners als experts.</li>
+    </ul>
+    <a href="design.html" id="features-cta" data-i18n="info.cta.toDesigns">Ga naar mijn designs</a>
+</section>
+
+<!-- Technologie Sectie -->
+<section id="technology-section">
+    <h2 id="technology-title" data-i18n="info.technology.title">Geavanceerde Technologie</h2>
+    <p id="technology-text" data-i18n="info.technology.text">Onze applicatie maakt gebruik van geavanceerde technologieën om een soepele en realistische ervaring te bieden:</p>
+    <ul id="technology-list">
+        <li id="tech-item-1" data-i18n="[html]info.technology.list.item1"><strong>N-Body algoritme:</strong> simuleert de beweging en onderlinge krachten van meerdere objecten die elkaar aantrekken volgens de zwaartekracht.</li>
+        <li id="tech-item-3" data-i18n="[html]info.technology.list.item2"><strong>Moderne Webtechnologieën:</strong> Gebouwd met HTML5, CSS3 en JavaScript voor brede compatibiliteit.</li>
+        <li id="tech-item-4" data-i18n="[html]info.technology.list.item3"><strong>Responsief Ontwerp:</strong> Werkt naadloos op desktops, tablets en mobiele apparaten.</li>
+        <p> </p>
+    </ul>
+    <a href="algoritme.html" id="technology-cta" data-i18n="info.cta.nBody">N-Body algoritme</a>
+</section>
+
+<!-- Over Sectie -->
+<section id="about-section">
+    <h2 id="about-title" data-i18n="info.aboutSection.title">Over de Applicatie</h2>
+    <p id="about-text-1" data-i18n="info.aboutSection.text1">De Zonnestelsel Simulatie is ontwikkeld met als doel het universum toegankelijk te maken voor iedereen. Of je nu een student, leraar, of ruimte-enthousiast bent, onze applicatie biedt een unieke manier om de dynamiek van zonnestelsels te verkennen.</p>
+    <p id="about-text-2" data-i18n="info.aboutSection.text2">Met een focus op toegankelijkheid, prestaties en educatie, combineert onze applicatie geavanceerde technologie met een gebruiksvriendelijke ervaring. We blijven de applicatie verbeteren met nieuwe functies en optimalisaties.</p>
+    <a href="#header-content" id="about-cta" data-i18n="info.cta.backToTop">Terug naar boven</a>
+</section>
+
+<section id="accessibility">
+    <h2 id="accessibility-title" data-i18n="info.accessibility.title">Accessibility</h2>
+    <p id="access-text-1" data-i18n="info.accessibility.text1">Bij het ontwerpen van deze website hebben we bijzondere aandacht besteed aan toegankelijkheid. We begrijpen dat niet iedereen kleuren op dezelfde manier waarneemt. Daarom implementeert SolarSim de mogelijkheid om verschillende vormen van kleurenblindheid te laten simuleren.</p>
+    <div class="feature-cards">
+        <div class="feature-card" id="rood"
+             onclick="setColorBlindMode('protanopia')">
+            <h3 data-i18n="about.accessibility.colorBlindTypes.protanopia.title">Protanopia</h3>
+            <p data-i18n="about.accessibility.colorBlindTypes.protanopia.description">Gemaakt voor mensen met een rood-kleurenblindheid.</p>
+        </div>
+        <div class="feature-card" id="groen"
+             onclick="setColorBlindMode('deuteranopia')">
+            <h3 data-i18n="about.accessibility.colorBlindTypes.deuteranopia.title">Deuteranopia</h3>
+            <p data-i18n="about.accessibility.colorBlindTypes.deuteranopia.description">Ontwikkeld voor mensen met een groen-kleurenblindheid, zodat alles van de website goed zichtbaar
+                is.</p>
+        </div>
+        <div class="feature-card" id="blauw"
+             onclick="setColorBlindMode('tritanopia')">
+            <h3 data-i18n="about.accessibility.colorBlindTypes.tritanopia.title">Tritanopia</h3>
+            <p data-i18n="about.accessibility.colorBlindTypes.tritanopia.description">Voor mensen met een blauw-kleurenblindheid.</p>
+        </div>
+        <div class="feature-card"
+             onclick="setColorBlindMode('achromatopsia')">
+            <h3 data-i18n="about.accessibility.colorBlindTypes.achromatopsia.title">Achromatopsie</h3>
+            <p data-i18n="about.accessibility.colorBlindTypes.achromatopsia.description">Speciaal alleen ontwikkeld voor mensen met volledige kleurenblindheid.</p>
+        </div>
+    </div>
+    <div id="visualisatieDropdown">
+        <button id="togglebutton" data-i18n="info.accessibility.visualizeButton">Visualiseer</button>
+        <div id="dropdownContent" class="dropdown hidden">
+            <p></p>
+            <p></p>
+            <div class="container">
+                <div class="color-sample red"></div>
+                <div class="color-sample green"></div>
+                <div class="color-sample blue"></div>
+                <div class="color-sample yellow"></div>
+                <img src="../Media/Venus.png" class="kleurenblind" alt="Visualisatie van kleurenblindheidsfilter op Venus">
+            </div>
+            <p></p>
+            <p></p>
+
+            <p></p>
+            <p></p>
+            <button id="reset-cta" onclick="resetKleurenblindheid()" data-i18n="about.accessibility.reset">Reset</button>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const wrapper = document.getElementById('visualisatieDropdown');
+                const button = wrapper.querySelector('#togglebutton');
+                const content = wrapper.querySelector('#dropdownContent');
+
+                button.addEventListener('click', () => {
+                    if (content.classList.contains('hidden')) {
+                        content.classList.remove('hidden');
+                        void content.offsetHeight; // force reflow
+                        content.classList.add('show');
+                    } else {
+                        content.classList.remove('show');
+                        content.addEventListener('transitionend', function handleTransition() {
+                            content.classList.add('hidden');
+                            content.removeEventListener('transitionend', handleTransition);
+                        });
+                    }
+                });
+            });
+        </script>
+
+    </div>
+</section>
+<svg width="0" height="0">
+    <!-- Gebruik filters voor de kleurenblindheid -->
+    <defs>
+        <!-- Protanopia: Simuleert rood-groen kleurenblindheid -->
+        <filter id="protanopia">
+            <feColorMatrix type="matrix" values="
+                      0.567, 0.433, 0, 0, 0,
+                      0.558, 0.442, 0, 0, 0,
+                      0, 0.242, 0.758, 0, 0,
+                      0, 0, 0, 1, 0"/>
+        </filter>
+
+        <!-- Deuteranopia: Simuleert groen kleurenblindheid -->
+        <filter id="deuteranopia">
+            <feColorMatrix type="matrix" values="
+                      0.625, 0.375, 0, 0, 0,
+                      0.7, 0.3, 0, 0, 0,
+                      0, 0.3, 0.7, 0, 0,
+                      0, 0, 0, 1, 0"/>
+        </filter>
+
+        <!-- Tritanopia: Simuleert blauw kleurenblindheid -->
+        <filter id="tritanopia">
+            <feColorMatrix type="matrix" values="
+                      0.95, 0.05, 0, 0, 0,
+                      0, 0.433, 0.567, 0, 0,
+                      0, 0.475, 0.525, 0, 0,
+                      0, 0, 0, 1, 0"/>
+        </filter>
+        <filter id="achromatopsia">
+            <feColorMatrix type="matrix"
+                           values="0.33 0.33 0.33 0 0
+              0.33 0.33 0.33 0 0
+              0.33 0.33 0.33 0 0
+              0    0    0    1 0"/>
+        </filter>
+    </defs>
+</svg>
+<script src="../JavaScript/i18n-mini.js"></script>
+<script src="../JavaScript/script.js"></script>
+</body>
+</html>

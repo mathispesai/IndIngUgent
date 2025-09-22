@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<!--Formulier als opdracht voor het vak Informatica-->
+
+<head>
+    <title>Formule1ier</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Formule 1, Sport, Hobby">
+    <meta name="Description" content="Formule 1 is een hypertechnologsche sport waarbij 20 racepiloten strijden om de wereldtitel te 
+        veroveren door te racen op verschillende circuits over de ganse wereld.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="ugent.css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="nav nav-pills nav-fill">
+                <li class="nav-item"></li>
+                <li class="nav-item1"> <a href="index.html" class="nav-link active">Home</a></li>
+                <li class="nav-item1"><a href="index.html#inleiding" class="nav-link active">Inleiding</a>
+                </li>
+                <li class="nav-item1"><a href="index.html#format" class="nav-link active">Format</a></li>
+                <li class="nav-item1"><a href="index.html#teams" class="nav-link active">Teams</a></li>
+                <li class="nav-item1"><a href="index.html#coureurs" class="nav-link active">Coureurs</a></li>
+                <li class="nav-item1"><a href="index.html#kalender" class="nav-link active">Kalender</a></li>
+                <li class="nav-item1"><a href="index.html#nieuws" class="nav-link active">Nieuws</a></li>
+                <li class="nav-item1"><a href="wedstrijdformulier.html" class="nav-link active">Formulier</a>
+                </li>
+                <li class="nav-item"></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Formule1ier <span id="eigennaam"> Mathis Bossuyt</span></h1>
+                <main>
+                    <form action="https://formspree.io/f/mnqwdwkz" method="post">
+                        <fieldset>
+                            <legend>Persoonlijke gegevens</legend>
+                            <div class="container">
+                                <div class="row row-cols-3">
+                                    <div class="col">
+                                        <div class=" input-group mb-3">
+                                            Naam:
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class=" input-group mb-3">
+                                            Geboortedatum:
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class=" input-group mb-3">
+                                            e-mailadres:
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class=" input-group mb-3">
+                                            <label for="naam" class="form-label"></label>
+                                            <input class="form-control" id="naam" name="naam" type="text"
+                                                placeholder="Voornaam Naam" required>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class=" input-group mb-3">
+                                            <label class="label" for="geboortedatum"></label>
+                                            <input class="form-control" id="geboortedatum" type="date"
+                                                name="geboortedatum" required>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class=" input-group mb-3">
+                                            <label class="form-label" for="email"></label>
+                                            <input class="form-control" id="email" type="email" name="email"
+                                                placeholder="voornaam.naam@mail.com" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Vragen</legend>
+                            Hoeveel Formule 1 teams zijn er?
+                            <div class="mb-3">
+                                <label class="form-label" for="vraag1"></label>
+                                <input class="form-control" id="vraag1" type="number" name="vraag1" min="1" step="1">
+                            </div>
+                            Is het Formule 1 seizoen al begonnen?
+                            <div class="form-check">
+                                <label class="form-check-label" for="vraag2ja">Ja</label>
+                                <input class="form-check-input" id="vraag2ja" type="radio" name="vraag2" value="Ja">
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label" for="vraag2nee">nee</label>
+                                <input class="form-check-input" id="vraag2nee" type="radio" name="vraag2" value="Nee">
+                            </div>
+                            Wat is de naam van de tweede piloot bij AlphaTauri?
+                            <label for="vraag3"></label>
+                            <select class="form-select" name="vraag3" id="vraag3">
+                                <option value="1">Valterri Bottas</option>
+                                <option value="2">Guanyu Zhou</option>
+                                <option value="3">Pierre Gasly
+                                </option>
+                                <option value="4">Yuki Tsunoda
+                                </option>
+                                <option value="5">Esteban Ocon
+                                </option>
+                                <option value="6">Fernando Alonso
+                                </option>
+                                <option value="7">Lance Stroll
+                                </option>
+                                <option value="8">Sebastian Vettel
+                                </option>
+                                <option value="9">Charles Leclerc
+                                </option>
+                                <option value="10">Carlos Sainz
+                                </option>
+                                <option value="11">Mick Schumacher
+                                </option>
+                                <option value="12">Nikita Mazepin
+                                </option>
+                                <option value="13">Lando Norris
+                                </option>
+                                <option value="14">Daniel Ricciardo
+                                </option>
+                                <option value="15">Lewis Hamilton
+                                </option>
+                                <option value="16">George Russell
+                                </option>
+                                <option value="17">George Russell
+                                </option>
+                                <option value="18">Sergio Perez
+                                </option>
+                                <option value="19">Alexander Albon
+                                </option>
+                                <option value="20">Nicholas Latifi
+                                </option>
+
+                            </select>
+                            Waar vindt de race op 13 november plaats?
+                            <div class="mb-3">
+                                <label class="form-label" for="vraag4"></label>
+                                <input class="form-control" id="vraag4" type="text" name="vraag4" placeholder="Land">
+                            </div>
+                            Bij welke vrag(en) ben je niet zeker over je antwoord?
+                            <div class="form-check">
+                                <label class="form-check-label" for="vraag51">1</label>
+                                <input class="form-check-input" id="vraag51" type="checkbox" name="vraag5">
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label" for="vraag52">2</label>
+                                <input class="form-check-input" id="vraag52" type="checkbox" name="vraag5">
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label" for="vraag53">3</label>
+                                <input class="form-check-input" id="vraag53" type="checkbox" name="vraag5">
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label" for="vraag54">4</label>
+                                <input class="form-check-input" id="vraag54" type="checkbox" name="vraag5">
+                            </div>
+                            Wat vond je van deze vragenlijst?
+                            <div class="mb-3">
+                                <label class="form-label" for="vraag6"></label>
+                                <textarea class="form-control" id="vraag6" name="vraag6" cols="30" rows="5"
+                                    placeholder="Tekst:"></textarea>
+                            </div>
+
+                        </fieldset>
+                        <label for="reset"></label>
+                        <input id="reset" class="btn btn-primary" type="reset" value="Reset">
+                        <label for="submit"></label>
+                        <input id="submit" class="btn btn-primary" type="submit" value="Verzenden">
+
+
+                    </form>
+                </main>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+        Mathis Bossuyt <time datetime="2022-02-21">21 februari 2022</time>
+    </footer>
+</body>
+
+</html>

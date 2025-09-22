@@ -1,0 +1,5 @@
+Deze bestanden werden automatisch gecreëerd bij het ontwerpen van de webapplicatie in Figma.
+Deze tool zette automatisch de designs om in html-code en css bestanden.
+informatief was dit handig maar deze code werd weinig tot niet gebruikt in de effectieve webapplicatie,
+doordat de webpagina's vreemd werden opgebouwd, niet zoals we dit gewend zijn.
+zo werden per pagina steeds twee html-bestanden aangemaakt met een enorme hoeveelheid div's.

@@ -1,0 +1,28 @@
+services:
+  devops-runner:
+    image: gitlab.stud.atlantis.ugent.be:5050/utils/docker/devops-runner:latest
+    pull_policy: always
+    ports:
+      - "8090:8090"
+    environment:
+      - PLAYER_NAME=Cedrick Lauwyck
+      # Here we use host.docker.internal, a special DNS name which resolves to the internal IP address used by the host
+      # More info see https://docs.docker.com/desktop/networking/#i-want-to-connect-from-a-container-to-a-service-on-the-host)
+      - LOGIC_URL=http://host.docker.internal:8080
+      - MAP_WIDTH=150
+      - MAP_HEIGHT=100
+      - CPU_PLAYERS=15
+      - TURN_INTERVAL_MS=700
+    # Uncomment when using Docker Engine on Linux instead of Docker Desktop
+    # extra_hosts:
+    #   - "host.docker.internal:host-gateway"
+
+  devops-gui:
+    image: gitlab.stud.atlantis.ugent.be:5050/utils/docker/devops-client:latest
+    pull_policy: always
+    ports:
+      - "8000:80"
+    environment:
+      # Here we must use localhost, as the devops-runner server is accessed through your browser
+      - GAME_HOST=http://localhost:8090
+      - TICK_SECONDS=0.5

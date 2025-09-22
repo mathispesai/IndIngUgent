@@ -1,0 +1,5 @@
+.idea
+
+#git ignore voor testen: 
+node_modules/
+coverage/

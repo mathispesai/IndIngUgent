@@ -1,0 +1,125 @@
+body {
+    display: flex;
+    align-items: center;
+    padding-top: 72px;
+    padding-bottom: 40px;
+    background-color: #E6E6EA;
+}
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+}
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+button{
+    margin: 10px;
+    padding: 10px;
+}
+footer {
+    position: absolute;
+    width: 100%;
+    margin-top: 100px;
+    background-color: #E6E6EA;
+    bottom: 0px;
+    display: flex;
+    justify-content: space-between;
+}
+#mainNav {
+    background-color: #FE4A49;
+    z-index: 1;
+    flex-wrap: wrap;
+}
+a {
+    color: #009FB7;
+}
+#footer ul {
+    list-style: none;
+}
+#footer li {
+    display: inline-block;
+    margin-right: 10px; /* add spacing between items */
+    margin-top: 10px;
+}
+.navbar-brand{
+    overflow: visible;
+}
+.navbar-toggler{
+    overflow: visible;
+
+}
+html, body {
+    height: 100%;
+    font-family: 'Ubuntu', sans-serif;
+}
+.gfg {
+    height: 50px;
+    width: 50px;
+}
+.mynav {
+    color: #009FB7;
+}
+.mynav li a {
+    color: #009FB7;
+    text-decoration: none;
+    width: 10%;
+    display: block;
+    border-radius: 5px;
+    padding: 8px 5px;
+}
+.mynav li a.active {
+    background: rgba(255, 255, 255, 0.2);
+}
+.mynav li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+.mynav li a i {
+    width: 25px;
+    text-align: center;
+}
+img {
+    width: 80px;
+    height: 80px; /*whatever the actual width of your picture is*/
+}
+.zoekertje-titel{
+    font-size: x-large;
+    border-bottom: solid thin #ff211e;
+    margin-bottom: 10px;
+}
+.zoekertje-body{
+    margin-top: 10px;
+}
+.zoekertje{
+    margin-bottom: 10px;
+    padding: 20px;
+    background-color: #c9cac9;
+    border-radius: 5px;
+    border-width: thin;
+    border-style: solid;
+    border-color: #ff211e;
+    text-align: left;
+}
+/*aanpassing menu (stan)*/
+ul{
+    width:200px;
+}
+.menu_hoofd{
+    width: 900%;
+}
+#map {
+    height: 400px; /* Hoogte van de kaart */
+    width: 100%; /* Breedte van de kaart */
+}
+.lengte {
+    height:fit-content;
+}

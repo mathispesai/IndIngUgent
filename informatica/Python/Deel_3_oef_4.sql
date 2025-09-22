@@ -1,0 +1,9 @@
+-- https://dodona.ugent.be/nl/courses/1032/series/11422/activities/816267407
+SELECT COUNT(NAME)
+FROM MANUFACTURER;
+
+SELECT  COUNT(DISTINCT NAME)
+FROM MANUFACTURER;
+
+
+

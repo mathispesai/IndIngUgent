@@ -1,0 +1,82 @@
+image: gitlab.stud.atlantis.ugent.be:5050/utils/docker/eclipse-temurin:21
+
+cache:
+  key: $CI_COMMIT_REF_SLUG
+  paths:
+    - .m2/repository
+
+
+stages:
+  - build
+  - package
+  - execute
+
+maven-build:
+  stage: build
+  variables:
+    MAVEN_CLI_OPTS: "--batch-mode"
+    MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+  script:
+    - ./mvnw $MAVEN_CLI_OPTS compile
+  cache:
+    policy: pull-push
+    paths:
+      - .m2/repository
+  artifacts:
+    paths:
+      - target/
+    expire_in: 1 hour
+  
+
+maven-container-image-generation:
+  stage: package
+  dependencies:
+    - maven-build
+  script:
+    - printenv
+    - echo $QUARKUS_CONTAINER_IMAGE_REGISTRY/$QUARKUS_CONTAINER_IMAGE_GROUP/logic-service:$QUARKUS_CONTAINER_IMAGE_TAG
+    - ./mvnw install
+  variables:
+    QUARKUS_CONTAINER_IMAGE_PUSH:	true
+    QUARKUS_CONTAINER_IMAGE_USERNAME:	${CI_REGISTRY_USER}
+    QUARKUS_CONTAINER_IMAGE_PASSWORD: ${CI_REGISTRY_PASSWORD}
+    QUARKUS_CONTAINER_IMAGE_REGISTRY:	${CI_REGISTRY}
+    QUARKUS_CONTAINER_IMAGE_GROUP:	${GITLAB_USER_LOGIN}/${CI_PROJECT_NAME}
+    QUARKUS_CONTAINER_IMAGE_TAG:	"latest"
+  cache:
+    policy: pull
+    paths:
+        - .m2/repository
+  artifacts:
+    paths:
+      - target/*.jar
+    expire_in: 1 hour
+
+
+run-game:
+  stage: execute
+  image:
+    name: gitlab.stud.atlantis.ugent.be:5050/utils/docker/devops-runner:latest
+    entrypoint: [""]
+  script:
+    - java -cp /app/resources:/app/classes:/app/libs/* be.ugent.devops.gamehost.services.runner.LauncherKt
+  
+  variables:
+    PLAYER_NAME: "CI/CD Player"
+    LOGIC_URL: "http://logic-service:8080"
+    TURN_INTERVAL_MS: "25"
+    TURN_LIMIT: "100"
+
+  services:
+    - name: $CI_REGISTRY/$CI_PROJECT_PATH/logic-service:latest
+      alias: logic-service
+
+  cache:
+    paths:
+      - .m2/repository
+
+  artifacts:
+    paths:
+      - target/
+    expire_in: 1 hour
+

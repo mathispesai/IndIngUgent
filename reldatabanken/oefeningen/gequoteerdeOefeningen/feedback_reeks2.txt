@@ -1,0 +1,61 @@
+Oefening 1
+----------
+
+- We zijn niet op zoek naar wedstrijden waarin de deelnemende clubs een verschillend aantal doelpunten hebben gemaakt en de deelnemende clubs een stadion hebben met een verschillende capaciteit.
+- We zijn niet op zoek naar wedstrijden waarin de thuisclub meer goals heeft gescoord dan de uitclub en het stadion van de uitclub een grotere capaciteit heeft dan het stadion van de thuisclub.
+- Let op voor kolomnamen.
+
+Modelantwoord:
+
+select datum, thuisclub, uitclub
+from wedstrijd w
+         inner join club c1 on w.thuisclub = c1.naam
+         inner join stadion s1 on c1.stadionnaam = s1.naam
+         inner join club c2 on w.uitclub = c2.naam
+         inner join stadion s2 on c2.stadionnaam = s2.naam
+where (thuisdoelpunten > uitdoelpunten and s1.capaciteit < s2.capaciteit)
+   or (thuisdoelpunten < uitdoelpunten and s1.capaciteit > s2.capaciteit);
+
+
+Oefening 2
+----------
+
+- Dit is echt een typische oefening om te kijken of je het algemeen principe van joins kent.
+In deze oefening volstaat het om een aantal joins (in dit geval zelf enkel inner joins) uit te voeren met de juiste join condities en je bent klaar.
+Gebruik maken van SQL concepten (zoals subqueries, aggregatiefuncties, GROUP BY en HAVING clausules) zijn dus niet nodig.
+- Vergeet niet, waar nodig, om dinstinct toe te voegen.
+- Let goed op dat, wanneer je joint over een foreign key, je ook altijd alle of enkel de nodige elementen van de foreing/primairy key vermeld. Zo zal het joinen van een doelpunt met een wedstrijdevent op basis van enkel de datum vaak ongewenste resultaten geven.
+- Wanneer je wedstrijdevent met zichzelf joint is het niet enkel belangerijk om te controleren of het tweede wedstrijdevent zich binnen de 5 minuten na het eerste bevindt, maar ook dat ze deel uitmaken van dezelfde wedstrijd.
+- De minuut van zowel een doelpunt als een vervanging kan je vinden door naar het bijhorende wedstrijdevent te kijken. In de workshops rond datababankontwerp hebben jullie de structuur van de databank uitbundindig kunnen bekijken (overerving).
+- Hou er rekening mee dat bij de between operator beide grenzen inclusief zijn.
+
+Modelantwoord:
+
+select distinct d.spelerid as spelerid
+from doelpunt d
+    inner join wedstrijdevent wed on wed.thuisclub = d.thuisclub and wed.datum = d.datum and wed.nr = d.nr
+    inner join vervanging v on v.spelerid_in = d.spelerid and v.thuisclub = wed.thuisclub and v.datum = wed.datum
+    inner join wedstrijdevent wev on wev.thuisclub = v.thuisclub and wev.datum = v.datum and wev.nr = v.nr and wed.minuut >= wev.minuut and wed.minuut < wev.minuut + 5;
+
+
+Oefening 3
+----------
+- Deze oefening kan opgelost worden door gebruik te maken van verschillende types joins.
+Je hebt dus niet noodzakelijk subqueries en/of aggregatiefuncties nodig.
+- Het gebruik van concat(voornaam,' ',familienaam) zal *een lege string* (en dus geen NULL-waarde) teruggeven indien voornaam een NULL-waarde bevat.
+Het gebruik van voornaam || ' ' || familienaam zal wel een NULL-waarde teruggeven indien voornaam een NULL-waarde bevat.
+Let hiervoor op wanneer je enkel de spelers wil selecteren van wie de voornaam gekend is.
+- Voor deze oefening waren we op zoek naar de naam van het stadion van de thuisclub van de wedstrijd waarin de eerste vervanging voor een bepaalde speler plaatsvond.
+Daarom is het nodig om de tabellen club en wedstrijd te joinen op basis van gelijkheid tussen wedstrijd.thuisclub en club.naam.
+Het is belangrijk om op te merken dat een speler bij de uitclub kan horen, wat dus verklaart waarom speler.clubnaam soms verschilt van wedstrijd.thuisclub.
+
+
+Modelantwoord:
+
+select v.spelerid_uit as spelerid_uit, s.voornaam || ' ' || s.familienaam as spelernaam, w.datum as datum, c.stadionnaam as stadionnaam, v.spelerid_in as spelerid_in
+from speler s
+    inner join vervanging v on v.spelerid_uit = s.id
+    inner join wedstrijd w on v.thuisclub = w.thuisclub and v.datum = w.datum
+    inner join club c on c.naam = w.thuisclub
+    left join vervanging v2 on v2.spelerid_uit = s.id and v2.datum < v.datum
+where s.voornaam is not null and v2.datum is null

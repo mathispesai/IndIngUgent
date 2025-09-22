@@ -1,0 +1,4 @@
+-- https://dodona.ugent.be/nl/courses/1032/series/11422/activities/1003584561
+DELETE FROM STUDENT_DETAIL
+WHERE STUDENT_DETAIL_ID = 2 OR STUDENT_DETAIL_ID = 3
+

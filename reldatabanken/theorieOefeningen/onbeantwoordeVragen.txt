@@ -1,0 +1,160 @@
+Drielagenarchitectuur
+Wat zijn logische en fysieke data-onafhankelijkheid?
+
+
+Drielagenarchitectuur verwijst naar een manier om een informatiesysteem op te bouwen met behulp van drie afzonderlijke componenten of lagen: de presentatielaag, de logische (of bedrijfslogica) laag en de gegevenslaag. Elk van deze lagen heeft specifieke verantwoordelijkheden en functies:
+
+Presentatielaag:
+
+Deze laag is verantwoordelijk voor het presenteren van informatie aan gebruikers en het verwerken van gebruikersinvoer.
+Het omvat de gebruikersinterface en andere componenten die direct in contact staan met de eindgebruiker.
+Logische laag:
+
+Hier bevindt zich de bedrijfslogica of de toepassingslogica.
+Deze laag handelt de verwerking van gegevens af op basis van de regels en vereisten van de specifieke toepassing.
+Gegevenslaag:
+
+Dit is waar de gegevens zelf worden opgeslagen en beheerd.
+In relationele databases zou dit bijvoorbeeld de database zijn die de tabellen bevat waarin de gegevens worden opgeslagen.
+Nu, wat betreft logische en fysieke data-onafhankelijkheid:
+
+Logische data-onafhankelijkheid:
+
+Dit verwijst naar de mogelijkheid om wijzigingen aan te brengen in de logische structuur van de gegevens (bijvoorbeeld het toevoegen van een nieuwe tabel, het wijzigen van relaties tussen tabellen) zonder de toepassingsprogramma's die deze gegevens gebruiken te beïnvloeden.
+In een relationele database kan dit worden bereikt door het gebruik van abstracties zoals weergaven (views) en stored procedures.
+Fysieke data-onafhankelijkheid:
+
+Dit verwijst naar de mogelijkheid om wijzigingen aan te brengen in de fysieke opslag en organisatie van gegevens (bijvoorbeeld het verplaatsen van een tabel naar een andere schijf, het wijzigen van indexen) zonder de logische structuur van de gegevens te beïnvloeden.
+In een relationele database kan dit worden bereikt door het gebruik van databasebeheersystemen (DBMS) die de details van fysieke opslag afschermen voor de applicaties.
+Samengevat bieden logische en fysieke data-onafhankelijkheid flexibiliteit en onderhoudsgemak bij het ontwerpen en onderhouden van databases in complexe informatiesystemen.
+
+Data
+Wat zijn geïntegreerde data, consistente data en persistente data?
+
+
+Geïntegreerde data, consistente data en persistente data zijn concepten die verband houden met de eigenschappen van gegevens in een informatiesysteem, met name in het kader van databases. Hier zijn de definities van elk:
+
+Geïntegreerde data:
+
+Geïntegreerde data verwijst naar het idee dat gegevens in een systeem op een gecoördineerde en geconsolideerde manier worden beheerd.
+Het komt vooral voor in omgevingen waarin meerdere applicaties of systemen samenwerken. Geïntegreerde data zorgen ervoor dat informatie uniform wordt gepresenteerd en beheerd, ongeacht de oorsprong of de toepassing ervan.
+Dit kan worden bereikt door het gebruik van gegevensintegratietechnieken en tools die ervoor zorgen dat gegevens over verschillende systemen consistent en toegankelijk zijn.
+Consistente data:
+
+Consistente data betekent dat gegevens vrij zijn van tegenstrijdigheden of discrepanties. Het impliceert uniformiteit en nauwkeurigheid van gegevens in het hele systeem.
+Consistentie is van cruciaal belang, vooral in relationele databases waarin gegevensafhankelijkheden en integriteitsregels worden gehandhaafd. Wanneer gegevens consistent zijn, kunnen gebruikers erop vertrouwen dat de informatie betrouwbaar is en overeenkomt met de verwachtingen.
+Persistente data:
+
+Persistente data verwijst naar gegevens die hun integriteit behouden en behouden blijven, zelfs na het afsluiten van het systeem of de toepassing.
+In het kader van databases betekent persistente data dat gegevens permanent worden opgeslagen en beschikbaar blijven tussen verschillende sessies of herstarts van het systeem.
+Databasesystemen gebruiken doorgaans persistente opslagmethoden, zoals schijven, om ervoor te zorgen dat gegevens duurzaam zijn en niet verloren gaan bij het uitschakelen van het systeem.
+In combinatie dragen geïntegreerde, consistente en persistente data bij aan de betrouwbaarheid en bruikbaarheid van informatiesystemen, met name in de context van databases die als gegevensopslagfunctie fungeren.
+
+Operationele modellen
+Wanneer zou je kiezen om een netwerkdatabank te gebruiken? Wanneer een hiërarchische databank?
+
+
+De keuze tussen een netwerkdatabank en een hiërarchische databank hangt af van verschillende factoren, waaronder de aard van de gegevens en de vereisten van het systeem. Hier zijn enkele overwegingen:
+
+Netwerkdatabank:
+
+Wanneer de relaties tussen gegevens complex zijn:
+
+Netwerkdatabases ondersteunen complexe relaties tussen entiteiten. Als de structuur van je gegevens veel-op-veel relaties of niet-lineaire relaties bevat, kan een netwerkdatabank geschikter zijn.
+Flexibiliteit in gegevensmodellering:
+
+Netwerkdatabases staan toe dat een entiteit aan meerdere andere entiteiten is gekoppeld zonder beperkingen. Dit biedt meer flexibiliteit in gegevensmodellering, wat nuttig kan zijn als je gegevens niet goed passen in een hiërarchische structuur.
+Wanneer je gebruik maakt van veel gegevens van hetzelfde type:
+
+Netwerkdatabases zijn vaak geschikt voor toepassingen waarin veel gegevens van hetzelfde type betrokken zijn, en waarbij deze gegevens op verschillende manieren met elkaar zijn verbonden.
+Hiërarchische databank:
+
+Duidelijke hiërarchische structuur:
+
+Hiërarchische databases zijn geschikt als de gegevens een duidelijke hiërarchische structuur hebben, zoals een boomstructuur waarin elk record één bovenliggend record heeft, behalve het hoogste niveau.
+Eenvoudige en gestructureerde gegevens:
+
+Als je gegevens eenvoudig en gestructureerd zijn, waarbij elke entiteit een eenduidige bovenliggende entiteit heeft, kan een hiërarchische databank een eenvoudige en efficiënte keuze zijn.
+Efficiëntie bij het doorlopen van gegevens:
+
+Hiërarchische databases zijn vaak efficiënter als het nodig is om gegevens in een specifieke hiërarchische volgorde te doorlopen, omdat dit de natuurlijke manier is waarop deze databases zijn georganiseerd.
+In de praktijk worden relationele databases vaker gebruikt dan netwerk- of hiërarchische databases vanwege hun flexibiliteit, krachtige querymogelijkheden en brede acceptatie in de industrie. Het gebruik van netwerk- of hiërarchische databanken is meer typerend voor legacy-systemen of specifieke toepassingen waarvoor deze modellen beter passen.
+
+EER-diagramma
+Hoe dien je het "deelverzameling van" symbool te interpreteren bij overerving?
+
+In een Enhanced Entity-Relationship (EER)-diagram wordt het "deelverzameling van" symbool gebruikt in het kader van overerving of generalisatie/specialisatie. Dit symbool wordt vaak weergegeven als een driehoek, die de relatie tussen een algemene entiteit (superklasse) en een specifieke entiteit (subklasse) aangeeft.
+
+De interpretatie van het "deelverzameling van" symbool bij overerving is als volgt:
+
+Superklasse (Algemene entiteit):
+
+De entiteit aan de bovenkant van het "deelverzameling van" symbool wordt de superklasse genoemd. Dit is de algemene entiteit die kenmerken en attributen bevat die van toepassing zijn op alle subklassen. Het wordt vaak aangeduid als de "deelverzameling van" entiteit.
+Subklasse (Specifieke entiteit):
+
+De entiteit aan de onderkant van het symbool wordt de subklasse genoemd. Dit is een specifieke entiteit die de kenmerken en attributen van de superklasse erft, maar het kan ook extra kenmerken hebben die specifiek zijn voor die subklasse.
+Overerving van kenmerken:
+
+Het symbool geeft aan dat de subklasse alle attributen en relaties van de superklasse erft. Met andere woorden, alle eigenschappen die van toepassing zijn op de superklasse zijn ook van toepassing op de subklasse.
+
+Gedragsaspecten
+Geef een voorbeeld waarmee je de delingsoperator illustreert.
+?
+
+Integriteitsaspecten
+Wat is het praktisch voordeel van de irreducibiliteitseigenschap van sleutels?
+
+
+De irreducibiliteitseigenschap van sleutels heeft betrekking op het feit dat een primaire sleutel (of een unieke sleutel) minimaal moet zijn, wat betekent dat geen enkel attribuut kan worden verwijderd uit de sleutel zonder de uniekheid te verliezen. Dit is een belangrijk concept in de relationele databases, en het heeft enkele praktische voordelen op het gebied van gegevensintegriteit. Hier zijn enkele van die voordelen:
+
+Unieke identificatie: Een irreducibele primaire sleutel zorgt ervoor dat elk record in de tabel uniek kan worden geïdentificeerd. Dit is van cruciaal belang om te voorkomen dat records onjuist worden geïdentificeerd of dat er dubbele records ontstaan.
+
+Consistentie: Door de irreducibiliteitseigenschap te handhaven, blijft de consistentie van de gegevens behouden. Als de sleutel attributen zou bevatten die niet noodzakelijk zijn voor unieke identificatie, zou het mogelijk zijn om inconsistente gegevens in te voegen of bij te werken.
+
+Eenvoudige indexering: Het gebruik van irreduceerbare sleutels vergemakkelijkt het indexeren van gegevens. Indexen versnellen zoekopdrachten en het gebruik van irreduceerbare sleutels maakt het beheer van deze indexen eenvoudiger.
+
+Efficiëntie van JOIN-operaties: Bij het uitvoeren van JOIN-operaties tussen tabellen is het gebruik van irreduceerbare sleutels gunstig. De unieke identificatie maakt het gemakkelijk om gegevens uit verschillende tabellen te koppelen zonder verwarring of fouten.
+
+Kortom, de irreducibiliteitseigenschap van sleutels draagt bij aan de nauwkeurigheid, consistentie en efficiëntie van de gegevensopslag en -toegang in relationele databases.
+
+
+EER-mapping
+Waarom worden de primaire sleutels van de basisrelaties van de identificerende entiteitstypes als vreemde sleutels toegevoegd aan de basisrelatie van een zwak entiteitstype?
+
+
+De reden om de primaire sleutels van basisrelaties van identificerende entiteitstypes als vreemde sleutels toe te voegen aan de basisrelatie van een zwak entiteitstype heeft te maken met het behoud van de referentiële integriteit en het vastleggen van de relatie tussen de zwakke entiteit en de bijbehorende identificerende entiteit(en). Dit concept is relevant bij het ontwerpen van databases en wordt vaak toegepast bij het vertalen van een Enhanced Entity-Relationship (EER) model naar een relationeel databaseontwerp.
+
+Een zwak entiteitstype is afhankelijk van een ander entiteitstype, het identificerende entiteitstype, voor zijn identificatie. Het heeft geen eigen sleutel die uniek is binnen de database, zonder rekening te houden met het identificerende entiteitstype waaraan het is gekoppeld.
+
+Door de primaire sleutels van de basisrelaties van identificerende entiteitstypes als vreemde sleutels toe te voegen aan de basisrelatie van het zwakke entiteitstype, wordt de relatie tussen de zwakke entiteit en de identificerende entiteit(en) geformaliseerd. Hier zijn enkele redenen waarom dit wordt gedaan:
+
+Unieke Identificatie: Door de primaire sleutels van de identificerende entiteit(en) op te nemen als vreemde sleutels in de zwakke entiteitstabel, zorg je ervoor dat elke rij in de zwakke entiteitstabel uniek kan worden geïdentificeerd in combinatie met de identificerende entiteit(en).
+
+Referentiële Integriteit: Het toevoegen van de primaire sleutels als vreemde sleutels helpt bij het handhaven van referentiële integriteit. Het garandeert dat er geen verwijzingen zijn naar niet-bestaande identificerende entiteiten.
+
+Samenvoegbaarheid: Hierdoor wordt de zwakke entiteitstabel "samenvoegbaar" met de identificerende entiteitstabel(s), wat betekent dat de relatie tussen deze entiteitstypen correct wordt weergegeven bij het uitvoeren van JOIN-operaties in SQL-query's.
+
+In essentie helpt deze aanpak bij het correct modelleren van complexe relaties tussen entiteiten in een database, en het zorgt voor consistentie en integriteit van de gegevens.
+
+
+Normalisatie
+Moet je nog normaliseren na databankontwerp met behulp van de EER-mappingtechniek?
+zie samenvatting vragen
+
+Meer-niveau-relatie
+Hoe kan de waarde van de primaire sleutel worden bepaald bij poly-instantiatie?
+
+
+Poly-instantiatie, ook wel bekend als meervoudige-instantiatie, komt voor wanneer een entiteit meerdere keren wordt geïnstantieerd in dezelfde klasse. Dit gebeurt meestal wanneer er overlappende subsets van attributen zijn binnen dezelfde entiteitsklasse. In het bijzonder kan poly-instantiatie voorkomen bij het modelleren van complexe situaties waarin bepaalde attributen alleen van toepassing zijn in specifieke contexten.
+
+Bij poly-instantiatie wordt de waarde van de primaire sleutel bepaald op basis van zowel de attributen die uniek zijn voor de entiteit als de contextuele attributen die specifiek zijn voor de instantiatie. Hier zijn de stappen om de waarde van de primaire sleutel te bepalen:
+
+Identificatie van de basiseigenschappen: Identificeer de basiseigenschappen die altijd aanwezig zijn voor de entiteit, ongeacht de context. Deze basiseigenschappen zullen deel uitmaken van de primaire sleutel.
+
+Identificatie van contextuele attributen: Identificeer de attributen die specifiek zijn voor de contextuele instantiatie. Dit zijn de attributen die deel uitmaken van de poly-instantiatie en variëren afhankelijk van de specifieke context.
+
+Combinatie van basiseigenschappen en contextuele attributen: Combineer de basiseigenschappen met de contextuele attributen om de volledige primaire sleutel te vormen. De combinatie van deze attributen moet uniek zijn om de integriteit van de primaire sleutel te waarborgen.
+
+Toewijzing van waarden: Wijs waarden toe aan de basiseigenschappen en contextuele attributen volgens de specifieke instantiatie. De combinatie van deze waarden zal de unieke primaire sleutelwaarde voor die instantiatie vormen.
+
+Het gebruik van poly-instantiatie vereist zorgvuldige modellering en duidelijke definitie van de contexten waarin de entiteit wordt geïnstantieerd. Het helpt bij het vastleggen van complexe scenario's waarin entiteiten verschillende sets attributen kunnen hebben op basis van de situatie waarin ze voorkomen.

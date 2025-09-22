@@ -1,0 +1,77 @@
+Logisch Ontwerp:
+
+
+Wielerteam (naam: varchar, verkorte_naam: varchar(3), code: varchar(2), status: varchar)
+    - Primaire sleutel: { naam }
+    - Uniek: verkorte_naam
+    - Not null: verkorte_naam, code, status
+    - Check: status = ["World Tour","Pro Tour"]
+
+
+Wielrenner (naam: varchar, team_naam: varchar, landcode: varchar(2), geboortedatum: date, geboorteplaats: varchar, gewicht: integer, lengte: integer)
+    - Primaire sleutel: { naam }
+    - Vreemde sleutel: { team_naam } -> Wielerteam { naam }
+    - Not null: team_naam, landcode, geboortedatum
+    - Check: Wielrenner.gewicht > 0, Wielrenner.lengte > 0
+
+
+Rit (ritID: integer, routeID: integer, datum: date, type: varchar, beschrijving: varchar)
+    - Primaire sleutel: { ritID }
+    - Vreemde sleutel: { routeID } -> Route { routeID }
+    - Not null: routeID, datum, type, beschrijving
+    - Check: type = ["road race", "individual time trial" en "team time trial"]
+
+
+Wielrenner_Rit (renner_naam: varchar, ritID: integer, status: varchar, bonustijd: integer, positie: integer, tijd: numeric)
+    - Primaire sleutel: { renner_naam, ritID }
+    - Vreemde sleutel: { renner_naam } -> Wielrenner { naam }
+                        { ritID } -> Rit { ritID }
+    - Not null: status, bonustijd, positie, tijd
+    - Check: positie >= 1, tijd >= 0, bonustijd >= 0, status = ["did finish", "did not finish", "did not start", "over time limit" en "disqualified"]
+    - Controleer dat als de uitslagstatus van een renner in een rit niet gelijk is aan "did finish", is de plaats van deze renner in deze rit niet gekend
+    - Controleer dat als de uitslagstatus van een renner in een rit "did not finish" of "did not start" is, is de tijd van deze renner in de rit niet gekend
+    - Controleer dat als de uitslagstatus van een renner in een rit "did not start" is, is de bonustijd van deze renner in deze rit niet gekend
+    - Controleer dat als uitslagstatus van een renner in een rit "did finish" is, is de plaats, tijd en bonustijd van deze renner in deze rit gekend
+    - Controleer dat een wielrenner op 1 datum maximum aan slechts 1 rit deelneemt
+
+
+Route (routeID: integer, vertrekplaats: varchar, aankomstplaats: varchar, afstand: integer, hoogtemeters: integer, moeilijkheidsniveau: integer)
+    - Primaire sleutel: { routeID }
+    - Not null: vertrekplaats, aankomstplaats, afstand, hoogtemeters, moeilijkheidsniveau
+    - Check: afstand > 0, hoogtemeters >= 0, moeilijkheidsniveau = [1,2,3,4,5]
+
+
+Wielerwedstrijd (naam: varchar, landcode: varchar(2))
+    - Primaire sleutel: { naam }
+    - Not null: landcode
+
+
+Eendagswedstrijd (naam: varchar)
+    - Primaire sleutel: { naam }
+    - Vreemde sleutel: { naam } -> Wielerwedstrijd { naam }
+    - Controleer: eendagswedstrijd heeft exact 1 rit
+
+
+Rittenkoers (naam: varchar)
+    - Primaire sleutel: { naam }
+    - Vreemde sleutel: { naam } -> Wielerwedstrijd { naam }
+    - Controleer dat als de uitslagstatus van wielrenner aan rit != "did finish" kan de wielrenner binnen dezelfde rittenkoers niet meer deelnemen aan een rit met een hoger volgnummer
+    - Controleer dat als een wielrenner deelneemt aan een rittenkoers moet de eerste rit waaraan hij deelneemt het volgnummer 1 bedragen, anders kan hij niet deelnemen aan de rittenkoers
+
+
+Eendagsrit (ritID: integer, wedstrijd_naam: varchar)
+    - Primaire sleutel: { ritID }
+    - Vreemde sleutel: { ritID } -> Rit { ritID }
+                        { wedstrijd_naam } -> Eendagswedstrijd { naam }
+    - Uniek: wedstrijd_naam
+    - Not null: wedstrijd_naam
+
+
+Rittenkoersrit_rittenkoers (wedstrijd_naam: varchar, volgnummer: integer, ritID: integer)
+    - Primaire sleutel: { wedstrijd_naam, volgnummer }
+    - Vreemde sleutel: { wedstrijd_naam } -> Rittenkoers { naam }
+    - Check: volgnummer > 0
+    - Uniek: ritID
+    - Not null: ritID
+
+    

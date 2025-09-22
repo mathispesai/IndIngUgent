@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>Over de applicatie | SolarSim</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/styles.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="../Media/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../Media/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../Media/favicon-16x16.png">
+
+</head>
+<body>
+  <header>
+    <nav class="main-nav">
+      <ul>
+        <li><a class="logo" href="index.html">SolarSim</a></li>
+      </ul>
+    </nav>
+    <nav>
+      <ul>
+        <li><a href="solarSystem.html" id="creeer-pagina" data-i18n="navigation.create">Creëer</a></li>
+        <li><a href="design.html" id="mijndesigns" data-i18n="navigation.myDesigns">Mijn Designs</a></li>
+        <li><a href="info.html" id="overdeapp" data-i18n="navigation.aboutApp">Over de applicatie</a></li>
+        <li><a href="algoritme.html" id="nbody" data-i18n="navigation.nBody">N-body Algoritme</a></li>
+        <li class="dropdown">
+          <a href="#" id="kblind" data-i18n="navigation.colorBlindness">Kleurenblindheid ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="#" onclick="resetKleurenblindheid()" data-i18n="colorBlindModes.normal">Normaal</a></li>
+            <li><a href="#" onclick="setColorBlindMode('protanopia')">Protanopia</a></li>
+            <li><a href="#" onclick="setColorBlindMode('deuteranopia')">Deuteranopia</a></li>
+            <li><a href="#" onclick="setColorBlindMode('tritanopia')">Tritanopia</a></li>
+            <li><a href="#" onclick="setColorBlindMode('achromatopsia')" data-i18n="colorBlindModes.achromatopsia">Achromatopsie</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" id="language-selector">🌐</a>
+          <ul class="dropdown-menu">
+            <li><a href="#" onclick="i18n.changeLanguage('nl')">Nederlands</a></li>
+            <li><a href="#" onclick="i18n.changeLanguage('en')">English</a></li>
+            <li><a href="#" onclick="i18n.changeLanguage('fr')">Français</a></li>
+            <li><a href="#" onclick="i18n.changeLanguage('de')">Deutsch</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="info-container">
+    <section class="zonnestelsels">
+      <div class="container">
+        <h1 data-i18n="about.title">Over de applicatie</h1>
+        <div class="zonnestelsel-grid">
+          <p><strong><a href="index.html">SolarSim</a> </strong> <span data-i18n="about.description">is een webapplicatie die je toelaat om
+                      interactief zelf een zonnestelsel te creëren</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="zonnestelsels">
+      <div class="features">
+        <h2 data-i18n="about.whatDoes.title">Wat doet SolarSim ?</h2>
+        <ul class="features-list">
+          <li data-i18n="about.whatDoes.list.0">Maak je eigen zonnestelsel</li>
+          <li data-i18n="about.whatDoes.list.1">Aanpasbare kleurenblindheid voor de gehele website</li>
+          <li data-i18n="[html]about.whatDoes.list.2">Simuleer beweging met behulp van een <strong><a href="algoritme.html">complex algoritme</a></strong></li>
+        </ul>
+      </div>
+    </section>
+    <section class="zonnestelsels">
+      <div class="container">
+        <h2 data-i18n="about.accessibility.title">Toegankelijkheid</h2>
+        <p data-i18n="about.accessibility.description">De website bevat verschillende soorten opties om kleuren aan te passen naar de voorkeur van de gebruiker
+          indien men kleurenblindheid heeft.</p>
+      </div>
+      <div class="feature-cards">
+        <div class="feature-card" id="rood"
+             onclick="setColorBlindMode('protanopia')">
+          <h3>Protanopia</h3>
+          <p data-i18n="about.accessibility.colorBlindTypes.protanopia.description">Gemaakt voor mensen met een rood-kleurenblindheid.</p>
+        </div>
+        <div class="feature-card" id="groen"
+             onclick="setColorBlindMode('deuteranopia')">
+          <h3>Deuteranopia</h3>
+          <p data-i18n="about.accessibility.colorBlindTypes.deuteranopia.description">Ontwikkeld voor mensen met een groen-kleurenblindheid, zodat alles van de website goed zichtbaar
+            is.</p>
+        </div>
+        <div class="feature-card" id="blauw"
+             onclick="setColorBlindMode('tritanopia')">
+          <h3>Tritanopia</h3>
+          <p data-i18n="about.accessibility.colorBlindTypes.tritanopia.description">Voor mensen met een blauw-kleurenblindheid.</p>
+        </div>
+        <div class="feature-card"
+             onclick="setColorBlindMode('achromatopsia')">
+          <h3 data-i18n="about.accessibility.colorBlindTypes.achromatopsia.title">Achromatopsie</h3>
+          <p data-i18n="about.accessibility.colorBlindTypes.achromatopsia.description">Speciaal alleen ontwikkeld voor mensen met volledige kleurenblindheid.</p>
+        </div>
+      </div>
+      <p></p>
+      <p></p>
+      <div id="visualisatieDropdown">
+        <button id="togglebutton">Visualiseer</button>
+        <div id="dropdownContent" class="dropdown hidden">
+          <p></p>
+          <p></p>
+          <div class="container">
+            <div class="color-sample red"></div>
+            <div class="color-sample green"></div>
+            <div class="color-sample blue"></div>
+            <div class="color-sample yellow"></div>
+          </div>
+          <p></p>
+          <p></p>
+          <img src="../Media/Venus.png" class="kleurenblind" alt="Visualisatie van kleurenblindheidsfilter op Venus">
+          <p></p>
+          <p></p>
+          <button onclick="resetKleurenblindheid()" data-i18n="about.accessibility.reset">Reset</button>
+        </div>
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            const wrapper = document.getElementById('visualisatieDropdown');
+            const button = wrapper.querySelector('#togglebutton');
+            const content = wrapper.querySelector('#dropdownContent');
+
+            button.addEventListener('click', () => {
+              if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                void content.offsetHeight; // force reflow
+                content.classList.add('show');
+              } else {
+                content.classList.remove('show');
+                content.addEventListener('transitionend', function handleTransition() {
+                  content.classList.add('hidden');
+                  content.removeEventListener('transitionend', handleTransition);
+                });
+              }
+            });
+          });
+        </script>
+
+      </div>
+
+
+    </section>
+    <section class="zonnestelsels">
+      <div class="container">
+        <h2 data-i18n="about.project.title">Het project</h2>
+        <p data-i18n="about.project.description">Dit project is gemaakt om focus te leggen op interactie met de gebruiker met behulp van Javascript.
+          Dit zal dan visueel gesimuleerd worden voor de gebruiker.</p>
+      </div>
+    </section>
+
+    <section class="zonnestelsels">
+      <div class="container">
+        <h2 data-i18n="about.faq.title">Veelgestelde vragen</h2>
+        <div class="faq-item">
+          <div class="faq-question"><u data-i18n="about.faq.questions.0.question">Is SolarSim gratis?</u></div>
+          <div class="faq-answer" data-i18n="about.faq.questions.0.answer"> Ja ! SolarSim is volledig gratis. Wij willen dat de webapplicatie volledig
+            toegankelijk is voor iedereen om kennis te kunnen opnemen zonder dat er voor betaald moet worden.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><u data-i18n="about.faq.questions.1.question">Wat is de nauwkeurigheid van SolarSim ?</u></div>
+          <div class="faq-answer" data-i18n="about.faq.questions.1.answer">SolarSim werkt met behulp van een N-Body algoritme die ervoor zorgt dat planeten
+            op elkaar reageren. Dit algoritme is een vereenvoudigde versie, maar volgt de fundamentele principes
+            van de natuurkunde.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><u data-i18n="[html]about.faq.questions.2.question">Kan je uw zonnestelsels delen met anderen ?</u></div>
+          <div class="faq-answer" data-i18n="[html]about.faq.questions.2.answer">Op dit moment zal dit nog niet kunnen. Je kunt wel uw gemaakte designs opslaan
+            in de <strong><a href="design.html">"Mijn Designs"</a></strong> tab.
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+    // Aparte script zodat FAQ werkt
+    document.addEventListener('DOMContentLoaded', function () {
+      const faqQuestions = document.querySelectorAll('.faq-question');
+
+      faqQuestions.forEach(question => {
+        question.addEventListener('click', function () {
+          const ouder = this.parentNode;
+          ouder.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+
+  <svg width="0" height="0">
+    <!-- Gebruik filters voor de kleurenblindheid -->
+    <defs>
+      <!-- Protanopia: Simuleert rood-groen kleurenblindheid -->
+      <filter id="protanopia">
+        <feColorMatrix type="matrix" values="
+                      0.567, 0.433, 0, 0, 0,
+                      0.558, 0.442, 0, 0, 0,
+                      0, 0.242, 0.758, 0, 0,
+                      0, 0, 0, 1, 0"/>
+      </filter>
+
+      <!-- Deuteranopia: Simuleert groen kleurenblindheid -->
+      <filter id="deuteranopia">
+        <feColorMatrix type="matrix" values="
+                      0.625, 0.375, 0, 0, 0,
+                      0.7, 0.3, 0, 0, 0,
+                      0, 0.3, 0.7, 0, 0,
+                      0, 0, 0, 1, 0"/>
+      </filter>
+
+      <!-- Tritanopia: Simuleert blauw kleurenblindheid -->
+      <filter id="tritanopia">
+        <feColorMatrix type="matrix" values="
+                      0.95, 0.05, 0, 0, 0,
+                      0, 0.433, 0.567, 0, 0,
+                      0, 0.475, 0.525, 0, 0,
+                      0, 0, 0, 1, 0"/>
+      </filter>
+      <filter id="achromatopsia">
+        <feColorMatrix type="matrix"
+                       values="0.33 0.33 0.33 0 0
+              0.33 0.33 0.33 0 0
+              0.33 0.33 0.33 0 0
+              0    0    0    1 0"/>
+      </filter>
+    </defs>
+  </svg>
+  <script src="../JavaScript/i18n-mini.js"></script>
+  <script src="../JavaScript/script.js"></script>
+</body>
+</html>

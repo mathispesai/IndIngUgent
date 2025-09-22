@@ -1,0 +1,86 @@
+[
+  {
+    "naam": "Zon",
+    "positie": {
+      "x": 0.04527499169723403,
+      "y": 0.003152115076326641
+    },
+    "snelheid": [
+      0.0007381433674743745,
+      0.0000642248967913744
+    ],
+    "gewicht": 1989000000,
+    "afbeeldingsrc": "../Media/Zon.png",
+    "straal": 47.60241766370396
+  },
+  {
+    "naam": "Alpha",
+    "positie": {
+      "x": 29.736630038668167,
+      "y": -23.78607350651645
+    },
+    "snelheid": [
+      23.262067159592505,
+      21.509058278562875
+    ],
+    "gewicht": 300,
+    "afbeeldingsrc": "../Media/Mars.png",
+    "straal": 20
+  },
+  {
+    "naam": "Beta",
+    "positie": {
+      "x": 70.99970482570632,
+      "y": 14.388343909190938
+    },
+    "snelheid": [
+      -5.7068686453487265,
+      20.856758644412743
+    ],
+    "gewicht": 600,
+    "afbeeldingsrc": "../Media/Saturnus.png",
+    "straal": 20
+  },
+  {
+    "naam": "Gamma",
+    "positie": {
+      "x": -48.052643672266164,
+      "y": 54.42305696397002
+    },
+    "snelheid": [
+      -17.23248065454126,
+      -20.79221304740808
+    ],
+    "gewicht": 1200,
+    "afbeeldingsrc": "../Media/Willekeurige_Planeet_7.png",
+    "straal": 20
+  },
+  {
+    "naam": "Delta",
+    "positie": {
+      "x": -59.109647010157104,
+      "y": -58.45932926103452
+    },
+    "snelheid": [
+      14.512229655905742,
+      -21.684810666702507
+    ],
+    "gewicht": 4500,
+    "afbeeldingsrc": "../Media/Willekeurige_Planeet_4.png",
+    "straal": 20
+  },
+  {
+    "naam": "Epsilon",
+    "positie": {
+      "x": 197.30901823834856,
+      "y": 26.194562257075592
+    },
+    "snelheid": [
+      -2.427557905814873,
+      11.841382392304718
+    ],
+    "gewicht": 6000,
+    "afbeeldingsrc": "../Media/Neptunus.png",
+    "straal": 20
+  }
+]

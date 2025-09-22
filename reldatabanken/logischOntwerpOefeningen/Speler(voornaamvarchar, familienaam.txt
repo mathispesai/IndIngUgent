@@ -1,0 +1,50 @@
+Speler(voornaam:varchar, familienaam:varchar, id:integer, geboorteplaats:varchar, geboorteland:varchar, geboortedatum:date, marktwaarde:integer, veldpositie:varchar, clubnaam:varchar )
+	primaire sleutel: {id}
+	vreemde sleutel: {clubnaam}-> club{naam}
+	notnull: familienaam, clubnaam
+	check: veldpositie element/van {GK,DEF,MID,ATT}
+	check: marktwaarde >= 0
+Club(naam:varchar, stadion:varchar)
+	primaire sleutel: {naam}
+	Vreemde sleutel: {stadionnaam}-> stadion{naam}
+	not null: stadionnaam
+Stadion(naam:varchar, capaciteit:integer)
+	primaire sleutel: {naam}
+	check: capaciteit >= 0
+	notnull: naam	
+Wedstrijd(thuisclub:varchar, uitclub:varchar, datum:date, toeschouwers:integer, thuisdoelpunten:integer, uitdoelpunten:integer)
+	primaire sleutel: {thuisclub,datum}
+	vreemde sleutel: {thuisclub}->club{naam}
+	vreemde sleutel: {uitclub}->club{naam}
+	notnull: thuisdoelpunten, uitdoelpunten, uitclub
+	uniek: {uitclub, datum}
+	check: thuisdoelpunten>=0
+	check: uitdoelpunten>= 0
+	check: toeschouwer>=0
+	check: thuisclub != uitclub
+	controleer: het aantal toeschouwers die een wedstrijd bijwonen kan niet groter zijn dan de capaciteit van het 		stadion van de thuisclub van die wedstrijd
+Westrijdevent(nummer:integer,minuut:integer,datum:date, thuisclub:varchar)
+	primaire sleutel: {thuisclub, datum, nr}
+	check: nr ≥ 1
+	check:minuut ∈ [0, 120]
+	notnull: minuut
+	vreemde sleutel: {datum, thuisclub}-> wedstrijd{thuisclub,datum}
+
+doelpunt(beschrijving: varchar,nummer:integer,minuut:integer,datum:date, thuisclub:varchar, spelerid:integer)
+	primaire sleutel: {thuisclub, datum, nr}
+	notnull: beschrijving, spelerid
+	vreemde sleutel: {thuisclub, datum, nr} → wedstrijdevent{thuisclub, datum, nr}, {spelerid} → speler{id}
+	controleer: het totaal aantal doelpunten dat gelieerd is aan een bepaalde wedstrijd kan niet groter zijn dan de som 	van de scores van de thuis- en uitclub op het einde van die wedstrijd
+
+vervanging(thuisclub:varchar, datum:date, nr:integer, spelerid_in:integer, spelerid_uit:integer)
+	primaire sleutel: {thuisclub, datum, nr}
+	notnull: spelerid_in, spelerid_uit
+	vreemde sleutel: {spelerid_in} → speler{id}
+	vreemde sleutel: {spelerid_uit} → speler{id}
+	vreemde sleutel: {thuisclub, datum, nr} → wedstrijdevent{thuisclub, datum, nr}, {spelerid} → speler{id}
+	check: spelerid_in != spelerid_uit
+	-------
+	extra controles in oplossing:
+	controleer: bij toevoeging dat de datum niet vroeger ligt dan de geboortedatum van de speler
+	controleer: bij toevoeging of de speler niet reeds vervangen is tijdens deze wedstrijd
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Testen algoritme</title>
+    <link rel="stylesheet" href="css/softwareproject.css">
+    <script type="module" src="scripts/graaf.js"></script>
+</head>
+<body>
+<a class="menu-item" href="hoofdscherm.html">Terug naar hoofdmenu</a>
+<!-- code om random profielen te gebruiken
+<div><bold>Opmerking: Collectie die je wilt gebruiken om het algoritme te testen moet manueel gekozen worden op twee plaatsen. Dus zo kiezen of je test collectie of andere collectie wilt gebruiken</bold></div><br>
+<div>- vanboven in GraafConfig.js</div><br>
+<div>- vanboven in graaf.js, hier kun je ook aantal random profielen aanpassen</div><br>
+<div>Keuze uit volgende collecties</div>
+<ol>
+    <li>"users":                standaard collection</li>
+    <li>"testUsers":            gebruik deze als je random profielen wilt genereren</li>
+    <li>"testUsersAfstand":     gebruik deze collectie voor profielen met gelijkaardige afstand. Voordat je deze gebruikt moet je in GraafConfig.js (line 39-42) enkele aanpassing doen zodat de locaties dichter bij elkaar liggen.</li>
+    <li>"testUsersLeeftijd":    gebruik deze collectie voor profielen met gelijkaardige leeftijd. Voordat je deze gebruikt moet je in RandomProfileGenerator.js (line 30-31) een aanpassing doen aan de leeftijd. </li>
+    <li>"testUsersSport":       gebruik deze collectie voor profielen met gelijkaardige sporten. Voordat je deze gebruikt moet je in RandomProfileGenerator.js (line 28) een aanpassing doen aan de lijst met beschikbare sporten. Verklein deze naar 2-3 sporten.</li>
+</ol>
+
+<div class="big"><bold>LET OP: ZORG DAT JE NADIEN DE COLLECTIE OP USERS TERUGZET ZODAT DE WEBSITE WEER CORRECT WERKT</bold></div>
+-->
+<div>Je kunt alles ook meevolgen in de console.</div><br>
+<div>Normaal is hier ook een optie voorzien om random profielen te genereren, dit is in deze versie echter in commentaar gezet
+om problemen met de firebase te vermijden. Bij de random profielen die gemaakt worden ontbreken enkele zaken waardoor er dus problemen zouden ontstaan.</div>
+
+<!--button id="testknop">Maak nieuwe random profielen aan </button-->
+
+<button id="testUsers">Test matching algo</button>
+<label for="matchingTextarea">matches (email - afstand - sporten - leeftijd - niveau)</label>
+<textarea id="matchingTextarea" rows="10" cols="50"></textarea>
+
+<button id="teststatic">static vars testen</button>
+
+<button id="ophalenusers">Haal users op</button>
+<label for="userListTextarea">Opgehaald users</label>
+<textarea id="userListTextarea" rows="10" cols="50"></textarea>
+
+</body>
+</html>

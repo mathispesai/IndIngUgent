@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sporters Connect</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <meta name="theme-color" content="#712cf9">
+    <link rel="icon" href="images/SportersConnect.svg" sizes="16x16" type="image/png">
+    <style>
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="css/main.css" rel="stylesheet">
+    <script type="module" src="scripts/main.js"></script>
+</head>
+<body class="text-center">
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg" id="mainNav">
+    <a class="navbar-brand" href="index.html" ><img class="navbar-brand" src="images/SportersConnect.svg" alt="Sporters Connect" width="10%" height="10%">Sporters Connect</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="hoofdscherm.html">Feed</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="profiel.html">Profile</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<main>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indic-->
+        <ul class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ul>
+        <!-- slides -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img id="one" src="images/slider1.jpg" alt="Image 1" width="100%" height="100%">
+            </div>
+            <div class="carousel-item">
+                <img id="two" src="images/slider2.jpg" alt="Image 2" width="100%" height="100%">
+            </div>
+            <div class="carousel-item">
+                <img id="three" src="images/slider3.jpg" alt="Image 3" width="100%" height="100%">
+            </div>
+        </div>
+        <!-- Contr-->
+        <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+    <div class="container">
+        <h3>Welcome to Sporters Connect</h3>
+        <p>Find and connect with fellow athletes!</p>
+    </div>
+    <div class="container">
+        <a class="w-80 btn btn-lg btn-primary" href="login.html" id="logIn" style="background-color:#009FB7;">Log In</a>
+        <a class="w-80 btn btn-lg btn-primary" href="signup.html" id="signUp" style="background-color:#009FB7;">Sign Up</a>
+    </div>
+</main>
+<footer class="navbar navbar-fixed-bottom">
+    <p class="col-md-4 mb-0 text-body-secondary" style="color: #009FB7;">&copy; 2024 Team 2</p>
+    <ul class="nav col-md-4 justify-content-end">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+        <li class="nav-item"><a href="hoofdscherm.html" class="nav-link px-2 text-body-secondary">Feed</a></li>
+        <li class="nav-item"><a href="profiel.html" class="nav-link px-2 text-body-secondary">Profile</a></li>
+    </ul>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

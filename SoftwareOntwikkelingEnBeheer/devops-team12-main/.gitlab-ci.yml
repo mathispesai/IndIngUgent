@@ -1,0 +1,143 @@
+image: gitlab.stud.atlantis.ugent.be:5050/utils/docker/eclipse-temurin:21
+
+variables:
+  MAVEN_CLI_OPTS: "--batch-mode"
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+  UTIL_REGISTRY: ${CI_REGISTRY}/utils/docker
+  QUARKUS_CONTAINER_IMAGE_USERNAME: "${CI_REGISTRY_USER}"
+  QUARKUS_CONTAINER_IMAGE_PASSWORD: "${CI_REGISTRY_PASSWORD}"
+  QUARKUS_CONTAINER_IMAGE_REGISTRY: "${CI_REGISTRY}"
+  QUARKUS_CONTAINER_IMAGE_GROUP: "${CI_PROJECT_PATH}"
+
+
+stages:
+  - build
+  - tests
+  - package
+  - deploy
+
+cache:
+  key: $CI_COMMIT_REF_SLUG
+  paths:
+    - .m2/repository/
+
+# BUILD STAGE
+maven-build:
+  stage: build
+  variables:
+    QUARKUS_CONTAINER_IMAGE_BUILD: "true"
+    QUARKUS_CONTAINER_IMAGE_PUSH: "true"
+    QUARKUS_CONTAINER_IMAGE_TAG: "${CI_COMMIT_SHORT_SHA}"
+  artifacts:
+    paths:
+      - target/
+    expire_in: 1 week
+  script:
+    - ./mvnw $MAVEN_CLI_OPTS package -D"skipTests"
+
+# TESTS STAGE
+maven-unit-test:
+  stage: tests
+  script:
+    - ./mvnw test
+    - |
+      coverage=$(awk -F ',' '
+      BEGIN { missed=0; covered=0 }
+      NR > 1 { missed += $4; covered += $5 }
+      END { print covered / (missed + covered) * 100 " % covered" }
+      ' target/jacoco-report/jacoco.csv)
+      echo "Code Coverage: $coverage"
+  coverage: '/(\d+\.\d+)\s% covered/'
+  cache:
+    key: $CI_COMMIT_REF_SLUG
+    paths:
+      - .m2/repository/
+  dependencies:
+    - maven-build
+  allow_failure: false
+  artifacts:
+    paths:
+      - target/jacoco-report/index.html
+      - target/jacoco-report/jacoco.csv
+      - target/surefire-reports/
+    when: always # generate the coverage report/artifacts, regardless of test result
+    expire_in: 1 week
+    reports:
+      coverage_report:
+        coverage_format: jacoco
+        path: target/jacoco-report/jacoco.xml
+      junit: target/surefire-reports/*.xml
+
+.test-integration-template:
+  cache: []
+  dependencies: []
+  stage: tests
+  image:
+    name: ${UTIL_REGISTRY}/devops-runner:latest
+    entrypoint:
+      - ""
+  script:
+    - java -cp /app/resources:/app/classes:/app/libs/* be.ugent.devops.gamehost.services.runner.LauncherKt
+  services:
+    - name: ${CI_REGISTRY_IMAGE}/logic-service:${CI_COMMIT_SHORT_SHA}
+      alias: logic-service
+  variables:
+    PLAYER_NAME: "CI/CD Player - Test"
+    LOGIC_URL: http://logic-service:8080
+    ENABLE_FETCH_LOGS: "true"
+    ABORT_ON_LOGIC_ERROR: "true"
+    LOGIC_REQUEST_TIMEOUT: 500
+
+test-integration-default:
+  extends: .test-integration-template
+  variables:
+    TURN_INTERVAL_MS: 50
+    TURN_LIMIT: 1000
+    MAP_WIDTH: 100
+    MAP_HEIGHT: 100
+
+test-integration-small-map:
+  extends: .test-integration-template
+  variables:
+    TURN_INTERVAL_MS: 50
+    TURN_LIMIT: 500
+    MAP_WIDTH: 5
+    MAP_HEIGHT: 5
+    CPU_PLAYERS: 5  
+
+test-integration-many-players:
+  extends: .test-integration-template
+  variables:
+    TURN_INTERVAL_MS: 250
+    TURN_LIMIT: 500
+    MAP_WIDTH:  150
+    MAP_HEIGHT: 100
+    CPU_PLAYERS: 10
+
+# Last 2 jobs should only run on main branch or if the lab tag is added
+.run-only-on-main: # template for rules
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main" || $CI_COMMIT_TAG =~ /(?i)lab ?\d+/
+      when: on_success
+    - when: never
+
+# PACKAGE STAGE
+maven-container-image-generation:
+  stage: package
+  extends: .run-only-on-main
+  variables:
+    QUARKUS_CONTAINER_IMAGE_PUSH: "true"
+    QUARKUS_CONTAINER_IMAGE_TAG: "latest"
+    QUARKUS_CONTAINER_IMAGE_ADDITIONAL_TAGS: $CI_COMMIT_TAG
+  script:
+    - ./mvnw $MVN_CLI_OPTS install -D"skipTests"
+
+deploy-kubernetes:
+  image: gitlab.stud.atlantis.ugent.be:5050/utils/docker/kubectl:1.31.2
+  stage: deploy
+  extends: .run-only-on-main
+  before_script:
+    - echo $KUBECONFIG_B64 | base64 -d > ~/.kube/config
+  script:
+    - kubectl apply -f k8s/
+    - kubectl rollout restart deployment/logic-deployment -n devops-team12
