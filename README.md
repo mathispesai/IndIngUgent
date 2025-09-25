@@ -10,6 +10,7 @@ Welcome to my GitHub repository containing various projects from my Electronics 
 - [🚗 Autonomous Vehicle System (PO2)](#-autonomous-vehicle-system-po2)
 - [⚡ Embedded Systems - 8051 Assembly Programming](#-embedded-systems---8051-assembly-programming)
 - [📈 Distributed Data Processing](#-distributed-data-processing)
+- [🌐 Software Development Projects](#-software-development-projects)
 - [📊 Statistical Analysis & Mathematical Modeling](#-statistical-analysis--mathematical-modeling)
 - [⚡ Electronics Laboratory Work](#-electronics-laboratory-work)
 - [💻 Core Technologies](#-core-technologies)
@@ -104,31 +105,48 @@ An automated vertical farming system integrating electronics, mechanical constru
 
 **Technologies:** LabVIEW, NI MyRIO, Various sensors
 
-### System Requirements
-Design and implementation of an autonomous vehicle capable of:
-- Line following navigation
-- Traffic light recognition and response
-- Obstacle detection and avoidance
-- Stop line recognition and compliance
+### 1. Problem Analysis & Client Requirements
+- **Requirements Translation**: Converting client needs into technical specifications (line following, stop line detection, traffic light interpretation, collision avoidance)
+- **System Analysis**: Understanding autonomous system functionality in a model city environment
+- **Specification Development**: Defining clear technical requirements and system boundaries
 
-### Hardware Architecture
-- **Microcontroller**: NI MyRIO (chosen over Raspberry Pi for real-time requirements)
-- **Sensors**: Reflectance sensors, ultrasonic distance sensors, color sensors
-- **Actuators**: DC motors, servo motors
-- **Indicators**: LED status indicators
-- **Chassis**: Custom 3D-modeled vehicle platform
+### 2. Hardware Design & Component Selection
+- **Component Selection**: Systematic selection and justification of chassis, wheels, motors, microcontroller (NI MyRIO), sensors (reflectance, distance, color sensors), and LEDs
+- **Alternative Analysis**: Comparative evaluation of options (Raspberry Pi vs. NI MyRIO, camera vs. color sensor)
+- **Physical Assembly**: Component mounting and integration using 3D models for preparation
+- **System Architecture**: Designing robust hardware architecture for autonomous operation
 
-### Software Implementation
-- LabVIEW programming for sensor integration
-- Calibration algorithms for sensor accuracy
-- Logic flow implementation for autonomous navigation
-- Real-time decision-making algorithms
+### 3. Software Design & Implementation
+- **LabVIEW Programming**: Developing communication protocols between sensors, microcontroller, and motors
+- **Sensor Calibration**: Experimental validation and calibration of sensor outputs (black/white/gray differentiation, red/green light detection, distance measurements)
+- **Logic Programming**: Creating flowchart-based programs for vehicle behavior control (driving, decelerating, stopping at obstacles or red lights)
+- **Real-time Control**: Implementing responsive control algorithms for autonomous navigation
 
-### Project Management Skills
-- Requirements analysis and technical specification translation
-- Component selection and budget management
-- Hardware-software integration
-- Technical documentation and reporting
+### 4. Hardware-Software Integration
+- **System Integration**: Connecting sensors and motors through microcontroller interface
+- **Testing & Refinement**: Iterative testing and optimization to achieve autonomous driving requirements
+- **Performance Validation**: Ensuring system meets all specified requirements and safety standards
+
+### 5. Engineering Project Skills
+- **Team Collaboration**: Working effectively in groups on realistic engineering challenges
+- **Budget Management**: Financial oversight and cost optimization within component procurement constraints
+- **Technical Documentation**: Comprehensive documentation of design choices, experiments, and results
+- **Project Planning**: Timeline management and milestone tracking for complex engineering deliverables
+
+### Core Competencies Developed
+**Technical Skills:**
+- Advanced sensor integration and calibration
+- LabVIEW graphical programming proficiency
+- Real-time system design and implementation
+- Hardware-software interface development
+- Autonomous system behavior programming
+
+**Engineering Skills:**
+- Problem-solving methodology and systematic approach
+- Design decision justification and documentation
+- Collaborative engineering project execution
+- Budget-conscious component selection and procurement
+- Technical report writing and presentation skills
 
 ---
 
@@ -212,6 +230,112 @@ Design and implementation of an autonomous vehicle capable of:
 
 ---
 
+## 🌐 Software Development Projects
+
+### Sporters Connect (Team 2, 2023-2024)
+
+**Technologies:** Firebase, JavaScript, HTML/CSS, Google Maps API
+
+#### Project Overview
+A social platform connecting sports enthusiasts through intelligent matching algorithms and location-based services for finding training partners and sports communities.
+
+#### Technical Implementation
+
+**Backend Architecture**
+- Complete Firebase integration for serverless backend services
+- Firestore NoSQL database design and implementation
+- Firebase Authentication for secure user registration and management
+- Firebase Storage for media file handling and user content
+
+**Frontend Development**
+- Responsive web design with modern HTML, CSS, and JavaScript
+- Interactive real-time user interfaces with dynamic content updates
+- Google Maps API integration for location-based matching services
+- Cross-platform compatibility ensuring consistent user experience
+
+**Algorithm Development**
+- Complex matching algorithms for connecting compatible sports partners
+- Graph structures implementation for user relationship mapping
+- Weighted scoring systems for accurate profile matching
+- Performance optimization for real-time matching capabilities
+
+**Data Management**
+- JSON data processing and manipulation
+- Browser session storage implementation for user state management
+- Data persistence strategies across sessions
+- User data privacy compliance and security protocols
+
+#### Project Management & Soft Skills
+- Effective task distribution among 4 team members
+- Code review processes and collaborative development
+- Requirements engineering through user story mapping
+- Quality assurance through systematic testing approaches
+
+---
+
+### SolarSim (Team 2, 2025)
+
+**Technologies:** Advanced JavaScript (ES6+), HTML5 Canvas, Jest, Node.js
+
+#### Project Overview
+An interactive solar system simulation implementing advanced physics algorithms and educational visualization for astronomical learning and scientific computation.
+
+#### Advanced Technical Implementation
+
+**Scientific Programming & Algorithms**
+- **Barnes-Hut Algorithm**: Implemented O(n log n) N-body simulation replacing naive O(n²) approach
+- **Quadtree Data Structures**: Spatial indexing for efficient collision detection and force calculations
+- **Numerical Physics**: Real-time gravitational force calculations and Newton's laws implementation
+- **Performance Optimization**: Theta-parameter tuning balancing accuracy with computational efficiency
+
+**Advanced JavaScript Architecture**
+- **Object-Oriented Design**: Complex ES6 class hierarchy for celestial bodies, simulation engine, and UI components
+- **HTML5 Canvas Mastery**: Real-time rendering of dynamic astronomical visualizations
+- **Animation Systems**: Smooth 60fps animations using requestAnimationFrame optimization
+- **Module Architecture**: Clean separation of concerns with ES6 import/export systems
+- **Asynchronous Programming**: File operations, data loading, and non-blocking UI updates
+- **Event-Driven Architecture**: Responsive user interaction handling for simulation controls
+
+**User Experience & Accessibility**
+- **Accessibility Features**: Support for 4 types of color blindness with dynamic color scheme switching
+- **Internationalization (i18n)**: Multi-language support for 4 languages with dynamic content switching
+- **Persistent User Preferences**: Local storage implementation for customized user experiences
+- **Responsive Design**: Adaptive interfaces for various screen sizes and devices
+
+**Data Systems**
+- **Configuration Management**: JSON-based solar system templates and parameter files
+- **Export Functionality**: CSV data export for scientific analysis and education
+- **Cross-Platform Compatibility**: Consistent data handling across different browsers and devices
+
+#### Scientific & Mathematical Competencies
+- **Physics Implementation**: Gravitational laws, orbital mechanics, and collision physics
+- **Numerical Methods**: Integration techniques for real-time simulation accuracy
+- **Algorithm Analysis**: Complexity optimization and performance profiling
+- **Mathematical Modeling**: Celestial body interactions and trajectory calculations
+
+#### Quality Assurance & Testing
+- **Unit Testing Framework**: Comprehensive Jest testing suite for Node.js environment
+- **Test Coverage**: Systematic validation of physics calculations and edge cases
+- **Performance Testing**: Optimization validation with varying object counts
+- **Cross-Browser Testing**: Compatibility verification across multiple platforms
+
+---
+
+### JavaScript Evolution & Expertise Development
+
+**Progressive Skill Development:**
+- **Sporters Connect (2023-2024)**: Foundation in JavaScript with Firebase SDK, DOM manipulation, and basic event handling
+- **SolarSim (2025)**: Advanced JavaScript mastery with complex OOP, Canvas API, real-time physics, and sophisticated animations
+
+**Core JavaScript Competencies Demonstrated:**
+- **ES6+ Features**: Classes, modules, arrow functions, destructuring, template literals
+- **Asynchronous Programming**: Promises, async/await, event loops, and non-blocking operations  
+- **Canvas API Mastery**: Real-time graphics, animations, and interactive visualizations
+- **Performance Optimization**: Algorithm efficiency, memory management, and smooth frame rates
+- **Architecture Design**: Modular, maintainable, and scalable code structures
+
+---
+
 ## 📊 Statistical Analysis & Mathematical Modeling
 
 **Technologies:** MATLAB, Python, Statistical Computing
@@ -266,7 +390,8 @@ These laboratory skills directly supported other projects:
 ## 💻 Core Technologies
 
 ### Programming Languages
-- **TypeScript/JavaScript**: Full-stack web development, REST APIs, real-time applications
+- **JavaScript (ES6+)**: Advanced full-stack development, Canvas API, real-time simulations, Firebase integration
+- **TypeScript**: Full-stack web development, REST APIs, real-time applications, type-safe programming
 - **Python**: Data analysis, signal processing, scientific computing, machine learning workflows
 - **C/C++**: Embedded systems programming, Arduino development, system-level programming
 - **Assembly (8051)**: Low-level hardware programming, microcontroller optimization
@@ -281,21 +406,26 @@ These laboratory skills directly supported other projects:
 - **Database Design**: Normalization, indexing, query optimization
 
 ### Frameworks & Tools
-- **Backend**: Node.js, Express, TypeORM
+- **Backend**: Node.js, Express, TypeORM, Firebase (Firestore, Authentication, Storage)
+- **Frontend**: HTML5 Canvas, responsive design, Google Maps API, modern JavaScript frameworks
 - **Data Processing**: Apache Spark, Apache Kafka, Pandas, NumPy
-- **Databases**: PostgreSQL, QuestDB, SQL Server
+- **Databases**: PostgreSQL, QuestDB, SQL Server, Firestore NoSQL
+- **Testing**: Jest, unit testing, performance testing, cross-browser testing
 - **Hardware**: Arduino, NI MyRIO, 8051 microcontroller
-- **Version Control**: Git, GitHub
-- **Deployment**: Linux servers, SSH, Docker
+- **Version Control**: Git, GitHub, collaborative development workflows
+- **Deployment**: Linux servers, SSH, Docker, Firebase Hosting
 
 ### Specialized Skills
 - **Embedded Systems**: Real-time programming, sensor integration, microcontroller optimization
 - **Signal Processing**: Fourier analysis, digital signal processing, audio processing
 - **Data Engineering**: Big data processing, stream analytics, ETL pipeline development
-- **Web Development**: REST APIs, WebSocket communication, full-stack applications
+- **Web Development**: Full-stack applications, REST APIs, WebSocket communication, Firebase integration
+- **Scientific Programming**: N-body simulations, algorithm optimization, numerical methods, physics modeling
+- **Algorithm Development**: Complex matching systems, spatial data structures, performance optimization
 - **Hardware Integration**: Circuit design, sensor calibration, system integration
 - **Statistical Analysis**: Mathematical modeling, hypothesis testing, data interpretation
 - **Electronics Design**: Circuit analysis, component selection, PCB layout principles
+- **User Experience**: Accessibility features, internationalization, responsive design
 
 ---
 
@@ -305,12 +435,18 @@ Each project in this repository demonstrates:
 - **Problem-solving skills**: Breaking down complex engineering challenges into manageable components
 - **Technical implementation**: Practical application of theoretical concepts across multiple domains
 - **System integration**: Combining hardware, software, networking, and database components
+- **Algorithm development**: From basic matching systems to advanced N-body simulations
 - **Mathematical modeling**: Application of statistical analysis and mathematical foundations
 - **Laboratory skills**: Hands-on experience with electronic circuits and measurement equipment
+- **Software architecture**: Designing scalable, maintainable, and efficient code structures
+- **User experience focus**: Creating accessible, intuitive, and responsive applications
 - **Documentation**: Comprehensive technical documentation and professional reporting
 - **Team collaboration**: Working effectively in multidisciplinary engineering teams
 - **Continuous learning**: Adapting to new technologies, frameworks, and methodologies
 - **Quality assurance**: Testing, validation, and optimization of engineering solutions
+- **Performance optimization**: From O(n²) to O(n log n) algorithm improvements and real-time systems
 
 ---
 
+
+*This portfolio represents a comprehensive journey through modern engineering practices, from low-level embedded programming to high-level distributed systems, showcasing both theoretical understanding and practical implementation skills.*
