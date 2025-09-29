@@ -1,6 +1,6 @@
 # Industrieel Ingenieur Informatica
 
-Welcome to my GitHub repository containing various projects from my Electronics and ICT studies at UGent. This collection showcases practical implementations across multiple domains including embedded systems, web development, data processing, and autonomous systems.
+Welcome to my GitHub repository containing various projects from my informatics studies at UGent. This collection showcases practical implementations across multiple domains including embedded systems, web development, data processing, and autonomous systems.
 
 ## 📋 Table of Contents
 
@@ -30,17 +30,6 @@ Welcome to my GitHub repository containing various projects from my Electronics 
 - **REST API Design**: API-first approach with comprehensive endpoint implementation
 - **Real-time Communication**: WebSocket integration for live functionality
 - **Deployment**: Linux server deployment using SSH, SCP, and Git
-
-### Project Structure
-```
-├── src/
-│   ├── entities/          # TypeORM entities
-│   ├── dao/              # Data Access Objects
-│   ├── routes/           # Express REST endpoints
-│   ├── websockets/       # WebSocket handlers
-│   └── services/         # Business logic
-└── deploy/               # Deployment scripts
-```
 
 ---
 
