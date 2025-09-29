@@ -1,4 +1,4 @@
-# 🎓 Engineering & Computer Science Portfolio
+# Industrieel Ingenieur Informatica
 
 Welcome to my GitHub repository containing various projects from my Electronics and ICT studies at UGent. This collection showcases practical implementations across multiple domains including embedded systems, web development, data processing, and autonomous systems.
 
@@ -13,7 +13,7 @@ Welcome to my GitHub repository containing various projects from my Electronics 
 - [🌐 Software Development Projects](#-software-development-projects)
 - [📊 Statistical Analysis & Mathematical Modeling](#-statistical-analysis--mathematical-modeling)
 - [⚡ Electronics Laboratory Work](#-electronics-laboratory-work)
-- [🗂️ Data Structures & Algorithms](#-Data-Structures--Algorithms)
+- [🗂️ Data Structures & Algorithms](#-data-structures--algorithms)
 
 ---
 
