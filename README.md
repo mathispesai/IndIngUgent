@@ -13,7 +13,7 @@ Welcome to my GitHub repository containing various projects from my Electronics 
 - [🌐 Software Development Projects](#-software-development-projects)
 - [📊 Statistical Analysis & Mathematical Modeling](#-statistical-analysis--mathematical-modeling)
 - [⚡ Electronics Laboratory Work](#-electronics-laboratory-work)
-- [💻 Core Technologies](#-core-technologies)
+- [🗂️ Data Structures & Algorithms](#-Data-Structures--Algorithms)
 
 ---
 
@@ -384,48 +384,6 @@ These laboratory skills directly supported other projects:
 - Circuit design for the Vertical Farming system
 - Hardware interfacing in the Autonomous Vehicle project
 - Sensor integration across multiple embedded systems projects
-
----
-
-## 💻 Core Technologies
-
-### Programming Languages
-- **JavaScript (ES6+)**: Advanced full-stack development, Canvas API, real-time simulations, Firebase integration
-- **TypeScript**: Full-stack web development, REST APIs, real-time applications, type-safe programming
-- **Python**: Data analysis, signal processing, scientific computing, machine learning workflows
-- **C/C++**: Embedded systems programming, Arduino development, system-level programming
-- **Assembly (8051)**: Low-level hardware programming, microcontroller optimization
-- **LabVIEW**: Graphical programming for hardware integration and automation
-- **MATLAB**: Statistical analysis, mathematical modeling, engineering computations
-- **SQL**: Relational database management, complex queries, database optimization
-
-### Database Technologies
-- **Relational Databases**: PostgreSQL, SQL Server, MySQL
-- **Time-Series Databases**: QuestDB for high-performance time-series data
-- **ORM Technologies**: TypeORM for object-relational mapping
-- **Database Design**: Normalization, indexing, query optimization
-
-### Frameworks & Tools
-- **Backend**: Node.js, Express, TypeORM, Firebase (Firestore, Authentication, Storage)
-- **Frontend**: HTML5 Canvas, responsive design, Google Maps API, modern JavaScript frameworks
-- **Data Processing**: Apache Spark, Apache Kafka, Pandas, NumPy
-- **Databases**: PostgreSQL, QuestDB, SQL Server, Firestore NoSQL
-- **Testing**: Jest, unit testing, performance testing, cross-browser testing
-- **Hardware**: Arduino, NI MyRIO, 8051 microcontroller
-- **Version Control**: Git, GitHub, collaborative development workflows
-- **Deployment**: Linux servers, SSH, Docker, Firebase Hosting
-
-### Specialized Skills
-- **Embedded Systems**: Real-time programming, sensor integration, microcontroller optimization
-- **Signal Processing**: Fourier analysis, digital signal processing, audio processing
-- **Data Engineering**: Big data processing, stream analytics, ETL pipeline development
-- **Web Development**: Full-stack applications, REST APIs, WebSocket communication, Firebase integration
-- **Scientific Programming**: N-body simulations, algorithm optimization, numerical methods, physics modeling
-- **Algorithm Development**: Complex matching systems, spatial data structures, performance optimization
-- **Hardware Integration**: Circuit design, sensor calibration, system integration
-- **Statistical Analysis**: Mathematical modeling, hypothesis testing, data interpretation
-- **Electronics Design**: Circuit analysis, component selection, PCB layout principles
-- **User Experience**: Accessibility features, internationalization, responsive design
 
 ---
 
