@@ -429,24 +429,32 @@ These laboratory skills directly supported other projects:
 
 ---
 
-## 🎯 Project Highlights
+## 🗂️ Data Structures & Algorithms
 
-Each project in this repository demonstrates:
-- **Problem-solving skills**: Breaking down complex engineering challenges into manageable components
-- **Technical implementation**: Practical application of theoretical concepts across multiple domains
-- **System integration**: Combining hardware, software, networking, and database components
-- **Algorithm development**: From basic matching systems to advanced N-body simulations
-- **Mathematical modeling**: Application of statistical analysis and mathematical foundations
-- **Laboratory skills**: Hands-on experience with electronic circuits and measurement equipment
-- **Software architecture**: Designing scalable, maintainable, and efficient code structures
-- **User experience focus**: Creating accessible, intuitive, and responsive applications
-- **Documentation**: Comprehensive technical documentation and professional reporting
-- **Team collaboration**: Working effectively in multidisciplinary engineering teams
-- **Continuous learning**: Adapting to new technologies, frameworks, and methodologies
-- **Quality assurance**: Testing, validation, and optimization of engineering solutions
-- **Performance optimization**: From O(n²) to O(n log n) algorithm improvements and real-time systems
+**Technologies:** Java 11, JUnit 5, Algorithm Analysis
 
----
+### Course Overview
+Advanced study of fundamental data structures and algorithmic techniques with emphasis on understanding underlying mechanisms, performance analysis, and correct application within larger systems. The course combines theoretical foundations with practical implementation and performance benchmarking.
 
+### Core Competencies Developed
 
-*This portfolio represents a comprehensive journey through modern engineering practices, from low-level embedded programming to high-level distributed systems, showcasing both theoretical understanding and practical implementation skills.*
+#### 1. Data Structure Implementation
+- **Skip Lists**: Probabilistic data structure with multiple levels for efficient O(log n) search operations
+- **Decision Trees**: Binary tree structures for classification and decision-making with optimization strategies
+- **Huffman Trees**: Binary trees for optimal data compression using frequency-based encoding
+- **Treaps**: Hybrid structure combining Binary Search Tree properties with heap priorities
+- **Binary Search Trees**: Implementation with rotations and balancing mechanisms
+
+#### 2. Algorithm Selection & Optimization
+- Comparative analysis of data structure performance characteristics
+- Selection of optimal structures based on problem requirements
+- Trade-off analysis between time and space complexity
+- Multiple optimization strategies for decision tree construction
+- Benchmarking methodologies for empirical performance validation
+
+#### 3. Complexity Analysis
+- Asymptotic notation and Big-O analysis
+- Time complexity evaluation for various operations
+- Space complexity considerations
+- Average vs worst-case performance analysis
+- Empirical validation of theoretical complexity
